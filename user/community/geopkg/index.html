@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>GeoPackage Extension &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Community modules" href="../index.html" />
+      <link rel="next" title="Installing the GeoServer GeoPackage extension" href="installing.html" />
+      <link rel="prev" title="MBTiles Output Format" href="../mbtiles/output.html" />
+</head>
+<body class="community/geopkg/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li>GeoPackage Extension</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="installing.html" title="Installing the GeoServer GeoPackage extension"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../mbtiles/output.html" title="MBTiles Output Format"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="geopackage-extension">
+<span id="community-geopkg"></span><h1>GeoPackage Extension<a class="headerlink" href="#geopackage-extension" title="Permalink to this headline">¶</a></h1>
+<p>This plugin brings in the ability to write GeoPackage files in GeoServer. Reading GeoPackage files is part of the core functionality of GeoServer, and does not require this extension.</p>
+<p><a class="reference external" href="http://www.opengeospatial.org/projects/groups/geopackageswg/">GeoPackage</a> is an SQLite based standard format that is able to hold multiple vector and raster data layers in a single file.</p>
+<p>GeoPackage can be used as an output format for WFS <a class="reference internal" href="../../services/wfs/reference.html#wfs-getfeature"><span class="std std-ref">GetFeature</span></a> (creating one vector data layer) as well as WMS <a class="reference internal" href="../../services/wms/reference.html#wms-getmap"><span class="std std-ref">GetMap</span></a> (creating one raster data layer).
+The GeoServer GeoPackage extension also allows to create a completely custom made GeoPackage with multiple layers, using the GeoPackage process.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing the GeoServer GeoPackage extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">GeoPackage As Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output.html#geopackage-wms-output-format">GeoPackage WMS Output Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#geopackage-wfs-output-format">GeoPackage WFS Output Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#geopackage-wps-process">GeoPackage WPS Process</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../mbtiles/output.html" title="previous chapter">MBTiles Output Format</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="installing.html" title="next chapter">Installing the GeoServer GeoPackage extension</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../mbtiles/output.html" title="previous chapter">MBTiles Output Format</a></li>
+            <li>Next: <a href="installing.html" title="next chapter">Installing the GeoServer GeoPackage extension</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/geopkg/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

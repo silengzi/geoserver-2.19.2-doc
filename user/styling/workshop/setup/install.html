@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>1.1. Extension Install &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../../index.html" />
+      <link rel="up" title="1. Workshop Setup" href="index.html" />
+      <link rel="next" title="1.2. Course Data" href="data.html" />
+      <link rel="prev" title="1. Workshop Setup" href="index.html" />
+</head>
+<body class="styling/workshop/setup/install">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../../index.html" accesskey="U">Styling</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Styling Workshop</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U"><span class="section-number">1. </span>Workshop Setup</a> &raquo;</li>
+  <li>1.1. Extension Install</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="data.html" title="1.2. Course Data"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="index.html" title="1. Workshop Setup"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="extension-install">
+<h1><span class="section-number">1.1. </span>Extension Install<a class="headerlink" href="#extension-install" title="Permalink to this headline">¶</a></h1>
+<p>This workshop course requires GeoServer with a few additional extensions.</p>
+<ul class="simple">
+<li><p>CSS Styling: Quickly and easily generate SLD files</p></li>
+<li><p>YSLD Styling: An alternative styling language to SLD</p></li>
+<li><p>Importer: Wizard for bulk import of data</p></li>
+</ul>
+<p>On Windows the following is recommended:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.mozilla.org/en-US/firefox/new/">FireFox</a></p></li>
+<li><p><a class="reference external" href="http://notepad-plus-plus.org">Notepad++</a></p></li>
+</ul>
+<p>The <strong>CSS extension</strong> is distributed as a supported GeoServer extension. Extensions are unpacked into the <code class="docutils literal notranslate"><span class="pre">libs</span></code> folder of the GeoServer application. The <strong>YSLD extension</strong> is a new addition to geoserver and is distributed as an unsupported GeoServer extension.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In a classroom setting these extensions have already been installed.</p>
+</div>
+<div class="section" id="manual-install">
+<h2><span class="section-number">1.1.1. </span>Manual Install<a class="headerlink" href="#manual-install" title="Permalink to this headline">¶</a></h2>
+<p>To download and install the required extensions by hand:</p>
+<ol class="arabic">
+<li><p>Download geoserver-2.10-M0-css-plugin.zip and geoserver-2.10-M0-css-plugin.zip from:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://geoserver.org/download/">Development Release</a> (GeoServer WebSite)</p></li>
+</ul>
+<p>It is important to download the version that matches the GeoServer you are running.</p>
+</li>
+<li><p>Download the geoserver-2.10-SNAPSHOT-ysld-plugin.zip from:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://build.geoserver.org/geoserver/master/community-latest/">Community Builds</a> (GeoServer WebSite)</p></li>
+</ul>
+</li>
+<li><p>Stop the GeoServer application.</p></li>
+<li><p>Navigate into the <code class="file docutils literal notranslate"><span class="pre">webapps/geoserver/WEB-INF/lib</span></code> folder.</p>
+<p>These files make up the running GeoServer application.</p>
+</li>
+<li><p>Unzip the contents of the three zip files into the <code class="file docutils literal notranslate"><span class="pre">lib</span></code> folder.</p></li>
+<li><p>Restart the Application Server.</p></li>
+<li><p>Login to the Web Administration application. Select <strong>Styles</strong> from the naviagion menu. Click <span class="guilabel">Create a new style</span> and ensure both CSS and YSLD are available in the formats dropdown. Click <span class="guilabel">Cancel</span> to return to the <strong>Styles</strong> page without saving.</p></li>
+</ol>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="index.html" title="previous chapter"><span class="section-number">1. </span>Workshop Setup</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="data.html" title="next chapter"><span class="section-number">1.2. </span>Course Data</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">1.1. Extension Install</a><ul>
+<li><a class="reference internal" href="#manual-install">1.1.1. Manual Install</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="index.html" title="previous chapter"><span class="section-number">1. </span>Workshop Setup</a></li>
+            <li>Next: <a href="data.html" title="next chapter"><span class="section-number">1.2. </span>Course Data</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/styling/workshop/setup/install.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

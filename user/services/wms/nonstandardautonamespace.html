@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Non Standard AUTO Namespace &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Web Map Service (WMS)" href="index.html" />
+      <link rel="next" title="WMS configuration" href="configuration.html" />
+      <link rel="prev" title="WMS vendor parameters" href="vendor.html" />
+</head>
+<body class="services/wms/nonstandardautonamespace">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Services</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Web Map Service (WMS)</a> &raquo;</li>
+  <li>Non Standard AUTO Namespace</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="configuration.html" title="WMS configuration"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="vendor.html" title="WMS vendor parameters"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="non-standard-auto-namespace">
+<span id="id1"></span><h1>Non Standard AUTO Namespace<a class="headerlink" href="#non-standard-auto-namespace" title="Permalink to this headline">¶</a></h1>
+<p>The WMS standard supports a small number of “automatic” coordinate reference systems that include a user-selected centre of projection.  These are specified using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AUTO</span><span class="p">:</span><span class="n">auto_crs_id</span><span class="p">,</span><span class="n">factor</span><span class="p">,</span><span class="n">lon0</span><span class="p">,</span><span class="n">lat0</span>
+</pre></div>
+</div>
+<p>for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CRS</span><span class="o">=</span><span class="n">AUTO</span><span class="p">:</span><span class="mi">42003</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">45</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>in GeoServer 2.8.x AUTO and AUTO2 namespaces are treated identically.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>in GeoServer 2.8.x the factor parameter in the AUTO namespace is ignored.  The BBOX parameter to GetMap must therefore be specified in metres.</p>
+</div>
+<p>The WMS standard provide projections with IDs in the range 42001 to 42005.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>Projection</p></td>
+</tr>
+<tr class="row-even"><td><p>42001</p></td>
+<td><p>Universal Transverse Mercator</p></td>
+</tr>
+<tr class="row-odd"><td><p>42002</p></td>
+<td><p>Transverse Mercator</p></td>
+</tr>
+<tr class="row-even"><td><p>42003</p></td>
+<td><p>Orthographic</p></td>
+</tr>
+<tr class="row-odd"><td><p>42004</p></td>
+<td><p>Equirectangular</p></td>
+</tr>
+<tr class="row-even"><td><p>42005</p></td>
+<td><p>Mollweide   (not supported in GeoServer 2.8.x)</p></td>
+</tr>
+</tbody>
+</table>
+<p>GeoServer also supports some non-standard coordinate reference systems.
+These are</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>Projection</p></td>
+</tr>
+<tr class="row-even"><td><p>97001</p></td>
+<td><p>Gnomonic</p></td>
+</tr>
+<tr class="row-odd"><td><p>97002</p></td>
+<td><p>Stereographic</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the auto stereographic  projection uses a sphere.  It does this by setting the semi minor axis to the same value as the semi major axis.</p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="vendor.html" title="previous chapter">WMS vendor parameters</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="configuration.html" title="next chapter">WMS configuration</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="vendor.html" title="previous chapter">WMS vendor parameters</a></li>
+            <li>Next: <a href="configuration.html" title="next chapter">WMS configuration</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/services/wms/nonstandardautonamespace.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

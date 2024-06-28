@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Installing the WPS extension &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Web Processing Service (WPS)" href="index.html" />
+      <link rel="next" title="WPS Operations" href="operations.html" />
+      <link rel="prev" title="Web Processing Service (WPS)" href="index.html" />
+</head>
+<body class="services/wps/install">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Services</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Web Processing Service (WPS)</a> &raquo;</li>
+  <li>Installing the WPS extension</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="operations.html" title="WPS Operations"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="index.html" title="Web Processing Service (WPS)"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="installing-the-wps-extension">
+<span id="wps-install"></span><h1>Installing the WPS extension<a class="headerlink" href="#installing-the-wps-extension" title="Permalink to this headline">¶</a></h1>
+<p>The WPS module is not a part of GeoServer core, but instead must be installed as an extension.  To install WPS:</p>
+<ol class="arabic">
+<li><p>Navigate to the <a class="reference external" href="http://geoserver.org/download/">GeoServer download page</a></p></li>
+<li><p>Find the page that matches the exact version of GeoServer you are running.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to match the version of the extension with that of GeoServer, otherwise errors will occur.</p>
+</div>
+</li>
+<li><p>Download the WPS extension.  The download link for <span class="guilabel">WPS</span> will be in the <span class="guilabel">Extensions</span> section under <span class="guilabel">Other</span>.</p></li>
+<li><p>Extract the files in this archive to the <code class="file docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> directory of your GeoServer installation.</p></li>
+<li><p>Restart GeoServer.</p></li>
+</ol>
+<p>After restarting, load the <a class="reference internal" href="../../webadmin/index.html#web-admin"><span class="std std-ref">Web administration interface</span></a>.  If the extension loaded properly, you should see an extra entry for WPS in the <span class="guilabel">Service Capabilities</span> column.  If you don’t see this entry, check the logs for errors.</p>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/wpscapslink.png" src="../../_images/wpscapslink.png" />
+<p class="caption"><span class="caption-text"><em>A link for the WPS capabilities document will display if installed properly</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="configuring-wps">
+<h2>Configuring WPS<a class="headerlink" href="#configuring-wps" title="Permalink to this headline">¶</a></h2>
+<p>WPS processes are subject to the same feature limit as the WFS service.
+The limit applies to process <strong>input</strong>, so even processes which summarize data
+and return few results will be affected if applied to very large datasets.
+The limit is set on the <a class="reference internal" href="../wfs/webadmin.html#services-webadmin-wfs"><span class="std std-ref">WFS settings</span></a> Admin page.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the limit is encountered during process execution, no error is given. Any results computed by the process may be incomplete</p>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="index.html" title="previous chapter">Web Processing Service (WPS)</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="operations.html" title="next chapter">WPS Operations</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Installing the WPS extension</a><ul>
+<li><a class="reference internal" href="#configuring-wps">Configuring WPS</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="index.html" title="previous chapter">Web Processing Service (WPS)</a></li>
+            <li>Next: <a href="operations.html" title="next chapter">WPS Operations</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/services/wps/install.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

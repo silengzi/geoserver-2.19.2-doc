@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Importer JDBC storage &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Community modules" href="../index.html" />
+      <link rel="next" title="SAP HANA" href="../hana/index.html" />
+      <link rel="prev" title="Catalog Services for the Web (CSW) ISO Metadata tutorial" href="../csw-iso/tutorial.html" />
+</head>
+<body class="community/importer-jdbc/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li>Importer JDBC storage</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="../hana/index.html" title="SAP HANA"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../csw-iso/tutorial.html" title="Catalog Services for the Web (CSW) ISO Metadata tutorial"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="importer-jdbc-storage">
+<span id="community-importer-jdbc"></span><h1>Importer JDBC storage<a class="headerlink" href="#importer-jdbc-storage" title="Permalink to this headline">¶</a></h1>
+<p>This plugin allows sharing the state of imports in a relational database supported by GeoTools.
+Compared to the default in-memory storage, this helps in two ways:</p>
+<ul class="simple">
+<li><p>The state of the imports is persisted and survives restarts</p></li>
+<li><p>If an external database, such as PostgreSQL/PostGIS, is used, then it’s possible to run multiple
+imports on different GeoServer nodes in load balancing and get a consolidated view of their state</p></li>
+</ul>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The module zip just need to be unpacked in the GeoServer <code class="docutils literal notranslate"><span class="pre">WEB-INF\lib</span></code>.
+On startup the module will create by default a H2 database in a “importer” folder
+inside the data directory, as well as a configuration file at <code class="docutils literal notranslate"><span class="pre">${GEOSERVER_DATA_DIR}/jdbc-import-store.properties</span></code>.</p>
+<p>The property file can be modified to point to an external database, for example, the following
+contents are suitable for a PostGIS database (PostGIS extensions mandatory, even if not used):</p>
+<div class="highlight-scss notranslate"><div class="highlight"><pre><span></span><span class="nt">dbtype</span><span class="o">=</span><span class="nt">postgis</span>
+<span class="nt">user</span><span class="o">=</span><span class="nt">myUserName</span>
+<span class="nt">passwd</span><span class="o">=</span><span class="nt">myPassword</span>
+<span class="nt">database</span><span class="o">=</span><span class="nt">databaseName</span>
+<span class="nt">port</span><span class="o">=</span><span class="nt">5432</span>
+<span class="nt">host</span><span class="o">=</span><span class="nt">localhost</span>
+<span class="nt">schema</span><span class="o">=</span><span class="nt">public</span>
+</pre></div>
+</div>
+<p>On connection the code will create one table and the suitable indexes to track the imports.
+In case the user above is not allowed to create tables, the following SQL
+statement can be used (adapt to the specific database):</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">public</span><span class="p">.</span><span class="n">import_context</span>
+<span class="p">(</span>
+  <span class="n">fid</span> <span class="nb">serial</span><span class="p">,</span>
+  <span class="n">context</span> <span class="nb">text</span><span class="p">,</span>
+  <span class="n">created</span> <span class="k">timestamp</span><span class="p">,</span>
+  <span class="n">updated</span> <span class="k">timestamp</span><span class="p">,</span>
+  <span class="ss">&quot;user&quot;</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">,</span>
+  <span class="k">state</span> <span class="nb">character</span> <span class="nb">varying</span><span class="p">,</span>
+  <span class="k">CONSTRAINT</span> <span class="n">import_context_pkey</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">fid</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">import_context_state</span> <span class="k">ON</span> <span class="n">import_context</span><span class="p">(</span><span class="k">state</span><span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">import_context_user</span> <span class="k">ON</span> <span class="n">import_context</span><span class="p">(</span><span class="ss">&quot;user&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The store has been tested with H2 and Postgresql with PostGIS extensions, it may work
+with other relational databases too assuming that they have a corresponding GeoTools data store
+plugin installed and the database is not changing the name of the columns (Oracle will most
+likely not work).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With some light extra development and testing the code could be extended to save the status
+of imports in any GeoTools supported store, e.g., SOLR, MongoDB.</p>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../csw-iso/tutorial.html" title="previous chapter">Catalog Services for the Web (CSW) ISO Metadata tutorial</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="../hana/index.html" title="next chapter">SAP HANA</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Importer JDBC storage</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../csw-iso/tutorial.html" title="previous chapter">Catalog Services for the Web (CSW) ISO Metadata tutorial</a></li>
+            <li>Next: <a href="../hana/index.html" title="next chapter">SAP HANA</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/importer-jdbc/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

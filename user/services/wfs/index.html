@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Web Feature Service (WFS) &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Services" href="../index.html" />
+      <link rel="next" title="WFS settings" href="webadmin.html" />
+      <link rel="prev" title="KML Scoring" href="../wms/googleearth/features/kmlscoring.html" />
+</head>
+<body class="services/wfs/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Services</a> &raquo;</li>
+  <li>Web Feature Service (WFS)</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="webadmin.html" title="WFS settings"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../wms/googleearth/features/kmlscoring.html" title="KML Scoring"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="web-feature-service-wfs">
+<span id="wfs"></span><h1>Web Feature Service (WFS)<a class="headerlink" href="#web-feature-service-wfs" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the Web Feature Service (WFS).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="webadmin.html">WFS settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#service-metadata">Service Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#service-levels">Service Levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#configuring-additional-srs">Configuring additional SRS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#gml">GML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#conformance">Conformance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#encode-response-with">Encode response with</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#shape-zip-output-format">SHAPE-ZIP output format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#stored-queries">Stored Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#override-gml-3-2-mime-type">Override GML 3.2 MIME type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin.html#configure-xml-entity-expansion-limit-on-wfs-xml-readers">Configure XML Entity Expansion limit on WFS XML readers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">WFS basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics.html#differences-between-wfs-versions">Differences between WFS versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">WFS reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#benefits-of-wfs">Benefits of WFS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="outputformats.html">WFS output formats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="outputformats.html#shapefile-output">Shapefile output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outputformats.html#json-and-jsonp-output">JSON and JSONP output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vendor.html">WFS vendor parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vendor.html#cql-filters">CQL filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor.html#format-options">Format options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor.html#reprojection">Reprojection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor.html#xml-request-validation">XML request validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor.html#getcapabilities-namespace-filter">GetCapabilities namespace filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schemamapping.html">WFS schema mapping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemamapping.html#schema-customization">Schema customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemamapping.html#type-changing">Type changing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="axis_order.html">Axis ordering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="axis_order.html#srslist-axis-order">SRSList Axis Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="axis_order.html#layer-axis-order">Layer Axis Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="axis_order.html#wfs-1-0-axis-order">WFS 1.0 Axis Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="axis_order.html#wfs-1-1-axis-order">WFS 1.1 Axis Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="axis_order.html#wfs-2-0-axis-order">WFS 2.0 Axis Order</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../wms/googleearth/features/kmlscoring.html" title="previous chapter">KML Scoring</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="webadmin.html" title="next chapter">WFS settings</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../wms/googleearth/features/kmlscoring.html" title="previous chapter">KML Scoring</a></li>
+            <li>Next: <a href="webadmin.html" title="next chapter">WFS settings</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/services/wfs/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

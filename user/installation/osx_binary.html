@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Mac OS X binary &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="up" title="Installation" href="index.html" />
+      <link rel="next" title="Linux binary" href="linux.html" />
+      <link rel="prev" title="Windows binary" href="win_binary.html" />
+</head>
+<body class="installation/osx_binary">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Installation</a> &raquo;</li>
+  <li>Mac OS X binary</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="linux.html" title="Linux binary"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="win_binary.html" title="Windows binary"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="mac-os-x-binary">
+<span id="installation-osx-bin"></span><h1>Mac OS X binary<a class="headerlink" href="#mac-os-x-binary" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For installing on OS X with an existing application server such as Tomcat, please see the <a class="reference internal" href="war.html#installation-war"><span class="std std-ref">Web archive</span></a> section.</p>
+</div>
+<p>An alternate way of installing GeoServer on OS X is to use the platform-independent binary. This version is a GeoServer web application bundled inside <a class="reference external" href="http://eclipse.org/jetty/">Jetty</a>, a lightweight and portable application server. It has the advantages of working very similarly across all operating systems and is very simple to set up.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Make sure you have a Java Runtime Environment (JRE) installed on your system. GeoServer requires a <strong>Java 8</strong> or <strong>Java 11</strong> environment, as provided by <a class="reference external" href="https://adoptopenjdk.net">AdoptOpenJDK</a> macOS installers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about Java and GeoServer compatibility, please see the section on <a class="reference internal" href="../production/java.html#production-java"><span class="std std-ref">Java Considerations</span></a>.</p>
+</div>
+</li>
+<li><p>Navigate to the <a class="reference external" href="http://geoserver.org/download">GeoServer Download page</a>.</p></li>
+<li><p>Select the version of GeoServer that you wish to download.  If you’re not sure, select <a class="reference external" href="http://geoserver.org/release/stable">Stable</a>.</p></li>
+<li><p>Select <span class="guilabel">Platform Independent Binary</span> on the download page.</p></li>
+<li><p>Download the archive and unpack to the directory where you would like the program to be located.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A suggested location would be <code class="file docutils literal notranslate"><span class="pre">/usr/local/geoserver</span></code>.</p>
+</div>
+</li>
+<li><p>Add an environment variable to save the location of GeoServer by typing the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export GEOSERVER_HOME=/usr/local/geoserver&quot;</span> &gt;&gt; ~/.profile
+. ~/.profile
+</pre></div>
+</div>
+</li>
+<li><p>Make yourself the owner of the <code class="docutils literal notranslate"><span class="pre">geoserver</span></code> folder, by typing the following command:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo chown -R &lt;USERNAME&gt; /usr/local/geoserver/
+</pre></div>
+</div>
+</div></blockquote>
+<p>where <code class="docutils literal notranslate"><span class="pre">USER_NAME</span></code> is your user name</p>
+</li>
+<li><p>Start GeoServer by changing into the directory <code class="docutils literal notranslate"><span class="pre">geoserver/bin</span></code> and executing the <code class="docutils literal notranslate"><span class="pre">startup.sh</span></code> script:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> geoserver/bin
+sh startup.sh
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you encounter the following error during startup, you may have some invalid JAI jars from the default Mac Java install:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java.lang.NoClassDefFoundError: Could not initialize class javax.media.jai.JAI
+</pre></div>
+</div>
+<p>To fix this error, locate your Java extensions folder (Usually <code class="docutils literal notranslate"><span class="pre">/System/Library/Java/Extensions</span></code> and/or <code class="docutils literal notranslate"><span class="pre">~/Library/Java/Extensions</span></code>), and delete the following jars:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jai_codec-1.1.3.jar
+jai_core-1.1.3.jar
+jai_imageio-1.1.jar
+</pre></div>
+</div>
+<p>If you have upgraded your OS from an older version, you may not have permission to delete these jars. In this case, you will first need to <a class="reference external" href="https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html#//apple_ref/doc/uid/TP40016462-CH5-SW1">disable System Integrity Protection</a>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>In a web browser, navigate to <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/geoserver</span></code>.</p></li>
+</ol>
+<p>If you see the GeoServer logo, then GeoServer is successfully installed.</p>
+<blockquote>
+<div><div class="figure align-default" id="id1">
+<img alt="../_images/success.png" src="../_images/success.png" />
+<p class="caption"><span class="caption-text">GeoServer installed and running successfully</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>To shut down GeoServer, either close the persistent command-line window, or run the <code class="file docutils literal notranslate"><span class="pre">shutdown.sh</span></code> file inside the <code class="file docutils literal notranslate"><span class="pre">bin</span></code> directory.</p>
+</div>
+<div class="section" id="uninstallation">
+<h2>Uninstallation<a class="headerlink" href="#uninstallation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Stop GeoServer (if it is running).</p></li>
+<li><p>Delete the directory where GeoServer is installed.</p></li>
+</ol>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="win_binary.html" title="previous chapter">Windows binary</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="linux.html" title="next chapter">Linux binary</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Mac OS X binary</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#uninstallation">Uninstallation</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="win_binary.html" title="previous chapter">Windows binary</a></li>
+            <li>Next: <a href="linux.html" title="next chapter">Linux binary</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/installation/osx_binary.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>WMS Animator &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="up" title="Tutorials" href="index.html" />
+      <link rel="next" title="CQL and ECQL" href="cql/cql_tutorial.html" />
+      <link rel="prev" title="WMS Reflector" href="wmsreflector.html" />
+</head>
+<body class="tutorials/animreflector">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Tutorials</a> &raquo;</li>
+  <li>WMS Animator</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="cql/cql_tutorial.html" title="CQL and ECQL"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="wmsreflector.html" title="WMS Reflector"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="wms-animator">
+<span id="tutorials-animreflector"></span><h1>WMS Animator<a class="headerlink" href="#wms-animator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Standard WMS can generate static maps only.
+There is a number of use cases in which generating an animation is of interest.
+An obvious case is time-based animation.
+Other uses include elevation-based animation,
+varying the values of SQL View or SLD substitution parameters,
+or the changing the extent of the generated map to produce the appearance of a moving viewport.</p>
+<p>This capability is provided by the <strong>WMS Animator</strong>.
+The WMS Animator works in a similar way to the WMS Reflector.
+It uses a provided partial WMS request as a template,
+and the <strong>animator parameters</strong> are used to generate and execute a sequence of complete requests.
+The rendered map images are combined into a single output image (in a format that supports multi-frame images).</p>
+<p>The Animator is invoked by using the <code class="docutils literal notranslate"><span class="pre">wms/animate</span></code> request path.
+Any WMS paramaters can be animated, including nested ones such as <a class="reference internal" href="../styling/sld/extensions/substitution.html#sld-variable-substitution"><span class="std std-ref">SLD environment variables</span></a>.
+To define the appearance of the animation additional parameters are provided:</p>
+<ul class="simple">
+<li><p><strong>aparam</strong> specifies the name of the parameter that will be changed in the request for each frame.
+This can be any WMS parameter such as <code class="docutils literal notranslate"><span class="pre">layers</span></code>, <code class="docutils literal notranslate"><span class="pre">cql_filter</span></code>, <code class="docutils literal notranslate"><span class="pre">bbox</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code> and so on.
+Nested parameters (such as required by the <code class="docutils literal notranslate"><span class="pre">format_options</span></code>, <code class="docutils literal notranslate"><span class="pre">env</span></code> and <code class="docutils literal notranslate"><span class="pre">view_params</span></code> parameters),
+are supported using the syntax of <code class="docutils literal notranslate"><span class="pre">param:name</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">view_params:year</span></code>).</p></li>
+<li><p><strong>avalues</strong> is a comma-separated list of the values the animation parameter has for each frame.
+If a value contain commas these must be escaped using a backslash.
+(For instance, this occurs when providing BBOX values.)</p></li>
+</ul>
+<p>The Animator parses the input values and uses string replacement to generate the sequence of WMS requests to be executed.
+Each generated request is executed to produce one frame.
+It is up to the caller to ensure the provided animation parameters result in valid WMS requests.</p>
+<p>For example, to generate an animation of a layer with the viewport scrolling towards the east,
+the WMS BBOX parameter is given the series of values <code class="docutils literal notranslate"><span class="pre">-90,40,-60,70</span></code>, <code class="docutils literal notranslate"><span class="pre">-80,40,-60,70</span></code> and <code class="docutils literal notranslate"><span class="pre">-70,40,-50,70</span></code>
+(note the escaping of the commas in the BBOX values):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp:states
+&amp;aparam=bbox
+&amp;avalues=-90\,40\,-60\,70,-80\,40\,-60\,70,-70\,40\,-50\,70
+</pre></div>
+</div>
+<p>For an example of nested parameters, assume the existence of a style named <code class="docutils literal notranslate"><span class="pre">selection</span></code> using an SLD variable <code class="docutils literal notranslate"><span class="pre">color</span></code>.
+The following request creates an animated map where the selection color changes between red, green and blue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp:states,topp:states
+&amp;styles=polygon,selection
+&amp;aparam=env:color
+&amp;avalues=FF0000,00FF00,0000FF
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-wms-animator">
+<h2>Using the WMS Animator<a class="headerlink" href="#using-the-wms-animator" title="Permalink to this headline">¶</a></h2>
+<p>To invoke the WMS Animator specify the path <code class="docutils literal notranslate"><span class="pre">wms/animate</span></code> instead of <code class="docutils literal notranslate"><span class="pre">wms</span></code> in a GetMap request.</p>
+<p>Every Animator request must specify the <code class="docutils literal notranslate"><span class="pre">layers</span></code>, <code class="docutils literal notranslate"><span class="pre">aparam</span></code> and <code class="docutils literal notranslate"><span class="pre">avalues</span></code> parameters.
+Any other valid WMS parameters may be used in the request as well.
+If any necessary parameters are omitted, the Animator provides sensible default values for them.
+The following defaults are used:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Default Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">request</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">getmap</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">service</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wms</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.1.1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">format</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">image/png</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">width</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">512</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">height</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">512</span></code> if width is not specified</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">srs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>, or SRS common to all layers</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code></p></td>
+<td><p>bounds of specified layer(s)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">styles</span></code></p></td>
+<td><p>default styles configured for specified layer(s)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Further details of these parameters are:</p>
+<p><strong>layers</strong>: This is the only mandatory standard parameter. It is a comma-separated list of the layers to be included in the output map.</p>
+<p><strong>format</strong>: The default output format is <code class="docutils literal notranslate"><span class="pre">image/png</span></code>.
+Supported values are <code class="docutils literal notranslate"><span class="pre">image/jpeg</span></code> (suitable for raster backgrounds), <code class="docutils literal notranslate"><span class="pre">image/png8</span></code> (8-bit colors, smaller files) and <code class="docutils literal notranslate"><span class="pre">image/gif</span></code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to produce an actual animated image the format must support animation. At this time the only one provide in GeoServer is <strong>image/gif;subtype=animated</strong></p>
+</div>
+<p><strong>width</strong>: Describes the width of the image. It defaults to 512 pixels, and can be calculated based on the specified height and the aspect ratio of the bounding box.</p>
+<p><strong>height</strong>: Describes the height of the image. It can be calculated based on the specified width and the aspect ratio of the bounding box.</p>
+<p><strong>bbox</strong>: Specifies the extent of the map frame.  The default bounding box is determined by taking the union of the bounds of the specified layers.
+(For example, if one layer shows Los Angeles and another shows New York, the default map shows most of the United States.
+The bounding box also determines the aspect ratio of the map.
+If only one of <code class="docutils literal notranslate"><span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code> is specified, the other is determined based on the aspect ratio of the bounding box.</p>
+<p><strong>styles</strong>: The default value is the default styles configured in GeoServer for the layers specified in the <code class="docutils literal notranslate"><span class="pre">layers</span></code> parameter.
+This can be overridden by providing a comma-separated list of style names (which must be known to the server).</p>
+<p><strong>srs</strong>: If all layers share the same SRS, this is used as the default value.
+Otherwise, the default value is EPSG:4326 (WGS84).</p>
+<div class="section" id="animation-options">
+<h3>Animation Options<a class="headerlink" href="#animation-options" title="Permalink to this headline">¶</a></h3>
+<p>The Animator provides options to control looping and frame speed.
+These are specified using the <code class="docutils literal notranslate"><span class="pre">format_options</span></code> <a class="reference internal" href="../services/wms/vendor.html#wms-vendor-parameters"><span class="std std-ref">WMS parameter</span></a>.
+The available options are:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Option</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gif_loop_continuously</span></code></p></td>
+<td><p>If <code class="docutils literal notranslate"><span class="pre">true</span></code> the animation will loop continuously.
+The default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gif_frames_delay</span></code></p></td>
+<td><p>Specifies the frame delay in milliseconds.
+The default is 1000 ms.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gif_disposal</span></code></p></td>
+<td><p>Specifies what to do with the previous GIF frame once a new frame is displayed.
+Valid values are <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">doNotDispose</span></code>, <code class="docutils literal notranslate"><span class="pre">backgroundColor</span></code> and <code class="docutils literal notranslate"><span class="pre">previous</span></code>.
+The default is <code class="docutils literal notranslate"><span class="pre">none</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p>Requests the layer <code class="docutils literal notranslate"><span class="pre">topp:states</span></code>,
+using the default style (<code class="docutils literal notranslate"><span class="pre">demographic</span></code>), width (512 pixels) and height (adjusted to aspect ratio).
+The <code class="docutils literal notranslate"><span class="pre">aparam=bbox</span></code> parameter specifies that the output animation has two frames, one using a whole-world extent and the other with the extent of the USA.
+This gives the effect of zooming in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp:states
+&amp;format=image/gif;subtype=animated
+&amp;aparam=bbox
+&amp;avalues=-180\,-90\,180\,90,-125\,25\,-67\,50
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p>Requests the layers <code class="docutils literal notranslate"><span class="pre">topp:states</span></code> and <code class="docutils literal notranslate"><span class="pre">sf:restricted</span></code>,
+using <code class="docutils literal notranslate"><span class="pre">format_options=gif_loop_continuosly:true</span></code> to request an infinite loop animation.
+The output map uses the default styles, the specified width (640 pixels), and the height automatically adjusted to the aspect ratio:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp:states,sf:restricted
+&amp;format=image/gif;subtype=animated
+&amp;aparam=bbox
+&amp;avalues=-180\,-90\,180\,90,-125\,25\,-67\,50
+&amp;format_options=gif_loop_continuosly:true
+&amp;width=640
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3">
+<h3>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
+<p>The following request uses
+the <code class="docutils literal notranslate"><span class="pre">format_options</span></code> of <code class="docutils literal notranslate"><span class="pre">gif_loop_continuosly:true</span></code> and <code class="docutils literal notranslate"><span class="pre">gif_frames_delay:10</span></code>
+to rotate the map image fast and continuously:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp:states,sf:restricted
+&amp;format=image/gif;subtype=animated
+&amp;aparam=angle
+&amp;avalues=0,45,90,135,180,225,270,365
+&amp;format_options=gif_loop_continuosly:true;gif_frames_delay:10
+&amp;width=640
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-frame-parameters-as-decorations">
+<h2>Displaying frame parameters as decorations<a class="headerlink" href="#displaying-frame-parameters-as-decorations" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to decorate each frame image with the <code class="docutils literal notranslate"><span class="pre">avalue</span></code> parameter value that generated it using the
+<a class="reference internal" href="../services/wms/decoration.html#wms-decorations"><span class="std std-ref">WMS Decorations</span></a> <code class="docutils literal notranslate"><span class="pre">text</span></code> decoration.
+The current animation parameter value can be accessed via the <code class="docutils literal notranslate"><span class="pre">avalue</span></code> environment variable.
+(This environment variable can also be used in <a class="reference internal" href="../styling/sld/extensions/substitution.html#sld-variable-substitution"><span class="std std-ref">Variable substitution in SLD</span></a>.)</p>
+<p>Here is an example that uses a decoration showing the frame parameter value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/geoserver/wms/animate
+?layers=topp%3Aworld
+&amp;aparam=time
+&amp;avalues=2004-01-01T00:00:00.000Z,2004-02-01T00:00:00.000Z
+&amp;format=image/gif;subtype=animated
+&amp;format_options=layout:message
+</pre></div>
+</div>
+<p>It uses the following decoration layout, located in <code class="docutils literal notranslate"><span class="pre">layouts/message.xml</span></code>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;layout&gt;</span>
+  <span class="nt">&lt;decoration</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">affinity=</span><span class="s">&quot;bottom,right&quot;</span> <span class="na">offset=</span><span class="s">&quot;6,6&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">value=</span><span class="s">&quot;${avalue}&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;font-size&quot;</span> <span class="na">value=</span><span class="s">&quot;12&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;font-family&quot;</span> <span class="na">value=</span><span class="s">&quot;Arial&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;halo-radius&quot;</span> <span class="na">value=</span><span class="s">&quot;2&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/decoration&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specifying-wms-animator-default-behaviour">
+<h2>Specifying WMS Animator default behaviour<a class="headerlink" href="#specifying-wms-animator-default-behaviour" title="Permalink to this headline">¶</a></h2>
+<p>The GeoServer Adinistrator GUI allows specifying some limits and default options for the WMS Animator.
+The settings are made on the <span class="guilabel">Services &gt; WMS</span> config screen as shown below:</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/animator_wms_params.jpg" src="../_images/animator_wms_params.jpg" />
+<p class="caption"><span class="caption-text"><em>WMS Animator default settings</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The first three options set server limits on the animation output.
+It is possible to set the <strong>maximum number of frames</strong> an animation can contain, the <strong>maximum rendering time</strong> to produce an animation and the <strong>maximum size</strong> of the whole animation.</p>
+<p>The default animation
+<strong>frame delay</strong> (expressed in ms) <strong>looping behaviour</strong> and <strong>disposal method</strong> can be set as well.
+These values can be overridden by using the <code class="docutils literal notranslate"><span class="pre">format_options</span></code> parameter as described above.</p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="wmsreflector.html" title="previous chapter">WMS Reflector</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="cql/cql_tutorial.html" title="next chapter">CQL and ECQL</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">WMS Animator</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#using-the-wms-animator">Using the WMS Animator</a><ul>
+<li><a class="reference internal" href="#animation-options">Animation Options</a></li>
+<li><a class="reference internal" href="#example-1">Example 1</a></li>
+<li><a class="reference internal" href="#example-2">Example 2</a></li>
+<li><a class="reference internal" href="#example-3">Example 3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#displaying-frame-parameters-as-decorations">Displaying frame parameters as decorations</a></li>
+<li><a class="reference internal" href="#specifying-wms-animator-default-behaviour">Specifying WMS Animator default behaviour</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="wmsreflector.html" title="previous chapter">WMS Reflector</a></li>
+            <li>Next: <a href="cql/cql_tutorial.html" title="next chapter">CQL and ECQL</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/tutorials/animreflector.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

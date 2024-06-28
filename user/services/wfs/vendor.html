@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>WFS vendor parameters &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Web Feature Service (WFS)" href="index.html" />
+      <link rel="next" title="WFS schema mapping" href="schemamapping.html" />
+      <link rel="prev" title="WFS output formats" href="outputformats.html" />
+</head>
+<body class="services/wfs/vendor">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Services</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Web Feature Service (WFS)</a> &raquo;</li>
+  <li>WFS vendor parameters</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="schemamapping.html" title="WFS schema mapping"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="outputformats.html" title="WFS output formats"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="wfs-vendor-parameters">
+<span id="id1"></span><h1>WFS vendor parameters<a class="headerlink" href="#wfs-vendor-parameters" title="Permalink to this headline">¶</a></h1>
+<p>WFS vendor parameters are non-standard request parameters defined by an implementation to provide enhanced capabilities. GeoServer supports a variety of vendor-specific WFS parameters.</p>
+<div class="section" id="cql-filters">
+<h2>CQL filters<a class="headerlink" href="#cql-filters" title="Permalink to this headline">¶</a></h2>
+<p>In WFS <a class="reference internal" href="reference.html#wfs-getfeature"><span class="std std-ref">GetFeature</span></a> GET requests, the <code class="docutils literal notranslate"><span class="pre">cql_filter</span></code> parameter can be used to specify a filter in ECQL (Extended Common Query Language) format. ECQL provides a more compact and readable syntax compared to OGC XML filters.</p>
+<p>For full details see the <a class="reference internal" href="../../filter/ecql_reference.html#filter-ecql-reference"><span class="std std-ref">ECQL Reference</span></a> and <a class="reference internal" href="../../tutorials/cql/cql_tutorial.html#cql-tutorial"><span class="std std-ref">CQL and ECQL</span></a> tutorial.</p>
+<p>The following example illustrates a GET request OGC filter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span><span class="o">=%</span><span class="mi">3</span><span class="n">CFilter</span><span class="o">%</span><span class="mi">20</span><span class="n">xmlns</span><span class="p">:</span><span class="n">gml</span><span class="o">=%</span><span class="mi">22</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">opengis</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">gml</span><span class="o">%</span><span class="mi">22</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">CIntersects</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">CPropertyName</span><span class="o">%</span><span class="mi">3</span><span class="n">Ethe_geom</span><span class="o">%</span><span class="mi">3</span><span class="n">C</span><span class="o">/</span><span class="n">PropertyName</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">Cgml</span><span class="p">:</span><span class="n">Point</span><span class="o">%</span><span class="mi">20</span><span class="n">srsName</span><span class="o">=%</span><span class="mi">224326</span><span class="o">%</span><span class="mi">22</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">Cgml</span><span class="p">:</span><span class="n">coordinates</span><span class="o">%</span><span class="mf">3E-74</span><span class="o">.</span><span class="mi">817265</span><span class="p">,</span><span class="mf">40.5296504</span><span class="o">%</span><span class="mi">3</span><span class="n">C</span><span class="o">/</span><span class="n">gml</span><span class="p">:</span><span class="n">coordinates</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">C</span><span class="o">/</span><span class="n">gml</span><span class="p">:</span><span class="n">Point</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">C</span><span class="o">/</span><span class="n">Intersects</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span><span class="o">%</span><span class="mi">3</span><span class="n">C</span><span class="o">/</span><span class="n">Filter</span><span class="o">%</span><span class="mi">3</span><span class="n">E</span>
+</pre></div>
+</div>
+<p>Using ECQL, the identical filter would be defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cql_filter</span><span class="o">=</span><span class="n">INTERSECTS</span><span class="p">(</span><span class="n">the_geom</span><span class="p">,</span><span class="o">%</span><span class="mi">20</span><span class="n">POINT</span><span class="o">%</span><span class="mi">20</span><span class="p">(</span><span class="o">-</span><span class="mf">74.817265</span><span class="o">%</span><span class="mf">2040.5296504</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-options">
+<h2>Format options<a class="headerlink" href="#format-options" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">format_options</span></code> parameter is a container for other parameters that are format-specific. The syntax is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">format_options</span><span class="o">=</span><span class="n">param1</span><span class="p">:</span><span class="n">value1</span><span class="p">;</span><span class="n">param2</span><span class="p">:</span><span class="n">value2</span><span class="p">;</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>The supported format option is:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> (default is <code class="docutils literal notranslate"><span class="pre">parseResponse</span></code>)—Specifies the callback function name for the JSONP response format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_policy</span></code> (default is <code class="docutils literal notranslate"><span class="pre">true</span></code>)- Specifies id generation for the JSON output format. To include feature id in output use an attribute name, or use <code class="docutils literal notranslate"><span class="pre">format_options=id_policy:true</span></code> for feature id generation. To avoid the use of feature id completely use <code class="docutils literal notranslate"><span class="pre">format_options=id_policy:false</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code> (default is <code class="file docutils literal notranslate"><span class="pre">features</span></code> or generated from feature type name)- provide a <code class="docutils literal notranslate"><span class="pre">Content-Disposition</span></code> header indicating the attachment filename (used as a suggestion by browsers saving content to disk using <strong class="command">Save-As</strong>). For example <code class="docutils literal notranslate"><span class="pre">format_options=filename:content.txt</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="reprojection">
+<h2>Reprojection<a class="headerlink" href="#reprojection" title="Permalink to this headline">¶</a></h2>
+<p>As WFS 1.1.0 and 2.0.0 both support data reprojection, GeoServer can store the data in one projection and return GML in another projection. While not part of the specification, GeoServer supports this using WFS 1.0.0 as well. When submitting a WFS <a class="reference internal" href="reference.html#wfs-getfeature"><span class="std std-ref">GetFeature</span></a> GET request, you can add this parameter to specify the reprojection SRS as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">srsName</span><span class="o">=&lt;</span><span class="n">srsName</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The code for the projection is represented by <code class="docutils literal notranslate"><span class="pre">&lt;srsName&gt;</span></code>, for example <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code>. For POST requests, you can add the same code to the <code class="docutils literal notranslate"><span class="pre">Query</span></code> element.</p>
+</div>
+<div class="section" id="xml-request-validation">
+<h2>XML request validation<a class="headerlink" href="#xml-request-validation" title="Permalink to this headline">¶</a></h2>
+<p>GeoServer is less strict than the WFS specification when it comes to the validity of an XML request. To force incoming XML requests to be valid, use the following parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">strict</span><span class="o">=</span><span class="p">[</span><span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The default option for this parameter is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>For example, the following request is invalid:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wfs:GetFeature</span> <span class="na">service=</span><span class="s">&quot;WFS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span>
+ <span class="na">xmlns:wfs=</span><span class="s">&quot;http://www.opengis.net/wfs&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Query</span> <span class="na">typeName=</span><span class="s">&quot;topp:states&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/wfs:GetFeature&gt;</span>
+</pre></div>
+</div>
+<p>The request is invalid for two reasons:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Query</span></code> element should be prefixed with <code class="docutils literal notranslate"><span class="pre">wfs:</span></code>.</p></li>
+<li><p>The namespace prefix has not been mapped to a namespace URI.</p></li>
+</ul>
+<p>That said, the request would still be processed by default. Executing the above command with the <code class="docutils literal notranslate"><span class="pre">strict=true</span></code> parameter, however, would result in an error. The correct syntax should be:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wfs:GetFeature</span> <span class="na">service=</span><span class="s">&quot;WFS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span>
+ <span class="na">xmlns:wfs=</span><span class="s">&quot;http://www.opengis.net/wfs&quot;</span>
+ <span class="na">xmlns:topp=</span><span class="s">&quot;http://www.openplans.org/topp&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;wfs:Query</span> <span class="na">typeName=</span><span class="s">&quot;topp:states&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/wfs:GetFeature&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getcapabilities-namespace-filter">
+<h2>GetCapabilities namespace filter<a class="headerlink" href="#getcapabilities-namespace-filter" title="Permalink to this headline">¶</a></h2>
+<p>WFS <a class="reference internal" href="reference.html#wfs-getcap"><span class="std std-ref">GetCapabilities</span></a> requests may be filtered to return only those layers that correspond to a particular namespace by adding the <code class="docutils literal notranslate"><span class="pre">&lt;namespace&gt;</span></code> parameter to the request.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This parameter only affects GetCapabilities requests.</p>
+</div>
+<p>To apply this filter, add the following code to your request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span><span class="o">=&lt;</span><span class="n">namespace</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Although providing an invalid namespace will not result in any errors, the GetCapabilities document returned will not contain any layer information.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using this parameter may result your GetCapabilities document becoming invalid, as the WFS specification requires the document to return at least one layer.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This filter is related to <a class="reference internal" href="../../configuration/virtual-services.html#virtual-services"><span class="std std-ref">Virtual Services</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="outputformats.html" title="previous chapter">WFS output formats</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="schemamapping.html" title="next chapter">WFS schema mapping</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">WFS vendor parameters</a><ul>
+<li><a class="reference internal" href="#cql-filters">CQL filters</a></li>
+<li><a class="reference internal" href="#format-options">Format options</a></li>
+<li><a class="reference internal" href="#reprojection">Reprojection</a></li>
+<li><a class="reference internal" href="#xml-request-validation">XML request validation</a></li>
+<li><a class="reference internal" href="#getcapabilities-namespace-filter">GetCapabilities namespace filter</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="outputformats.html" title="previous chapter">WFS output formats</a></li>
+            <li>Next: <a href="schemamapping.html" title="next chapter">WFS schema mapping</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/services/wfs/vendor.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

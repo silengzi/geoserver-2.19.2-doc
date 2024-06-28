@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>GeoPackage As Output &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="GeoPackage Extension" href="index.html" />
+      <link rel="next" title="PGRaster" href="../pgraster/pgraster.html" />
+      <link rel="prev" title="Installing the GeoServer GeoPackage extension" href="installing.html" />
+</head>
+<body class="community/geopkg/output">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">GeoPackage Extension</a> &raquo;</li>
+  <li>GeoPackage As Output</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="../pgraster/pgraster.html" title="PGRaster"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="installing.html" title="Installing the GeoServer GeoPackage extension"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="geopackage-as-output">
+<h1>GeoPackage As Output<a class="headerlink" href="#geopackage-as-output" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geopackage-wms-output-format">
+<h2>GeoPackage WMS Output Format<a class="headerlink" href="#geopackage-wms-output-format" title="Permalink to this headline">¶</a></h2>
+<p>Any WMS <a class="reference internal" href="../../services/wms/reference.html#wms-getmap"><span class="std std-ref">GetMap</span></a> request can be returned in the form of a GeoPackage by specifying <code class="docutils literal notranslate"><span class="pre">format=geopackage</span></code> as output format (see <a class="reference internal" href="../../services/wms/outputformats.html#wms-output-formats"><span class="std std-ref">WMS output formats</span></a>). The returned result will be a GeoPackage file with a single tile layer.</p>
+<dl class="simple">
+<dt>The following additional parameters can be passed on using <a class="reference internal" href="../../services/wms/vendor.html#format-options"><span class="std std-ref">format_options</span></a>:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tileset_name</span></code>: name to be used for tileset in GeoPackage file (default is name of layer(s)).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_zoom</span></code>, <code class="docutils literal notranslate"><span class="pre">max_zoom</span></code>, <code class="docutils literal notranslate"><span class="pre">min_column</span></code>, <code class="docutils literal notranslate"><span class="pre">max_column</span></code>, <code class="docutils literal notranslate"><span class="pre">min_row</span></code>, <code class="docutils literal notranslate"><span class="pre">max_row</span></code>: set the minimum and maximum zoom level, column, and rows</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gridset</span></code>: name of gridset to use (otherwise default for CRS is used)</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="geopackage-wfs-output-format">
+<h2>GeoPackage WFS Output Format<a class="headerlink" href="#geopackage-wfs-output-format" title="Permalink to this headline">¶</a></h2>
+<p>Any WFS <a class="reference internal" href="../../services/wfs/reference.html#wfs-getfeature"><span class="std std-ref">GetFeature</span></a> request can be returned as a GeoPackage by specifying <code class="docutils literal notranslate"><span class="pre">format=geopackage</span></code> as output format (see <a class="reference internal" href="../../services/wfs/outputformats.html#wfs-output-formats"><span class="std std-ref">WFS output formats</span></a>). The returned result will be a GeoPackage file with a single features layer.</p>
+</div>
+<div class="section" id="geopackage-wps-process">
+<h2>GeoPackage WPS Process<a class="headerlink" href="#geopackage-wps-process" title="Permalink to this headline">¶</a></h2>
+<p>A custom GeoPackage can be created with any number of tiles and features layers using the <code class="docutils literal notranslate"><span class="pre">GeoPackage</span></code> WPS Process (see <a class="reference internal" href="../../services/wps/processes/index.html#wps-processes"><span class="std std-ref">Process Cookbook</span></a>).</p>
+<p>The WPS process takes in one parameter: <code class="docutils literal notranslate"><span class="pre">contents</span></code> which is an XML schema that represents the desired output.</p>
+<p>General outline of a <code class="docutils literal notranslate"><span class="pre">contents</span></code> scheme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;geopackage name=”mygeopackage” xmlns=&quot;http://www.opengis.net/gpkg&quot;&gt;
+
+&lt;features name=”myfeaturelayer” identifier=”L01”&gt;
+        &lt;description&gt;describe the layer&lt;/description&gt;
+        &lt;srs&gt; EPSG:4216 &lt;/srs&gt;
+        &lt;bbox&gt;
+                &lt;minx&gt;-180&lt;/minx&gt;
+                &lt;miny&gt;-90&lt;/miny&gt;
+                &lt;maxx&gt;180&lt;/maxx&gt;
+                &lt;maxy&gt;90&lt;/maxy&gt;
+        &lt;/bbox&gt;
+    ...
+&lt;/features&gt;
+
+&lt;tiles name=”mytileslayer” identifier=”L02”&gt;
+        &lt;description&gt;describe the layer&lt;/description&gt;
+        &lt;srs&gt;..&lt;/srs&gt;
+        &lt;bbox&gt;..&lt;/bbox&gt;
+        ...
+&lt;/tiles&gt;
+
+&lt;/geopackage&gt;
+</pre></div>
+</div>
+<p>Each GeoPackage has a mandatory <code class="docutils literal notranslate"><span class="pre">name</span></code>, which will be the name of the file (with the extension .gpkg added).
+Each layer (features or tiles) has the following properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (mandatory): the name of the layer in the GeoPackage;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">identifier</span></code> (optional): an identifier for the layer;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code> (optional): a description for the layer;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">srs</span></code> ( mandatory for tiles, optional for features): coordinate reference system; for features the default is the SRS of the feature type;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code>  ( mandatory for tiles, optional for features): the bounding box; for features the default is the bounding box of the feature type.</p></li>
+</ul>
+</div></blockquote>
+<p>Outline of the features layer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;features name=”myfeaturelayer” identifier=”L01”&gt;
+        &lt;description&gt;..&lt;/description&gt;
+        &lt;srs&gt;..&lt;/srs&gt;
+        &lt;bbox&gt;..&lt;/bbox&gt;
+        &lt;featuretype&gt;myfeaturetype&lt;/featuretype&gt;
+        &lt;propertynames&gt;property1, property2&lt;/propertynames&gt;
+        &lt;filter&gt;..&lt;/filter&gt;
+        &lt;indexed&gt;true&lt;/indexed&gt;
+        &lt;styles&gt;true&lt;/styles&gt;
+&lt;/features&gt;
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Each features layer has the following properties:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">featuretype</span></code> (mandatory): the feature type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">propertynames</span></code> (optional): list of comma-separated names of properties in feature type to be included (default is all properties)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code> (optional): any OGC filter that will be applied on features before output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indexed</span></code> (optional): include spatial indexes in the output (true/false)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">styles</span></code> (optional): include styles in the output using the portrayal and semantic annotation extensions (true/false)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Outline of the tiles layer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;tiles name=”mytileslayer” identifier=”L02”&gt;
+        &lt;description&gt;...&lt;/description&gt;
+        &lt;srs&gt;..&lt;/srs&gt;
+        &lt;bbox&gt;..&lt;/bbox&gt;
+        &lt;layers&gt;layer1, layer2&lt;/styles&gt;
+        &lt;styles&gt; style1, style2 &lt;/styles&gt;
+        &lt;sld&gt; path/to/file.sld &lt;/sld&gt;
+        &lt;sldBody&gt; .. &lt;/sldBody&gt;
+        &lt;format&gt;mime/type&lt;/format&gt;
+        &lt;bgcolor&gt;ffffff&lt;/bgcolor&gt;
+        &lt;transparent&gt;true&lt;/transparent&gt;
+        &lt;coverage&gt;
+                &lt;minZoom&gt;5&lt;/minZoom&gt;
+                &lt;maxZoom&gt;50&lt;/maxZoom&gt;
+                &lt;minColumn&gt;6&lt;/minColumn&gt;
+                &lt;maxColumn&gt;60&lt;/maxColumn&gt;
+                &lt;minRow&gt;7&lt;/minRow&gt;
+                &lt;maxRow&gt;70&lt;/maxRow&gt;
+        &lt;coverage&gt;
+        &lt;gridset&gt;
+                ...
+        &lt;/gridset&gt;
+&lt;/tiles&gt;
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Each tiles layer has the following properties:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">layers</span></code> (mandatory): comma-separated list of layers that will be included</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">styles</span></code>, <code class="docutils literal notranslate"><span class="pre">sld</span></code>, and <code class="docutils literal notranslate"><span class="pre">sldbody</span></code> are mutually exclusive, having one is mandatory</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">styles</span></code>: list of comma-separated styles to be used</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sld</span></code>: path to SLD style file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sldbody</span></code>: inline SLD style file</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format</span></code> (optional): mime-type of image format of tiles (image/png or image/jpeg)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bgcolor</span></code> (optional): background colour as a six-digit hexadecimal RGB value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transparent</span></code> (optional): transparency (true or false)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coverage</span></code> (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minzoom</span></code>, <code class="docutils literal notranslate"><span class="pre">maxzoom</span></code>, <code class="docutils literal notranslate"><span class="pre">minColumn</span></code>, <code class="docutils literal notranslate"><span class="pre">maxColumn</span></code>, <code class="docutils literal notranslate"><span class="pre">minRow</span></code>, <code class="docutils literal notranslate"><span class="pre">maxRow</span></code> (all optional): set the minimum and maximum zoom level, column, and rows</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gridset</span></code> (optional): see following</p></li>
+</ul>
+</dd>
+</dl>
+<p>Gridset can take on two possible (mutually exclusive) forms:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">gridset</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">mygridset</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">gridset</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">name</span></code> of a known gridset is specified; or a custom gridset may be defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">gridset</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">grids</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">grid</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">zoomlevel</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">zoomlevel</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tileWidth</span><span class="o">&gt;</span><span class="mi">256</span><span class="o">&lt;/</span><span class="n">tileWidth</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tileHeight</span><span class="o">&gt;</span><span class="mi">256</span><span class="o">&lt;/</span><span class="n">tileHeight</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">matrixWidth</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">matrixWidth</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">matrixHeight</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">matrixHeight</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">pixelXSize</span><span class="o">&gt;</span><span class="mf">0.17</span><span class="o">&lt;/</span><span class="n">pixelXSize</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">pixelYSize</span><span class="o">&gt;</span><span class="mf">0.17</span><span class="o">&lt;/</span><span class="n">pixelYSize</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">grid</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">grid</span><span class="o">&gt;...&lt;/</span><span class="n">grid</span><span class="o">&gt;</span>
+                <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">grids</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">gridset</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="installing.html" title="previous chapter">Installing the GeoServer GeoPackage extension</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="../pgraster/pgraster.html" title="next chapter">PGRaster</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">GeoPackage As Output</a><ul>
+<li><a class="reference internal" href="#geopackage-wms-output-format">GeoPackage WMS Output Format</a></li>
+<li><a class="reference internal" href="#geopackage-wfs-output-format">GeoPackage WFS Output Format</a></li>
+<li><a class="reference internal" href="#geopackage-wps-process">GeoPackage WPS Process</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="installing.html" title="previous chapter">Installing the GeoServer GeoPackage extension</a></li>
+            <li>Next: <a href="../pgraster/pgraster.html" title="next chapter">PGRaster</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/geopkg/output.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

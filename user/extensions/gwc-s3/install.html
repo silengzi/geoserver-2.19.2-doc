@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Installing the GWC S3 extension &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="GWC S3 BlobStore plugin" href="index.html" />
+      <link rel="next" title="Configuring the S3 BlobStore plugin" href="configuration.html" />
+      <link rel="prev" title="GWC S3 BlobStore plugin" href="index.html" />
+</head>
+<body class="extensions/gwc-s3/install">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Extensions</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">GWC S3 BlobStore plugin</a> &raquo;</li>
+  <li>Installing the GWC S3 extension</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="configuration.html" title="Configuring the S3 BlobStore plugin"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="index.html" title="GWC S3 BlobStore plugin"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="installing-the-gwc-s3-extension">
+<span id="gwc-s3-install"></span><h1>Installing the GWC S3 extension<a class="headerlink" href="#installing-the-gwc-s3-extension" title="Permalink to this headline">¶</a></h1>
+<p>The GWC S3 extension is listed among the other extension downloads on the GeoServer download page.</p>
+<p>The installation process is similar to other GeoServer extensions:</p>
+<ol class="arabic">
+<li><p>Download the <a class="reference external" href="http://sourceforge.net/projects/geoserver/files/GeoServer/2.19.2/extensions/geoserver-2.19.2-gwc-s3-plugin.zip">http://sourceforge.net/projects/geoserver/files/GeoServer/2.19.2/extensions/geoserver-2.19.2-gwc-s3-plugin.zip</a></p>
+<p>Verify that the version number in the filename corresponds to the version of GeoServer you are running (for example 2.19.2 above).</p>
+</li>
+<li><p>Extract the contents of the archive into the <code class="file docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> directory in GeoServer.
+Make sure you do not create any sub-directories during the extraction process.</p></li>
+<li><p>Restart GeoServer.</p></li>
+</ol>
+<p>To verify the installation was successful, to to “Tile Caching”, “Blobstores” and create
+a new blobstore, the S3 option show be available:</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/newBlobstore.png" src="../../_images/newBlobstore.png" />
+<p class="caption"><span class="caption-text">The S3 option showing while creating a new blobstore</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="index.html" title="previous chapter">GWC S3 BlobStore plugin</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="configuration.html" title="next chapter">Configuring the S3 BlobStore plugin</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="index.html" title="previous chapter">GWC S3 BlobStore plugin</a></li>
+            <li>Next: <a href="configuration.html" title="next chapter">Configuring the S3 BlobStore plugin</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/extensions/gwc-s3/install.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

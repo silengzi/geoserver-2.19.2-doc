@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>INSPIRE &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Extensions" href="../index.html" />
+      <link rel="next" title="Installing the INSPIRE extension" href="installing.html" />
+      <link rel="prev" title="Importer REST API examples" href="../importer/rest_examples.html" />
+</head>
+<body class="extensions/inspire/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Extensions</a> &raquo;</li>
+  <li>INSPIRE</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="installing.html" title="Installing the INSPIRE extension"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../importer/rest_examples.html" title="Importer REST API examples"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="inspire">
+<span id="community-inspire"></span><h1>INSPIRE<a class="headerlink" href="#inspire" title="Permalink to this headline">¶</a></h1>
+<p>The INSPIRE extension allows GeoServer to be compliant with the View Service and Download Service specifications put forth by the <strong>Infrastructure for Spatial Information in the European Community</strong> (INSPIRE) directive.</p>
+<p>In practice this means adding some extra elements into an extended capabilities section of the WMS, WFS and WCS capabilities documents. For WMS, WFS and WCS this includes a <strong>Metadata URL</strong> element with a link to the metadata associated with the service, and <strong>SupportedLanguages</strong> and <strong>ResponseLanguage</strong> elements which report the response language (GeoServer can only support one response language). For WFS and WCS there are also one or more <strong>SpatialDataSetIdentifier</strong> elements for each spatial data resource served by the service.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current INSPIRE extension fulfills “Scenario 1” of the View Service extended metadata requirements.  “Scenario 2” is not currently supported in GeoServer, but is certainly possible to implement.  If you are interested in implementing or funding this, please raise the issue on the <a class="reference internal" href="../../introduction/gettinginvolved.html#getting-involved"><span class="std std-ref">GeoServer mailing list</span></a>.</p>
+</div>
+<p>For more information on the INSPIRE directive, please see the European Commission’s <a class="reference external" href="http://inspire.ec.europa.eu/">INSPIRE website</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing the INSPIRE extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using.html">Using the INSPIRE extension</a></li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../importer/rest_examples.html" title="previous chapter">Importer REST API examples</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="installing.html" title="next chapter">Installing the INSPIRE extension</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../importer/rest_examples.html" title="previous chapter">Importer REST API examples</a></li>
+            <li>Next: <a href="installing.html" title="next chapter">Installing the INSPIRE extension</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/extensions/inspire/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Workspaces &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="up" title="REST" href="index.html" />
+      <link rel="next" title="Stores" href="stores.html" />
+      <link rel="prev" title="Styles" href="styles.html" />
+</head>
+<body class="rest/workspaces">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">REST</a> &raquo;</li>
+  <li>Workspaces</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="stores.html" title="Stores"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="styles.html" title="Styles"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="workspaces">
+<span id="rest-workspaces"></span><h1>Workspaces<a class="headerlink" href="#workspaces" title="Permalink to this headline">¶</a></h1>
+<p>The REST API allows you to create and manage workspaces in GeoServer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Read the <a class="reference external" href="http://docs.geoserver.org/latest/en/api/#1.0.0/workspaces.yaml">API reference for /workspaces</a>.</p>
+</div>
+<div class="section" id="adding-a-new-workspace">
+<h2>Adding a new workspace<a class="headerlink" href="#adding-a-new-workspace" title="Permalink to this headline">¶</a></h2>
+<p><strong>Creates a new workspace named “acme” with a POST request</strong></p>
+<p><em>Request</em></p>
+<div class="admonition-curl admonition">
+<p class="admonition-title">curl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">u</span> <span class="n">admin</span><span class="p">:</span><span class="n">geoserver</span> <span class="o">-</span><span class="n">XPOST</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-type: text/xml&quot;</span>
+  <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;&lt;workspace&gt;&lt;name&gt;acme&lt;/name&gt;&lt;/workspace&gt;&quot;</span>
+  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">geoserver</span><span class="o">/</span><span class="n">rest</span><span class="o">/</span><span class="n">workspaces</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-python admonition">
+<p class="admonition-title">python</p>
+<p>TBD</p>
+</div>
+<div class="admonition-java admonition">
+<p class="admonition-title">java</p>
+<p>TBD</p>
+</div>
+<p><em>Response</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">201</span> <span class="n">Created</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Location</span></code> response header specifies the location (URI) of the newly created workspace.</p>
+</div>
+</div>
+<div class="section" id="listing-workspace-details">
+<h2>Listing workspace details<a class="headerlink" href="#listing-workspace-details" title="Permalink to this headline">¶</a></h2>
+<p><strong>Retrieve information about a specific workspace</strong></p>
+<p><em>Request</em></p>
+<div class="admonition-curl admonition">
+<p class="admonition-title">curl</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">u</span> <span class="n">admin</span><span class="p">:</span><span class="n">geoserver</span> <span class="o">-</span><span class="n">XGET</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: text/xml&quot;</span>
+  <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">geoserver</span><span class="o">/</span><span class="n">rest</span><span class="o">/</span><span class="n">workspaces</span><span class="o">/</span><span class="n">acme</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Accept</span></code> header is optional.</p>
+</div>
+<div class="admonition-python admonition">
+<p class="admonition-title">python</p>
+<p>TBD</p>
+</div>
+<div class="admonition-java admonition">
+<p class="admonition-title">java</p>
+<p>TBD</p>
+</div>
+<p><em>Response</em></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;workspace&gt;</span>
+  <span class="nt">&lt;name&gt;</span>acme<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;dataStores&gt;</span>
+    <span class="nt">&lt;atom:link</span> <span class="na">xmlns:atom=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span>
+     <span class="na">href=</span><span class="s">&quot;http://localhost:8080/geoserver/rest/workspaces/acme/datastores.xml&quot;</span>
+     <span class="na">type=</span><span class="s">&quot;application/xml&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/dataStores&gt;</span>
+  <span class="nt">&lt;coverageStores&gt;</span>
+    <span class="nt">&lt;atom:link</span> <span class="na">xmlns:atom=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span>
+     <span class="na">href=</span><span class="s">&quot;http://localhost:8080/geoserver/rest/workspaces/acme/coveragestores.xml&quot;</span>
+     <span class="na">type=</span><span class="s">&quot;application/xml&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/coverageStores&gt;</span>
+  <span class="nt">&lt;wmsStores&gt;</span>
+    <span class="nt">&lt;atom:link</span> <span class="na">xmlns:atom=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span>
+     <span class="na">href=</span><span class="s">&quot;http://localhost:8080/geoserver/rest/workspaces/acme/wmsstores.xml&quot;</span>
+     <span class="na">type=</span><span class="s">&quot;application/xml&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/wmsStores&gt;</span>
+<span class="nt">&lt;/workspace&gt;</span>
+</pre></div>
+</div>
+<p>This shows that the workspace can contain “<code class="docutils literal notranslate"><span class="pre">dataStores</span></code>” (for <a class="reference internal" href="../data/vector/index.html#data-vector"><span class="std std-ref">vector data</span></a>), “<code class="docutils literal notranslate"><span class="pre">coverageStores</span></code>” (for <a class="reference internal" href="../data/raster/index.html#data-raster"><span class="std std-ref">raster data</span></a>), and “<code class="docutils literal notranslate"><span class="pre">wmsStores</span></code>” (for <a class="reference internal" href="../data/cascaded/wms.html#data-external-wms"><span class="std std-ref">cascaded WMS servers</span></a>).</p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="styles.html" title="previous chapter">Styles</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="stores.html" title="next chapter">Stores</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Workspaces</a><ul>
+<li><a class="reference internal" href="#adding-a-new-workspace">Adding a new workspace</a></li>
+<li><a class="reference internal" href="#listing-workspace-details">Listing workspace details</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="styles.html" title="previous chapter">Styles</a></li>
+            <li>Next: <a href="stores.html" title="next chapter">Stores</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/rest/workspaces.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

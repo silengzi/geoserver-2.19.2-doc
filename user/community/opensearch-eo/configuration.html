@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Configuring the OpenSearch module &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="OpenSearch for EO" href="index.html" />
+      <link rel="next" title="The JDBC store database structure" href="database.html" />
+      <link rel="prev" title="Installing the OpenSearch for EO module" href="installation.html" />
+</head>
+<body class="community/opensearch-eo/configuration">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">OpenSearch for EO</a> &raquo;</li>
+  <li>Configuring the OpenSearch module</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="database.html" title="The JDBC store database structure"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="installation.html" title="Installing the OpenSearch for EO module"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="configuring-the-opensearch-module">
+<span id="opensearch-eo-configuration"></span><h1>Configuring the OpenSearch module<a class="headerlink" href="#configuring-the-opensearch-module" title="Permalink to this headline">¶</a></h1>
+<p>The OpenSearch module needs to know upon which database perform the searches.</p>
+<p>Follow these steps:</p>
+<ul>
+<li><p>Setup a standard PostGIS database pointing to the database and schema created above
+from the SQL file. Note down the full name of the store (e.g. <code class="docutils literal notranslate"><span class="pre">test:metadata</span></code> where <code class="docutils literal notranslate"><span class="pre">test</span></code>
+is the workspace and <code class="docutils literal notranslate"><span class="pre">metadata</span></code> is the store name).
+Besides filling the connection parameters, remember to set “expose primary keys” to true.</p></li>
+<li><p>Create a new store of type “JDBC based OpenSearch store” and configure the fully qualified name
+of the basic PostGIS store in its “store” parameter.</p>
+<div class="figure align-center">
+<img alt="../../_images/store.png" src="../../_images/store.png" />
+</div>
+</li>
+<li><p>Go into the “OS-EO” service configuration page and configure the “OpenSearch” store</p>
+<div class="figure align-default">
+<img alt="../../_images/service.png" src="../../_images/service.png" />
+</div>
+</li>
+</ul>
+<div class="section" id="advanced-adding-product-classes">
+<h2>Advanced: adding product classes<a class="headerlink" href="#advanced-adding-product-classes" title="Permalink to this headline">¶</a></h2>
+<p>The design of the OpenSearch module is “data driven”, meaning that one can materialize new
+search properties by just adding new columns to the product and collection tables.</p>
+<p>In particular, both tables have a “prefix based” convention linking the properties to their
+respective product types, and the engine will advertise for a particular product only
+the properties relevant to it. For example, in an optical product, the properties starting
+with “opt” will be listed, but not those starting with “sar”.</p>
+<p>Here is a table of the product classes known out of the box:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Prefix</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>eop_generic</p></td>
+<td><p>eop</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/eop/2.1">http://www.opengis.net/eop/2.1</a></p></td>
+<td><p>Base properties shared among all EO products. Never remove this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p>optical</p></td>
+<td><p>opt</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/opt/2.1">http://www.opengis.net/opt/2.1</a></p></td>
+<td><p>Optical products properties</p></td>
+</tr>
+<tr class="row-even"><td><p>radar</p></td>
+<td><p>sar</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/sar/2.1">http://www.opengis.net/sar/2.1</a></p></td>
+<td><p>Radar products properties</p></td>
+</tr>
+<tr class="row-odd"><td><p>Altimetric</p></td>
+<td><p>alt</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/alt/2.1">http://www.opengis.net/alt/2.1</a></p></td>
+<td><p>Altimetric products properties</p></td>
+</tr>
+<tr class="row-even"><td><p>Atmospheric</p></td>
+<td><p>atm</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/atm/2.1">http://www.opengis.net/atm/2.1</a></p></td>
+<td><p>Atmospheric products properties</p></td>
+</tr>
+<tr class="row-odd"><td><p>Limb</p></td>
+<td><p>lmb</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/lmb/2.1">http://www.opengis.net/lmb/2.1</a></p></td>
+<td><p>Limb products properties</p></td>
+</tr>
+<tr class="row-even"><td><p>ssp</p></td>
+<td><p>ssp</p></td>
+<td><p><a class="reference external" href="http://www.opengis.net/ssp/2.1">http://www.opengis.net/ssp/2.1</a></p></td>
+<td><p>SSP products properties</p></td>
+</tr>
+</tbody>
+</table>
+<p>The various properties have different usages:</p>
+<ul class="simple">
+<li><p>The <em>name</em> is used in the collection to define the type of sensor (eoSensorType column)</p></li>
+<li><p>The <em>prefix</em> is used in the product table as a prefix to column name in order to associate
+them to a particular product type, shows up as-is in the JSON representations of the REST API,
+as well as the prefix in XML outputs</p></li>
+<li><p>The <em>namespace</em> is used in XML output, along with the prefix (e.g., <code class="docutils literal notranslate"><span class="pre">xmlns:opt=&quot;http://www.opengis.net/opt/2.1&quot;</span></code>)</p></li>
+</ul>
+<p>It is possible to add new product classes as well as changing the build-in ones, but care should
+be taken to keep product classes and database aligned. After any change to the database structure
+remember to “reset” the GeoServer configuration to make it re-scan the table structures.</p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="installation.html" title="previous chapter">Installing the OpenSearch for EO module</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="database.html" title="next chapter">The JDBC store database structure</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Configuring the OpenSearch module</a><ul>
+<li><a class="reference internal" href="#advanced-adding-product-classes">Advanced: adding product classes</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="installation.html" title="previous chapter">Installing the OpenSearch for EO module</a></li>
+            <li>Next: <a href="database.html" title="next chapter">The JDBC store database structure</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/opensearch-eo/configuration.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

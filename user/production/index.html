@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Running in a production environment &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="next" title="Java Considerations" href="java.html" />
+      <link rel="prev" title="Parameterize catalog settings" href="../datadirectory/configtemplate.html" />
+</head>
+<body class="production/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li>Running in a production environment</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="java.html" title="Java Considerations"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../datadirectory/configtemplate.html" title="Parameterize catalog settings"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="running-in-a-production-environment">
+<span id="production"></span><h1>Running in a production environment<a class="headerlink" href="#running-in-a-production-environment" title="Permalink to this headline">¶</a></h1>
+<p>GeoServer is geared towards many different uses, from a simple test server to the enterprise-level data server.  While many optimizations for GeoServer are set by default, here are some extra considerations to keep in mind when running GeoServer in a production environment.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="java.html">Java Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="java.html#use-supported-jre">Use supported JRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html#running-on-java-11">Running on Java 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html#installing-unlimited-strength-jurisdiction-policy-files">Installing Unlimited Strength Jurisdiction Policy Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html#outdated-install-native-jai-and-imageio-extensions">Outdated: install native JAI and ImageIO extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="container.html">Container Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="container.html#optimize-your-jvm">Optimize your JVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html#enable-the-marlin-rasterizer">Enable the Marlin rasterizer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="container.html#enable-cors">Enable CORS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#use-production-logging">Use production logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#set-a-service-strategy">Set a service strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#personalize-your-server">Personalize your server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#configure-service-limits">Configure service limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#set-security">Set security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#cache-your-data">Cache your data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#disable-the-geoserver-web-administration-interface">Disable the GeoServer web administration interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#disable-the-auto-complete-on-web-administration-interface-login">Disable the Auto-complete on web administration interface login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#x-frame-options-policy">X-Frame-Options Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#ows-serviceexception-xml-mimetype">OWS ServiceException XML mimeType</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#use-an-external-data-directory">Use an external data directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#use-a-spatial-database">Use a spatial database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#pick-the-best-performing-coverage-formats">Pick the best performing coverage formats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linuxscript.html">Linux init scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linuxscript.html#debian-ubuntu">Debian/Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linuxscript.html#suse">Suse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linuxscript.html#starting-geoserver-in-tomcat">Starting GeoServer in Tomcat</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Other Considerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#host-your-application-separately">Host your application separately</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#proxy-your-server">Proxy your server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#publish-your-server-s-capabilities-documents">Publish your server’s capabilities documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#set-up-clustering">Set up clustering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#checking-wfs-requests">Checking WFS requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#leveraging-geoserver-own-log">Leveraging GeoServer own log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#logging-service-requests">Logging service requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#using-jdk-tools-to-get-stack-and-memory-dumps">Using JDK tools to get stack and memory dumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#xstream">XStream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="identify.html">Make cluster nodes identifiable from the GUI</a></li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../datadirectory/configtemplate.html" title="previous chapter">Parameterize catalog settings</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="java.html" title="next chapter">Java Considerations</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../datadirectory/configtemplate.html" title="previous chapter">Parameterize catalog settings</a></li>
+            <li>Next: <a href="java.html" title="next chapter">Java Considerations</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/production/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

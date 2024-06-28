@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>GeoWebCache &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="next" title="GeoWebCache settings" href="webadmin/index.html" />
+      <link rel="prev" title="Authentication with CAS" href="../security/tutorials/cas/index.html" />
+</head>
+<body class="geowebcache/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li>GeoWebCache</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="webadmin/index.html" title="GeoWebCache settings"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../security/tutorials/cas/index.html" title="Authentication with CAS"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="geowebcache">
+<span id="gwc"></span><h1>GeoWebCache<a class="headerlink" href="#geowebcache" title="Permalink to this headline">¶</a></h1>
+<img alt="../_images/geowebcache.png" src="../_images/geowebcache.png" />
+<p>GeoWebCache is a tiling server. It runs as a proxy between a map client and map server, caching (storing) tiles as they are requested, eliminating redundant request processing and thus saving large amounts of processing time. GeoWebCache is integrated with GeoServer, though it is also available as a standalone product for use with other map servers.</p>
+<p>This section will discuss the version of GeoWebCache integrated with GeoServer. The first part will be show how GeoWebCache can be configured through the web admin interface, followed by a detailed discussion of the concepts of the.</p>
+<p>For information about the standalone product, please see the <a class="reference external" href="http://geowebcache.org">GeoWebCache homepage</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="webadmin/index.html">GeoWebCache settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/layers.html">Tile Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/demopage.html">Demo page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/defaults.html">Caching defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/gridsets.html">Gridsets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/diskquotas.html">Disk Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webadmin/blobstores.html">BlobStores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using.html">Using GeoWebCache</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using.html#direct-integration-with-geoserver-wms">Direct integration with GeoServer WMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#geowebcache-endpoint-url">GeoWebCache endpoint URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#disk-quota">Disk quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#integration-with-external-mapping-sites">Integration with external mapping sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using.html#support-for-custom-projections">Support for custom projections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#integrated-user-interface">Integrated user interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#determining-tiled-layers">Determining tiled layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#configuration-files">Configuration files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#changing-the-cache-directory">Changing the cache directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#geowebcache-with-multiple-geoserver-instances">GeoWebCache with multiple GeoServer instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#geoserver-data-security">GeoServer Data Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#configuring-in-memory-caching">Configuring In Memory Caching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="seeding.html">Seeding and refreshing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="seeding.html#generating-tiles">Generating tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="responseheaders.html">HTTP Response Headers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="responseheaders.html#custom-response-headers">Custom response headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="responseheaders.html#last-modified-and-if-modified-since">Last-Modified and If-Modified-Since</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest/index.html">GeoWebCache REST API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rest/layers.html">Managing Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest/seed.html">Seeding and Truncating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest/diskquota.html">Disk Quota</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#grid-misalignment">Grid misalignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#direct-wms-integration">Direct WMS integration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../security/tutorials/cas/index.html" title="previous chapter">Authentication with CAS</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="webadmin/index.html" title="next chapter">GeoWebCache settings</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../security/tutorials/cas/index.html" title="previous chapter">Authentication with CAS</a></li>
+            <li>Next: <a href="webadmin/index.html" title="next chapter">GeoWebCache settings</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/geowebcache/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>CSRF Protection &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Security settings" href="index.html" />
+      <link rel="next" title="Role system" href="../usergrouprole/index.html" />
+      <link rel="prev" title="File Browsing" href="filebrowse.html" />
+</head>
+<body class="security/webadmin/csrf">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Security</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Security settings</a> &raquo;</li>
+  <li>CSRF Protection</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="../usergrouprole/index.html" title="Role system"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="filebrowse.html" title="File Browsing"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="csrf-protection">
+<span id="security-webadmin-csrf"></span><h1>CSRF Protection<a class="headerlink" href="#csrf-protection" title="Permalink to this headline">¶</a></h1>
+<p>The GeoServer web admin employs a CSRF (Cross-Site Request Forgery) protection filter that will block any form submissions that didn’t appear to originate from GeoServer. This can sometimes cause problems for certain proxy configurations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Symptoms of this problem may include the WPS request builder (and
+other wicket pages) failing with an HTTP status of 403 and the message “Origin
+does not correspond to request”. However, you may need to view the page
+response in a debugger to see this, to the end user it will appear as if the
+form section of the page is just missing.</p>
+</div>
+<p>To allow-list your proxy with the CSRF filter, you can use the <code class="docutils literal notranslate"><span class="pre">GEOSERVER_CSRF_WHITELIST</span></code> property. This property is a comma-separated list of domains, of the form <code class="docutils literal notranslate"><span class="pre">&lt;domainname&gt;.&lt;TLD&gt;</span></code>, and can contain a subdomains.
+Alternatively, you can disable the CSRF filter by setting the <code class="docutils literal notranslate"><span class="pre">GEOSERVER_CSRF_DISABLED</span></code> property to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>Each of these properties is set through one of the standard means:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">web.xml</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">context</span><span class="o">-</span><span class="n">param</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">param</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span><span class="n">GEOSERVER_CSRF_WHITELIST</span><span class="o">&lt;/</span><span class="n">param</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">param</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">&lt;/</span><span class="n">param</span><span class="o">-</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">context</span><span class="o">-</span><span class="n">param</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>System property</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">DGEOSERVER_CSRF_WHITELIST</span><span class="o">=</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+</li>
+<li><p>Environment variable</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">GEOSERVER_CSRF_WHITELIST</span><span class="o">=</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="filebrowse.html" title="previous chapter">File Browsing</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="../usergrouprole/index.html" title="next chapter">Role system</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="filebrowse.html" title="previous chapter">File Browsing</a></li>
+            <li>Next: <a href="../usergrouprole/index.html" title="next chapter">Role system</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/security/webadmin/csrf.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

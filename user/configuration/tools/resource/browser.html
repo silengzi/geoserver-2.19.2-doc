@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Resource Browser &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../../index.html" />
+      <link rel="up" title="Resource Browser tool" href="index.html" />
+      <link rel="next" title="Resource Browser Examples" href="examples.html" />
+      <link rel="prev" title="Installing the GeoServer Web Resource extension" href="install.html" />
+</head>
+<body class="configuration/tools/resource/browser">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../../index.html" accesskey="U">Server configuration</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Tools</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Resource Browser tool</a> &raquo;</li>
+  <li>Resource Browser</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="examples.html" title="Resource Browser Examples"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="install.html" title="Installing the GeoServer Web Resource extension"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="resource-browser">
+<span id="web-resource"></span><h1>Resource Browser<a class="headerlink" href="#resource-browser" title="Permalink to this headline">¶</a></h1>
+<p>The <span class="guilabel">Resource Browser</span> provides a tree showing configuration folders, along with actions to edit and mange resources.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/browser.png" src="../../../_images/browser.png" />
+<p class="caption"><span class="caption-text">Resource Browser</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>User interface elements:</p>
+<ul>
+<li><p><span class="guilabel">Resource tree</span> is used to explore configuration folders and resource items.</p></li>
+<li><p><span class="guilabel">Upload</span> uploads files to GeoServer. Select a directory to enable this tool.</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/upload.png" src="../../../_images/upload.png" />
+<p class="caption"><span class="caption-text">Upload a resource</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p><span class="guilabel">Download</span> is used to download a selected resource from GeoServer as a file.</p></li>
+<li><p><span class="guilabel">New resource</span> creates a new text file in the selected directory. The <span class="guilabel">Edit Resource</span> dialog is used to record the resource location, and the contents.</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/new_resource.png" src="../../../_images/new_resource.png" />
+<p class="caption"><span class="caption-text">Edit a Resource (New File)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p><span class="guilabel">Edit</span> a selected resource.</p>
+<div class="figure align-default" id="id4">
+<img alt="../../../_images/edit_resource.png" src="../../../_images/edit_resource.png" />
+<p class="caption"><span class="caption-text">Edit a Resource (Existing File)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Use <span class="guilabel">Cut</span>, <span class="guilabel">Copy</span>, and <span class="guilabel">Paste</span> to move resources between folders.</p>
+<div class="figure align-default" id="id5">
+<img alt="../../../_images/paste_resource.png" src="../../../_images/paste_resource.png" />
+<p class="caption"><span class="caption-text">Paste a Resource</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p><span class="guilabel">Rename</span> to rename an selected resource.</p>
+<blockquote>
+<div><div class="figure align-default" id="id6">
+<img alt="../../../_images/rename_resource.png" src="../../../_images/rename_resource.png" />
+<p class="caption"><span class="caption-text">Rename a Resource</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p><span class="guilabel">Delete</span> to remove a selected resource.</p>
+<blockquote>
+<div><div class="figure align-default" id="id7">
+<img alt="../../../_images/delete_resource.png" src="../../../_images/delete_resource.png" />
+<p class="caption"><span class="caption-text">Delete a resource</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="before-you-start">
+<h2>Before you start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<p>The resource browser is used to manage configuration resources in environments that do not provide direct disk access:</p>
+<ul class="simple">
+<li><p>When running GeoServer on a remote machine it can be difficult mange the icons and fonts used for effective styling</p></li>
+<li><p>Some cloud deployments of GeoServer operate without a data directory. In these environments the resource browser is used to manage items stored in a database or cloud storage rather than a file system.</p></li>
+<li><p>Folders are visual only, when creating or uploading a resource you can type a path and folders will be created as needed.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please use this tool with caution:</p>
+<ul class="simple">
+<li><p>Configuration files managed by the web administration application can be reviewed and even modified using this tool.</p></li>
+<li><p>It is not advised to edit these files directly as GeoServer must reload its Catalog to notice these changes.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="install.html" title="previous chapter">Installing the GeoServer Web Resource extension</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="examples.html" title="next chapter">Resource Browser Examples</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Resource Browser</a><ul>
+<li><a class="reference internal" href="#before-you-start">Before you start</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="install.html" title="previous chapter">Installing the GeoServer Web Resource extension</a></li>
+            <li>Next: <a href="examples.html" title="next chapter">Resource Browser Examples</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/configuration/tools/resource/browser.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

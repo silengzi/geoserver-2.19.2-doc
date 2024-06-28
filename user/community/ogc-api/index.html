@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>OGC API Extension &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Community modules" href="../index.html" />
+      <link rel="next" title="Installing the GeoServer OGC API module" href="install.html" />
+      <link rel="prev" title="Backward Mapping" href="../features-templating/querying.html" />
+</head>
+<body class="community/ogc-api/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li>OGC API Extension</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="install.html" title="Installing the GeoServer OGC API module"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../features-templating/querying.html" title="Backward Mapping"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="ogc-api-extension">
+<span id="community-ogcapi"></span><h1>OGC API Extension<a class="headerlink" href="#ogc-api-extension" title="Permalink to this headline">¶</a></h1>
+<p>This plugin includes implementation of a set of OGC API service implementations</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing the GeoServer OGC API module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features/index.html">OGC API Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tiles/index.html">OGC API Tiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maps/index.html">OGC API - Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="styles.html">OGC API Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testbed.html">OGC Testbed Experiments</a></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The OGC API services are still in heavy development, most of the specs and extensions are still in draft form and their behavior is likely to change in the next months/year.</p>
+</div>
+<div class="admonition-how-to-help admonition">
+<p class="admonition-title">How to help</p>
+<p>The modules are still in their infancy, there is a set of activities that could help their development:</p>
+<ul class="simple">
+<li><p>Implementation of additional draft API services, such as the <a class="reference external" href="https://github.com/opengeospatial/OGC-API-Maps">Maps API</a>,
+the <a class="reference external" href="https://github.com/opengeospatial/ogc_api_coverages">Coverages API</a>, the <a class="reference external" href="https://github.com/opengeospatial/ogcapi-records">Records API</a>
+and the <a class="reference external" href="https://github.com/opengeospatial/wps-rest-binding">Process API</a>.</p></li>
+<li><p>Implementation of new draft extensions not yet covered, like the <a class="reference external" href="https://github.com/opengeospatial/ogcapi-features/tree/master/extensions/transactions">OGC Features API Transaction extension</a>.</p></li>
+<li><p>Improvement of the HTML representation of resources, both in terms of looks and functionality
+(the specification makes no mandate for them, so they are free to implement as we see fit).</p></li>
+<li><p>Testing and improvement of the OpenAPI documents generated by each service, with particular focus on automatic generation of clients.</p></li>
+<li><p>General testing, reporting and bug fixing.</p></li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../features-templating/querying.html" title="previous chapter">Backward Mapping</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="install.html" title="next chapter">Installing the GeoServer OGC API module</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../features-templating/querying.html" title="previous chapter">Backward Mapping</a></li>
+            <li>Next: <a href="install.html" title="next chapter">Installing the GeoServer OGC API module</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/ogc-api/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

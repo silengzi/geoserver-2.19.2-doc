@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Users and Groups &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Role system" href="index.html" />
+      <link rel="next" title="User/group services" href="usergroupservices.html" />
+      <link rel="prev" title="Role system" href="index.html" />
+</head>
+<body class="security/usergrouprole/usergroups">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Security</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Role system</a> &raquo;</li>
+  <li>Users and Groups</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="usergroupservices.html" title="User/group services"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="index.html" title="Role system"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="users-and-groups">
+<span id="security-rolesystem-usergroups"></span><h1>Users and Groups<a class="headerlink" href="#users-and-groups" title="Permalink to this headline">¶</a></h1>
+<p>The definition of a GeoServer <strong>user</strong> is similar to most security systems. Although the correct Java term is <strong>principal</strong>—a principal being a human being, computer, software system, and so on—the term <strong>user</strong> is adopted throughout the GeoServer documentation. For each user the following information is maintained:</p>
+<ul class="simple">
+<li><p>User name</p></li>
+<li><p><a class="reference internal" href="../passwd.html#security-passwd"><span class="std std-ref">Password</span></a> (optionally stored <a class="reference internal" href="../passwd.html#security-passwd-encryption"><span class="std std-ref">encrypted</span></a>)</p></li>
+<li><p>A flag indicating if the user is enabled (this is the default). A disabled user is prevented from logging on. Existing user sessions are not affected.</p></li>
+<li><p>Set of key/value pairs</p></li>
+</ul>
+<p>Key/value pairs are implementation-specific and may be configured by the <a class="reference internal" href="usergroupservices.html#security-rolesystem-usergroupservices"><span class="std std-ref">user/group service</span></a> the user or group belongs to. For example, a user/group service that maintains information about a user such as Name, Email address, and so on, may wish to associate those attributes with the user object.</p>
+<p>A GeoServer <strong>group</strong> is simply a set of users. For each group the following information is maintained:</p>
+<ul class="simple">
+<li><p>Group name</p></li>
+<li><p>A flag indicating if the group is enabled (this is the default). A disabled group does not contribute to the role calculation for all users contained in this group.</p></li>
+<li><p>List of users who belong to the group</p></li>
+</ul>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="index.html" title="previous chapter">Role system</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="usergroupservices.html" title="next chapter">User/group services</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="index.html" title="previous chapter">Role system</a></li>
+            <li>Next: <a href="usergroupservices.html" title="next chapter">User/group services</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/security/usergrouprole/usergroups.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

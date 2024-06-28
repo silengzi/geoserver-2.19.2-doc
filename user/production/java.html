@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Java Considerations &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../_static/jquery.js"></script>
+  <script type="text/javascript" src="../_static/doctools.js"></script>
+  <script type="text/javascript" src="../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../searchindex.js"></script>
+  <link rel="shortcut icon" href="../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../index.html" />
+      <link rel="up" title="Running in a production environment" href="index.html" />
+      <link rel="next" title="Container Considerations" href="container.html" />
+      <link rel="prev" title="Running in a production environment" href="index.html" />
+</head>
+<body class="production/java">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">Running in a production environment</a> &raquo;</li>
+  <li>Java Considerations</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="container.html" title="Container Considerations"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="index.html" title="Running in a production environment"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="java-considerations">
+<span id="production-java"></span><h1>Java Considerations<a class="headerlink" href="#java-considerations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="use-supported-jre">
+<h2>Use supported JRE<a class="headerlink" href="#use-supported-jre" title="Permalink to this headline">¶</a></h2>
+<p>GeoServer’s speed depends a lot on the chosen Java Runtime Environment (JRE). The latest versions of GeoServer are tested with both Oracle JRE and OpenJDK. Implementations other than those tested may work correctly, but are generally not recommended.</p>
+<p>Tested:</p>
+<ul class="simple">
+<li><p>Java 11 and Java 8 - GeoServer 2.15.x and above (OpenJDK tested)</p></li>
+<li><p>Java 8 - GeoServer 2.9.x and above (OpenJDK and Oracle JRE tested)</p></li>
+<li><p>Java 7 - GeoServer 2.6.x to GeoServer 2.8.x (OpenJDK and Oracle JRE tested)</p></li>
+<li><p>Java 6 - GeoServer 2.3.x to GeoServer 2.5.x (Oracle JRE tested)</p></li>
+<li><p>Java 5 - GeoServer 2.2.x and earlier (Sun JRE tested)</p></li>
+</ul>
+<p>For best performance we recommend the use <em>Oracle JRE 8</em> (also known as JRE 1.8).</p>
+<p>As of GeoServer 2.0, a Java Runtime Environment (JRE) is sufficient to run GeoServer.  GeoServer no longer requires a Java Development Kit (JDK).</p>
+</div>
+<div class="section" id="running-on-java-11">
+<h2>Running on Java 11<a class="headerlink" href="#running-on-java-11" title="Permalink to this headline">¶</a></h2>
+<p>GeoServer 2.15 will run under Java 11 with no additional configuration on <strong>Tomcat 9</strong> or newer and <strong>Jetty 9.4.12</strong> or newer.</p>
+<p>Running GeoServer under Java 11 on other Application Servers may require some additional configuration. Some Application Servers do not support Java 11 yet.</p>
+<ul>
+<li><p><strong>Wildfly 14</strong> supports Java 11, with some additional configuration - in the run configuration, under VM arguments add:</p>
+<blockquote>
+<div><p>–add-modules=java.se</p>
+</div></blockquote>
+<p>Future WildFly releases should support Java 11 with no additional configuration.</p>
+</li>
+<li><p><strong>GlassFish</strong> does not currently Java 11, although the upcoming 5.0.1 release is expected to include support for it.</p></li>
+<li><p><strong>WebLogic</strong> do not yet support Java 11.</p></li>
+</ul>
+</div>
+<div class="section" id="installing-unlimited-strength-jurisdiction-policy-files">
+<span id="java-policyfiles"></span><h2>Installing Unlimited Strength Jurisdiction Policy Files<a class="headerlink" href="#installing-unlimited-strength-jurisdiction-policy-files" title="Permalink to this headline">¶</a></h2>
+<p>These policy files are needed for unlimited cryptography. As an example, Java does not support AES
+with a key length of 256 bit. Installing the policy files removes these restrictions.</p>
+<div class="section" id="open-jdk">
+<h3>Open JDK<a class="headerlink" href="#open-jdk" title="Permalink to this headline">¶</a></h3>
+<p>Since Open JDK is Open Source, the policy files are already installed.</p>
+</div>
+<div class="section" id="oracle-java">
+<h3>Oracle Java<a class="headerlink" href="#oracle-java" title="Permalink to this headline">¶</a></h3>
+<p>The policy files are available at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html">Java 8 JCE policy jars</a></p></li>
+</ul>
+<p>The download contains two files, <strong>local_policy.jar</strong> and  <strong>US_export_policy.jar</strong>. The default
+versions of these two files are stored in JRE_HOME/lib/security. Replace these two files with the
+versions from the download.</p>
+<div class="section" id="test-if-unlimited-key-length-is-available">
+<h4>Test if unlimited key length is available<a class="headerlink" href="#test-if-unlimited-key-length-is-available" title="Permalink to this headline">¶</a></h4>
+<p>Start or restart GeoServer and login as administrator. The annotated warning should have disappeared.</p>
+<div class="figure align-default">
+<img alt="../_images/unlimitedkey.png" src="../_images/unlimitedkey.png" />
+</div>
+<p>Additionally, the GeoServer log file should contain the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Strong cryptography is available&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The replacement has to be done for each update of the Java runtime.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ibm-java">
+<h3>IBM Java<a class="headerlink" href="#ibm-java" title="Permalink to this headline">¶</a></h3>
+<p>The policy files are available at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=jcesdk">IBM JCE policy jars</a></p></li>
+</ul>
+<p>An IBM ID is needed to log in. The installation is identical to Oracle.</p>
+</div>
+</div>
+<div class="section" id="outdated-install-native-jai-and-imageio-extensions">
+<h2>Outdated: install native JAI and ImageIO extensions<a class="headerlink" href="#outdated-install-native-jai-and-imageio-extensions" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/tech/jai-142803.html">Java Advanced Imaging API</a> (JAI) is an advanced image processing library built by Oracle.  GeoServer uses JAI-EXT, a set
+of replacement operations with bug fixes and NODATA support, for  all image processing.</p>
+<p>In case there is no interest in NODATA support, one can disable JAI-EXT and install the native JAI extensions to improve raster processing performance.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Users should take care that <em>JAI</em> native libraries remove support for NODATA pixels, provided instead by the pure Java JAI-EXT libraries.</p>
+</div>
+<p>Before installing native JAI, JAI-EXT can be disabled adding the following system variable to the JVM running GeoServer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">Dorg</span><span class="o">.</span><span class="n">geotools</span><span class="o">.</span><span class="n">coverage</span><span class="o">.</span><span class="n">jaiext</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="n">false</span>
+</pre></div>
+</div>
+<p>Native JAI and ImageIO extensions are available for:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p>32-bit</p></th>
+<th class="head"><p>64-bit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p>available</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Linux</p></td>
+<td><p>available</p></td>
+<td><p>available</p></td>
+</tr>
+<tr class="row-even"><td><p>Solaris</p></td>
+<td><p>available</p></td>
+<td><p>available</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max OSX</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A system installations of JAI and ImageIO may conflict with the pure java copy of JAI and ImageIO included in your GeoServer <code class="docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> folder - producing “class cast exceptions” preventing your application server from starting GeoServer.</p>
+<ul>
+<li><p>When installed as a “java extension” JAI and JAI ImageIO are unpacked into your JRE as both native code (in <code class="docutils literal notranslate"><span class="pre">bin</span></code>) and jars (in <code class="docutils literal notranslate"><span class="pre">ext/libs</span></code>). If you encounter this problem after installation of native the JAI and ImageIO extensions remove the pure java implementation from your GeoServer instances <code class="docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">jai_core</span><span class="o">-*</span><span class="n">jar</span> <span class="n">jai_imageio</span><span class="o">-*.</span><span class="n">jar</span> <span class="n">jai_codec</span><span class="o">-*.</span><span class="n">jar</span>
+</pre></div>
+</div>
+</li>
+<li><p>On OSX jars may be installed in <code class="docutils literal notranslate"><span class="pre">~/Library/Java/Extensions</span></code>, we advise removing these jars if present as they are no longer maintained by Apple.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Native ImageIO encoding may not always be the best choice, we recommend the built-in <a class="reference internal" href="../configuration/image_processing/index.html#jai"><span class="std std-ref">PNGJ based encoder</span></a> and <a class="reference internal" href="../extensions/libjpeg-turbo/index.html#community-libjpeg-turbo"><span class="std std-ref">libjpeg-turbo Map Encoder Extension</span></a> for png8 and jpeg encoding performance.</p>
+</div>
+<div class="section" id="installing-native-jai-on-windows">
+<h3>Installing native JAI on Windows<a class="headerlink" href="#installing-native-jai-on-windows" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Go to the <a class="reference external" href="http://download.java.net/media/jai/builds/release/1_1_3/">JAI download page</a> and download the Windows installer for version 1.1.3. At the time of writing only the 32 bit version of the installer is available, so if you are using a JDK, you will want to download <a class="reference external" href="http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-windows-i586-jdk.exe">jai-1_1_3-lib-windows-i586-jdk.exe</a>, and if you are using a JRE, you will want to download <a class="reference external" href="http://download.java.net/media/jai/builds/release/1_1_3/jai-1_1_3-lib-windows-i586-jre.exe">jai-1_1_3-lib-windows-i586-jre.exe</a>.</p></li>
+<li><p>Run the installer and point it to the JDK/JRE install that GeoServer will use to run.</p></li>
+<li><p>Go to the <a class="reference external" href="http://download.java.net/media/jai-imageio/builds/release/1.1/">JAI Image I/O download page</a> and download the Windows installer for version 1.1. At the time of writing only the 32 bit version of the installer is available, so if you are using a JDK, you will want to download <a class="reference external" href="http://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-windows-i586-jdk.exe">jai_imageio-1_1-lib-windows-i586-jdk.exe</a>, and if you are using a JRE, you will want to download <a class="reference external" href="http://download.java.net/media/jai-imageio/builds/release/1.1/jai_imageio-1_1-lib-windows-i586-jre.exe">jai_imageio-1_1-lib-windows-i586-jre.exe</a></p></li>
+<li><p>Run the installer and point it to the JDK/JRE install that GeoServer will use to run.</p></li>
+<li><p>Once the installation is complete, you may optionally remove the original JAI files from the GeoServer <code class="docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">jai_core</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">jar</span>
+<span class="o">*</span> <span class="n">jai_imageio</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">jar</span>
+<span class="o">*</span> <span class="n">jai_codec</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> refer to specific version numbers.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These installers are limited to allow adding native extensions to just one version of the JDK/JRE on your system.  If native extensions are needed on multiple versions, manually unpacking the extensions will be necessary.  See the section on <a class="reference internal" href="#native-jai-manual-install"><span class="std std-ref">Installing native JAI manually</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These installers are also only able to apply the extensions to the currently used JDK/JRE.  If native extensions are needed on a different JDK/JRE than that which is currently used, it will be necessary to uninstall the current one first, then run the setup program against the remaining JDK/JRE.</p>
+</div>
+</div>
+<div class="section" id="installing-native-jai-on-linux">
+<h3>Installing native JAI on Linux<a class="headerlink" href="#installing-native-jai-on-linux" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Go to the <a class="reference external" href="http://data.opengeo.org/suite/jai/">OpenGeo JAI download page</a> and download the Linux installer for version 1.1.3, choosing the appropriate architecture:</p>
+<ul class="simple">
+<li><p><cite>i586</cite> for the 32 bit systems</p></li>
+<li><p><cite>amd64</cite> for the 64 bit ones (even if using Intel processors)</p></li>
+</ul>
+</li>
+<li><p>Copy the file into the directory containing the JDK/JRE and then run it.  For example, on an Ubuntu 32 bit system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo cp jai-1_1_3-lib-linux-i586-jdk.bin /usr/lib/jvm/java-6-sun
+$ cd /usr/lib/jvm/java-6-sun
+$ sudo sh jai-1_1_3-lib-linux-i586-jdk.bin
+# accept license
+$ sudo rm jai-1_1_3-lib-linux-i586-jdk.bin
+</pre></div>
+</div>
+</li>
+<li><p>Go to the <a class="reference external" href="http://data.opengeo.org/suite/jai/">OpenGeo JAI Image I/O Download page</a> and download the Linux installer for version 1.1, choosing the appropriate architecture:</p>
+<ul class="simple">
+<li><p><cite>i586</cite> for the 32 bit systems</p></li>
+<li><p><cite>amd64</cite> for the 64 bit ones (even if using Intel processors)</p></li>
+</ul>
+</li>
+<li><p>Copy the file into the directory containing the JDK/JRE and then run it.  If you encounter difficulties, you may need to export the environment variable <code class="docutils literal notranslate"><span class="pre">_POSIX2_VERSION=199209</span></code>. For example, on a Ubuntu 32 bit Linux system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo cp jai_imageio-1_1-lib-linux-i586-jdk.bin /usr/lib/jvm/java-6-sun
+$ cd /usr/lib/jvm/java-6-sun
+$ sudo su
+$ export _POSIX2_VERSION=199209
+$ sh jai_imageio-1_1-lib-linux-i586-jdk.bin
+# accept license
+$ rm ./jai_imageio-1_1-lib-linux-i586-jdk.bin
+$ exit
+</pre></div>
+</div>
+</li>
+<li><p>Once the installation is complete, you may optionally remove the original JAI files from the GeoServer <code class="docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">jai_core</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">jar</span>
+<span class="o">*</span> <span class="n">jai_imageio</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">jar</span>
+<span class="o">*</span> <span class="n">jai_codec</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">jar</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> refer to specific version numbers.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-native-jai-manually">
+<span id="native-jai-manual-install"></span><h3>Installing native JAI manually<a class="headerlink" href="#installing-native-jai-manually" title="Permalink to this headline">¶</a></h3>
+<p>You can install the native JAI manually if you encounter problems using the above installers, or if you wish to install the native JAI for more than one JDK/JRE.</p>
+<p>Please refer to the <a class="reference external" href="https://docs.geotools.org/latest/userguide/build/install/jdk.html#java-extensions-optional">GeoTools page on JAI installation</a> for details.</p>
+</div>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="index.html" title="previous chapter">Running in a production environment</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="container.html" title="next chapter">Container Considerations</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">Java Considerations</a><ul>
+<li><a class="reference internal" href="#use-supported-jre">Use supported JRE</a></li>
+<li><a class="reference internal" href="#running-on-java-11">Running on Java 11</a></li>
+<li><a class="reference internal" href="#installing-unlimited-strength-jurisdiction-policy-files">Installing Unlimited Strength Jurisdiction Policy Files</a><ul>
+<li><a class="reference internal" href="#open-jdk">Open JDK</a></li>
+<li><a class="reference internal" href="#oracle-java">Oracle Java</a><ul>
+<li><a class="reference internal" href="#test-if-unlimited-key-length-is-available">Test if unlimited key length is available</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ibm-java">IBM Java</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#outdated-install-native-jai-and-imageio-extensions">Outdated: install native JAI and ImageIO extensions</a><ul>
+<li><a class="reference internal" href="#installing-native-jai-on-windows">Installing native JAI on Windows</a></li>
+<li><a class="reference internal" href="#installing-native-jai-on-linux">Installing native JAI on Linux</a></li>
+<li><a class="reference internal" href="#installing-native-jai-manually">Installing native JAI manually</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="index.html" title="previous chapter">Running in a production environment</a></li>
+            <li>Next: <a href="container.html" title="next chapter">Container Considerations</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/production/java.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

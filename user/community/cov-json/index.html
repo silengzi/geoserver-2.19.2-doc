@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>CoverageJSON output format &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="Community modules" href="../index.html" />
+      <link rel="next" title="Smart Data Loader Extension" href="../smart-data-loader/index.html" />
+      <link rel="prev" title="ImageMosaic example with Modis COG datasets" href="../cog/mosaic.html" />
+</head>
+<body class="community/cov-json/index">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li>CoverageJSON output format</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="../smart-data-loader/index.html" title="Smart Data Loader Extension"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="../cog/mosaic.html" title="ImageMosaic example with Modis COG datasets"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="coveragejson-output-format">
+<span id="cov-json"></span><h1>CoverageJSON output format<a class="headerlink" href="#coveragejson-output-format" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://covjson.org/">CoverageJSON</a> is a format for encoding geotemporal coverage data like grids and time series. For example, it can be as output format for a WCS2.0 getCoverage requesting a TimeSeries on a specific coordinate. As per the specification, the format to be specified to get back a cov-json output is <em>application/prs.coverage+json</em>.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>As a community module, the cov-json package needs to be downloaded from the <a class="reference external" href="https://build.geoserver.org/geoserver/">nightly builds</a>,
+picking the community folder of the corresponding GeoServer series (e.g. if working on the GeoServer main development branch nightly
+builds, pick the zip file form <code class="docutils literal notranslate"><span class="pre">master/community-latest</span></code>).</p>
+<p>To install the module, unpack the zip file contents into GeoServer own <code class="docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> directory and restart GeoServer.</p>
+</div>
+<div class="section" id="example-wcs-2-0-timeseries">
+<h2>Example: WCS 2.0 - TimeSeries<a class="headerlink" href="#example-wcs-2-0-timeseries" title="Permalink to this headline">¶</a></h2>
+<p>Let <em>test:timeseries</em> be a sample layer related to a coverage with time dimensions enabled. Suppose we want to get the coverage values for a specific time period on a specific lat/lon coordinate. That will be a slicing on lat/lon coordinate and trimming on time dimension.</p>
+<p>A getCoverage request can be posted with a similar content to <a class="reference external" href="http://server:port/geoserver/wcs">http://server:port/geoserver/wcs</a>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wcs:GetCoverage</span> <span class="na">service=</span><span class="s">&quot;WCS&quot;</span> <span class="na">version=</span><span class="s">&quot;2.0.1&quot;</span>
+<span class="na">xmlns:wcs=</span><span class="s">&quot;http://www.opengis.net/wcs/2.0&quot;</span>
+<span class="na">xmlns:gml=</span><span class="s">&quot;http://www.opengis.net/gml/3.2&quot;</span>
+<span class="na">xmlns:crs=</span><span class="s">&quot;http://www.opengis.net/spec/WCS_service-extension_crs/1.0&quot;</span>
+<span class="na">xmlns:rsub=</span><span class="s">&quot;http://www.opengis.net/spec/wcs_service-extension_range-subsetting/1.0&quot;</span>
+<span class="na">xmlns:scal=</span><span class="s">&quot;http://www.opengis.net/spec/WCS_service-extension_scaling/1.0/&quot;</span>
+<span class="na">xmlns:wcsgeotiff=</span><span class="s">&quot;http://www.opengis.net/wcs/geotiff/1.0&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd&quot;</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;wcs:CoverageId&gt;</span>test__timeseries<span class="nt">&lt;/wcs:CoverageId&gt;</span>
+  <span class="nt">&lt;wcs:format&gt;</span>application/prs.coverage+json<span class="nt">&lt;/wcs:format&gt;</span>
+  <span class="nt">&lt;wcs:DimensionSlice&gt;</span>
+    <span class="nt">&lt;wcs:Dimension&gt;</span>Long<span class="nt">&lt;/wcs:Dimension&gt;</span>
+    <span class="nt">&lt;wcs:SlicePoint&gt;</span>56<span class="nt">&lt;/wcs:SlicePoint&gt;</span>
+  <span class="nt">&lt;/wcs:DimensionSlice&gt;</span>
+  <span class="nt">&lt;wcs:DimensionSlice&gt;</span>
+    <span class="nt">&lt;wcs:Dimension&gt;</span>Lat<span class="nt">&lt;/wcs:Dimension&gt;</span>
+    <span class="nt">&lt;wcs:SlicePoint&gt;</span>0<span class="nt">&lt;/wcs:SlicePoint&gt;</span>
+  <span class="nt">&lt;/wcs:DimensionSlice&gt;</span>
+  <span class="nt">&lt;wcs:DimensionTrim&gt;</span>
+    <span class="nt">&lt;wcs:Dimension&gt;</span>Time<span class="nt">&lt;/wcs:Dimension&gt;</span>
+    <span class="nt">&lt;wcs:TrimLow&gt;</span>2014-01-01T00:00:00.000Z<span class="nt">&lt;/wcs:TrimLow&gt;</span>
+    <span class="nt">&lt;wcs:TrimHigh&gt;</span>2017-01-01T00:00:00.000Z<span class="nt">&lt;/wcs:TrimHigh&gt;</span>
+  <span class="nt">&lt;/wcs:DimensionTrim&gt;</span>
+<span class="nt">&lt;/wcs:GetCoverage&gt;</span>
+</pre></div>
+</div>
+<p>The outcome will be something like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Coverage&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;domain&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Domain&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;domainType&quot;</span><span class="p">:</span> <span class="s2">&quot;PointSeries&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;axes&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mf">56.0</span>
+    <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="mf">1.0112359550561785</span>
+    <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;2014-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;2015-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;2016-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;2017-01-01T00:00:00Z&quot;</span>
+    <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;referencing&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;y&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;GeographicCRS&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;</span>
+    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+    <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;t&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;TemporalRS&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;calendar&quot;</span><span class="p">:</span> <span class="s2">&quot;Gregorian&quot;</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;TIMESERIES&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Parameter&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;timeseries&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;observedProperty&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;en&quot;</span><span class="p">:</span> <span class="s2">&quot;timeseries&quot;</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;ranges&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;TIMESERIES&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;NdArray&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dataType&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;axisNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;t&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;x&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;shape&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="mi">4</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="mf">25.5</span><span class="p">,</span>
+    <span class="mf">24.76</span><span class="p">,</span>
+    <span class="mf">26.06</span><span class="p">,</span>
+    <span class="mf">23.22</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note the domainType = PointSeries where x,y axes have a single and the t axis has 4 times in the values. Also note the ranges property is reporting 4 values.</p>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="../cog/mosaic.html" title="previous chapter">ImageMosaic example with Modis COG datasets</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="../smart-data-loader/index.html" title="next chapter">Smart Data Loader Extension</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">CoverageJSON output format</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#example-wcs-2-0-timeseries">Example: WCS 2.0 - TimeSeries</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="../cog/mosaic.html" title="previous chapter">ImageMosaic example with Modis COG datasets</a></li>
+            <li>Next: <a href="../smart-data-loader/index.html" title="next chapter">Smart Data Loader Extension</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/cov-json/index.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>

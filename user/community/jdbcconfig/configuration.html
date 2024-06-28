@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>JDBCConfig configuration &mdash; GeoServer 2.19.2 User Manual</title>
+  <link rel="stylesheet" href="../../_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="../../_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="../../_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="../../_static/jquery.js"></script>
+  <script type="text/javascript" src="../../_static/doctools.js"></script>
+  <script type="text/javascript" src="../../_static/searchtools.js"></script>
+  <script type="text/javascript" src="../../searchindex.js"></script>
+  <link rel="shortcut icon" href="../../_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="../../search.html" />
+      <link rel="top" title="GeoServer 2.19.2 User Manual" href="../../index.html" />
+      <link rel="up" title="JDBCConfig" href="index.html" />
+      <link rel="next" title="MBTiles Extension" href="../mbtiles/index.html" />
+      <link rel="prev" title="Installing JDBCConfig" href="installing.html" />
+</head>
+<body class="community/jdbcconfig/configuration">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="../../index.html">GeoServer 2.19.2 User Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="../../index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="../../search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="../../_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="../../index.html">GeoServer 2.19.2 User Manual</a> &raquo;</li>
+  <li><a href="../index.html" accesskey="U">Community modules</a> &raquo;</li>
+  <li><a href="index.html" accesskey="U">JDBCConfig</a> &raquo;</li>
+  <li>JDBCConfig configuration</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="../../py-modindex.html" title="Python Module Index"
+       accesskey="">modules</a></li>
+  <li>
+    <a href="../mbtiles/index.html" title="MBTiles Extension"
+       accesskey="N">next</a>|</li>
+  <li>
+    <a href="installing.html" title="Installing JDBCConfig"
+       accesskey="P">previous</a>|</li>
+</ul>
+        
+  <div class="section" id="jdbcconfig-configuration">
+<span id="community-jdbcconfig-config"></span><h1>JDBCConfig configuration<a class="headerlink" href="#jdbcconfig-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The JDBCConfig module is configured in the file <code class="docutils literal notranslate"><span class="pre">jdbcconfig/jdbcconfig.properties</span></code> inside the <a class="reference internal" href="../../datadirectory/index.html#datadir"><span class="std std-ref">GeoServer data directory</span></a>.
+The following properties may be set:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">enabled</span></code>: Use JDBCConfig.  Turn off to use the data directory for all configuration instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">initdb</span></code>: Initialize an empty database if this is set on true.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span></code> : The import configuration option tells GeoServer whether to import the current catalog from the file system to the database or not. If set to true, it will be imported and the config option will be set the value ‘false’ for the next start up to avoid trying to re-import the catalog  configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repopulate</span></code>: The repopulate configuration option tells GeoServer to repopulate the queryable field values in the database. These are the fields of catalog objects jdbcconfig can query via the database, i.e. much faster than via post-filtering in memory. May be necessary after jdbcconfig upgrades or if someone manually adds queryable fields to the database. (In such cases, if the values were not properly repopulated, queries might give incorrect results.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">initScript</span></code>: Path to initialisation script .sql file. Only used if initdb = true.</p></li>
+</ul>
+<div class="section" id="jndi">
+<h2>JNDI<a class="headerlink" href="#jndi" title="Permalink to this headline">¶</a></h2>
+<p>Get the database connection from the application server via JNDI lookup.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jndiName</span></code>: The JNDI name for the data source. Only set this if you want to use JNDI, the JDBC configuration properties may still be set for in case the JNDI Lookup fails.</p></li>
+</ul>
+</div>
+<div class="section" id="direct-jdbc-connection">
+<h2>Direct JDBC Connection<a class="headerlink" href="#direct-jdbc-connection" title="Permalink to this headline">¶</a></h2>
+<p>Provide the connection parameters directly in the configuration file. This includes the password in the clear which is a potential security risk.  To avoid this use JNDI instead.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jdbcUrl</span></code>: JDBC direct connection parameters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">username</span></code>: JDBC connection username.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">password</span></code>: JDBC connection password.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.minIdle</span></code>: minimum connections in pool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.maxActive</span></code>:  maximum connections in pool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.poolPreparedStatements</span></code>: whether to pool prepared statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.maxOpenPreparedStatements</span></code>: size of prepared statement cache, only used if pool.poolPreparedStatements = true</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.testOnBorrow</span></code>: whether to validate connections when obtaining from the pool</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pool.validationQuery</span></code>: validation query for connections from pool, must be set when pool.testOnBorrow = true</p></li>
+</ul>
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="installing.html" title="previous chapter">Installing JDBCConfig</a></div>
+          <div class="rightwise"><strong>Next</strong>: <a href="../mbtiles/index.html" title="next chapter">MBTiles Extension</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+      <div id="toc" class="section">
+        <h3 class="pngfix">Table Of Contents</h3>
+        <ul>
+<li><a class="reference internal" href="#">JDBCConfig configuration</a><ul>
+<li><a class="reference internal" href="#jndi">JNDI</a></li>
+<li><a class="reference internal" href="#direct-jdbc-connection">Direct JDBC Connection</a></li>
+</ul>
+</li>
+</ul>
+
+        <div class="section-footer"></div>
+      </div>
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="installing.html" title="previous chapter">Installing JDBCConfig</a></li>
+            <li>Next: <a href="../mbtiles/index.html" title="next chapter">MBTiles Extension</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/user/source/community/jdbcconfig/configuration.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>
