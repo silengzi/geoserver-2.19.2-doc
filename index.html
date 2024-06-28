@@ -3,17 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>GeoServer 2.19.2 document</title>
+  <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .links {
+        text-align: center;
+    }
+    .link {
+        display: inline-block;
+        padding: 15px 30px;
+        margin: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+</style>
 </head>
 <body>
-  <div>
-    <a href="./user/index.html">User Manual(用户手册)</a>
-  </div>
-  <div>
-    <a href="./developer/index.html">Developer Manual(开发者手册)</a>
-  </div>
-  <div>
-    <a href="./api/index.html">api</a>
+  <div class="links">
+    <div>
+      <a class="link" href="./user/index.html">User Manual &nbsp; (用户手册)</a>
+    </div>
+    <div>
+      <a class="link" href="./developer/index.html">Developer Manual &nbsp; (开发者手册)</a>
+    </div>
+    <div>
+      <a class="link" href="./api/index.html">api</a>
+    </div>
   </div>
 </body>
 </html>
