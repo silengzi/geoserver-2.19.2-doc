@@ -81,7 +81,7 @@
 <h2>Brute force attack prevention<a class="headerlink" href="#brute-force-attack-prevention" title="Permalink to this headline">¶</a></h2>
 <p>GeoServer ships with a delay based brute force attack prevention system.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/auth_brute_force.png" src="../../_images/auth_brute_force.png" />
+<img alt="../../images/auth_brute_force.png" src="../../images/auth_brute_force.png" />
 <p class="caption"><span class="caption-text"><em>Brute force attack prevention settings</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -124,7 +124,7 @@ Login attempts are slowed down/blocked on all protocols, be either a OGC request
 <p>A user trying to login from the user interface while another request is blocked waiting for the cool-down period to
 expire will see a message like the following:</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/auth_brute_force_message.png" src="../../_images/auth_brute_force_message.png" />
+<img alt="../../images/auth_brute_force_message.png" src="../../images/auth_brute_force_message.png" />
 <p class="caption"><span class="caption-text"><em>Error message for parallel user interface login</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>A HTTP request (REST or OGC) will instead get an immediate 401 with a message like:</p>
@@ -150,7 +150,7 @@ all the users start working) while still leaving room for successful authenticat
 <h2>Authentication filters<a class="headerlink" href="#authentication-filters" title="Permalink to this headline">¶</a></h2>
 <p>This section manages the Authentication Filters (adding, removing, and editing). Several authentication filters are configured by default (anonymous, basic, form, rememberme), but others can be added to the list.</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/auth_filters.png" src="../../_images/auth_filters.png" />
+<img alt="../../images/auth_filters.png" src="../../images/auth_filters.png" />
 <p class="caption"><span class="caption-text"><em>List of authentication filters</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="anonymous-access">
@@ -161,7 +161,7 @@ all the users start working) while still leaving room for successful authenticat
 <h3>Credentials From Headers filter<a class="headerlink" href="#credentials-from-headers-filter" title="Permalink to this headline">¶</a></h3>
 <p>This filter allows gathering user credentials (username and password) from request headers in a flexible and configurable way.</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/auth_filter_credentials_from_header.png" src="../../_images/auth_filter_credentials_from_header.png" />
+<img alt="../../images/auth_filter_credentials_from_header.png" src="../../images/auth_filter_credentials_from_header.png" />
 <p class="caption"><span class="caption-text"><em>Creating a new authentication filter fetching credentials from request headers</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -202,14 +202,14 @@ all the users start working) while still leaving room for successful authenticat
 <p>This section manages the <a class="reference internal" href="../auth/providers.html#security-auth-providers"><span class="std std-ref">Authentication providers</span></a> (adding, removing, and editing). The default authentication provider uses basic <a class="reference internal" href="../auth/providers.html#security-auth-provider-userpasswd"><span class="std std-ref">username/password authentication</span></a>. <a class="reference internal" href="../auth/providers.html#security-auth-provider-jdbc"><span class="std std-ref">JDBC</span></a> and <a class="reference internal" href="../auth/providers.html#security-auth-provider-ldap"><span class="std std-ref">LDAP</span></a> authentication can also be used.</p>
 <p>Click <span class="guilabel">Add new</span> to create a new provider. Click an existing provider to edit its parameters.</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/auth_providers.png" src="../../_images/auth_providers.png" />
+<img alt="../../images/auth_providers.png" src="../../images/auth_providers.png" />
 <p class="caption"><span class="caption-text"><em>List of authentication providers</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="username-password-provider">
 <h3>Username/password provider<a class="headerlink" href="#username-password-provider" title="Permalink to this headline">¶</a></h3>
 <p>The default new authentication provider uses a user/group service for authentication.</p>
 <div class="figure align-center" id="id6">
-<img alt="../../_images/auth_userpass.png" src="../../_images/auth_userpass.png" />
+<img alt="../../images/auth_userpass.png" src="../../images/auth_userpass.png" />
 <p class="caption"><span class="caption-text"><em>Creating a new authentication provider with a username and password</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -236,7 +236,7 @@ all the users start working) while still leaving room for successful authenticat
 <h3>JDBC provider<a class="headerlink" href="#jdbc-provider" title="Permalink to this headline">¶</a></h3>
 <p>The configuration options for the JDBC authentication provider are illustrated below.</p>
 <div class="figure align-center" id="id7">
-<img alt="../../_images/auth_jdbc.png" src="../../_images/auth_jdbc.png" />
+<img alt="../../images/auth_jdbc.png" src="../../images/auth_jdbc.png" />
 <p class="caption"><span class="caption-text"><em>Configuring the JDBC authentication provider</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -269,11 +269,11 @@ all the users start working) while still leaving room for successful authenticat
 <h3>LDAP provider<a class="headerlink" href="#ldap-provider" title="Permalink to this headline">¶</a></h3>
 <p>The following illustration shows the configuration options for the LDAP authentication provider. The default option is to use LDAP groups for role assignment, but there is also an option to use a user/group service for role assignment. Depending on whether this option is selected, the page itself will have different options.</p>
 <div class="figure align-center" id="id8">
-<img alt="../../_images/auth_ldap1.png" src="../../_images/auth_ldap1.png" />
+<img alt="../../images/auth_ldap1.png" src="../../images/auth_ldap1.png" />
 <p class="caption"><span class="caption-text"><em>Configuring the LDAP authentication provider using LDAP groups for role assignment</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id9">
-<img alt="../../_images/auth_ldap2.png" src="../../_images/auth_ldap2.png" />
+<img alt="../../images/auth_ldap2.png" src="../../images/auth_ldap2.png" />
 <p class="caption"><span class="caption-text"><em>Configuring the LDAP authentication provider using user/group service for authentication</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -353,7 +353,7 @@ Only applicable when the <em>Enable Hierarchical groups search( parameter is **c
 <h2>Authentication chain<a class="headerlink" href="#authentication-chain" title="Permalink to this headline">¶</a></h2>
 <p>This section selects the authentication chain. Currently, only one default authentication chain is available. For further information about the default chain, please refer to <a class="reference internal" href="../auth/chain.html#security-auth-chain"><span class="std std-ref">Authentication chain</span></a>.</p>
 <div class="figure align-center" id="id10">
-<img alt="../../_images/auth_chain.png" src="../../_images/auth_chain.png" />
+<img alt="../../images/auth_chain.png" src="../../images/auth_chain.png" />
 <p class="caption"><span class="caption-text"><em>Selecting the authentication chain</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>

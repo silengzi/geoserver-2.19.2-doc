@@ -103,7 +103,7 @@ Each color can be defined using these possible syntaxes (same as ncWMS):</p>
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/redblue-editor.png" src="../../_images/redblue-editor.png" />
+<img alt="../../images/redblue-editor.png" src="../../images/redblue-editor.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a dynamic palette style</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Several ready to use palettes coming from the popular “color brewer” site are available in the <a class="reference external" href="https://github.com/Reading-eScience-Centre/edal-java/tree/master/graphics/src/main/resources/palettes">ncWMS source code repository</a>.</p>
@@ -246,7 +246,7 @@ the above style translates to the following style:</p>
 <li><p>The scale can be either linear, or logarithmic</p></li>
 </ul>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/bandrange.png" src="../../_images/bandrange.png" />
+<img alt="../../images/bandrange.png" src="../../images/bandrange.png" />
 <p class="caption"><span class="caption-text"><em>Editing the defaults for min/max scale range values in the GeoServer layer editor</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The above parameters can all be used at will to control the palette generation using the typical environment variable approach. However, it’s also possible to use ncWMS own extensions, which
@@ -273,25 +273,25 @@ but currently TIME needs to be a list of discrete times instead. Animation requi
 </li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/redblue-default.png" src="../../_images/redblue-default.png" />
+<img alt="../../images/redblue-default.png" src="../../images/redblue-default.png" />
 </div>
 <ul class="simple">
 <li><p>Adopting a logarithmic scale by adding <code class="docutils literal notranslate"><span class="pre">&amp;COLORSCALERANGE=1,6000&amp;LOGSCALE=true</span></code> (a logarithmic scale needs a positive minimum)</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/redblue-logscale.png" src="../../_images/redblue-logscale.png" />
+<img alt="../../images/redblue-logscale.png" src="../../images/redblue-logscale.png" />
 </div>
 <ul class="simple">
 <li><p>Using just 5 colors in logarithmic mode by adding <code class="docutils literal notranslate"><span class="pre">&amp;COLORSCALERANGE=1,6000&amp;LOGSCALE=true&amp;NUMCOLORBANDS=5</span></code></p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/redblue-numcolors.png" src="../../_images/redblue-numcolors.png" />
+<img alt="../../images/redblue-numcolors.png" src="../../images/redblue-numcolors.png" />
 </div>
 <ul class="simple">
 <li><p>Limiting the range and specifying other colors above (gray) and below (yellow) by adding <code class="docutils literal notranslate"><span class="pre">&amp;COLORSCALERANGE=100,2000&amp;BELOWMINCOLOR=0xFFFF00&amp;ABOVEMAXCOLOR=0xAAAAAA</span></code></p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/redblue-range.png" src="../../_images/redblue-range.png" />
+<img alt="../../images/redblue-range.png" src="../../images/redblue-range.png" />
 </div>
 </div>
 <div class="section" id="ncwms-getcapabilities-extensions">
@@ -380,7 +380,7 @@ Time (UTC),Temperature (degrees)
 </div>
 <p>Sample chart output:</p>
 <div class="figure align-center">
-<img alt="../../_images/geoserver-GetTimeSeries.png" src="../../_images/geoserver-GetTimeSeries.png" />
+<img alt="../../images/geoserver-GetTimeSeries.png" src="../../images/geoserver-GetTimeSeries.png" />
 </div>
 <p><strong>Note:</strong> Since GeoServer 2.17, nodata pixels will not be reported in the result chart. Moreover, entries in CSV list related to nodata pixels will report time but will have no pixel value reported, as in the example below for times 2014-02-01 and 2014-05-01:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Latitude: 40.396728515625

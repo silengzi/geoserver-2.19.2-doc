@@ -256,7 +256,7 @@ which cannot report progress. Here are three possible scenarios, depending on wh
 </div>
 <p>This specific operation allows a client to recognize the list of WPS Executions.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_001.png" src="../../_images/getExecutions_001.png" />
+<img alt="../../images/getExecutions_001.png" src="../../images/getExecutions_001.png" />
 </div>
 <p>The client makes a simple “GetExecutions” request to the WPS Server, in order to get back an XML document containing the list of current Execution Statuses.</p>
 <p>It is also possible to filter the “GetExecutions” request along with simple parameters, in order to refine the output and get back only the executions status we are looking for.</p>
@@ -268,7 +268,7 @@ which cannot report progress. Here are three possible scenarios, depending on wh
 <p>Refers to <a class="reference external" href="http://docs.opengeospatial.org/is/14-065/14-065.html">http://docs.opengeospatial.org/is/14-065/14-065.html</a> 9.5 and extends it.</p>
 <p>The StatusInfo document is used to provide identification and status information about jobs on a WPS server. The operation adds additional fields to the StatusInfo Document reporting also the WPS Process Identifier and other information on estimated execution and expiration time.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_002.png" src="../../_images/getExecutions_002.png" />
+<img alt="../../images/getExecutions_002.png" src="../../images/getExecutions_002.png" />
 </div>
 </div>
 <div class="section" id="getexecutionsoperation">
@@ -276,17 +276,17 @@ which cannot report progress. Here are three possible scenarios, depending on wh
 <p>The GetExecutions Operation allows WPS clients to retrieve the list of available process jobs running on a WPS instance. The output is returned in the form of an XML document.</p>
 <p>The GetExecutions Operation returns only the list of available Executions the logged in user has started, except in the case it is an Administrator. In that case he will be able to get the whole list.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_003.png" src="../../_images/getExecutions_003.png" />
+<img alt="../../images/getExecutions_003.png" src="../../images/getExecutions_003.png" />
 </div>
 </div>
 <div class="section" id="getexecutionsrequest">
 <h3>GetExecutionsRequest<a class="headerlink" href="#getexecutionsrequest" title="Permalink to this headline">¶</a></h3>
 <p>The GetExecutions Request is a common structure for synchronous execution. It inherits basic properties from the RequestBaseType and contains additional elements that allow to filter out, refine and order the list of available Process Jobs.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_004.png" src="../../_images/getExecutions_004.png" />
+<img alt="../../images/getExecutions_004.png" src="../../images/getExecutions_004.png" />
 </div>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_005.png" src="../../_images/getExecutions_005.png" />
+<img alt="../../images/getExecutions_005.png" src="../../images/getExecutions_005.png" />
 </div>
 </div>
 <div class="section" id="getexecutionsresponse">
@@ -298,14 +298,14 @@ which cannot report progress. Here are three possible scenarios, depending on wh
 <p>Response paging is the ability of a client to scroll through a set of response values, N values at-a-time much like one scrolls through the response from a search engine one page at a time.</p>
 <p>Similarly to the WFS 2.0.0 response paging mechanism (see See section “7.7.4.4 Response paging” of the specification), the output will show to the client the following attributes as part of the response document.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_006.png" src="../../_images/getExecutions_006.png" />
+<img alt="../../images/getExecutions_006.png" src="../../images/getExecutions_006.png" />
 </div>
 </div>
 <div class="section" id="getexecutionsexceptions">
 <h3>GetExecutionsExceptions<a class="headerlink" href="#getexecutionsexceptions" title="Permalink to this headline">¶</a></h3>
 <p>When a WPS server encounters an error while performing an GetExecutionsResponse, it shall return an exception report as specified in clause 8 of [OGC 06-121r9]. If appropriate, the server shall use additional exception codes as defined in this section.</p>
 <div class="figure align-center">
-<img alt="../../_images/getExecutions_007.png" src="../../_images/getExecutions_007.png" />
+<img alt="../../images/getExecutions_007.png" src="../../images/getExecutions_007.png" />
 </div>
 </div>
 <div class="section" id="retrieve-the-wps-execute-input-values">

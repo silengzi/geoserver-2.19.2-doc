@@ -92,7 +92,7 @@
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>We use postgis/postgres as database engine, a database named “gis” and start with an image from openstreetmap. We also need this utility  <a class="reference external" href="http://www.gdal.org/gdal_retile.html">http://www.gdal.org/gdal_retile.html</a> . The best way to install with all dependencies is downloading from here <a class="reference external" href="http://fwtools.maptools.org/">http://fwtools.maptools.org/</a></p>
-<img alt="../../_images/start.png" src="../../_images/start.png" />
+<img alt="../../images/start.png" src="../../images/start.png" />
 <p>Create a working directory, lets call it <code class="file docutils literal notranslate"><span class="pre">working</span></code> ,download this image with a right mouse click (Image save as …) and save it as <code class="file docutils literal notranslate"><span class="pre">start_rgb.png</span></code></p>
 <p>Check your image with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="n">start_rgb</span><span class="o">.</span><span class="n">png</span>
@@ -325,19 +325,19 @@
 <div class="section" id="configuring-geoserver">
 <h2>Configuring GeoServer<a class="headerlink" href="#configuring-geoserver" title="Permalink to this headline">¶</a></h2>
 <p>Start GeoServer and log in.Under <span class="menuselection">Config ‣ WCS ‣ CoveragePlugins</span> you should see</p>
-<img alt="../../_images/snapshot1.png" src="../../_images/snapshot1.png" />
+<img alt="../../images/snapshot1.png" src="../../images/snapshot1.png" />
 <p>If there is no line starting with “ImageMosaicJDBC”, the <code class="file docutils literal notranslate"><span class="pre">gt-imagemosiac-jdbc-</span><em><span class="pre">version</span></em><span class="pre">.jar</span></code> file is not in your <code class="file docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> folder.
 Go to <span class="menuselection">Config‣Data‣CoverageStores‣New</span> and fill in the formular</p>
-<img alt="../../_images/snapshot2.png" src="../../_images/snapshot2.png" />
+<img alt="../../images/snapshot2.png" src="../../images/snapshot2.png" />
 <p>Press <span class="guilabel">New</span> and fill in the formular</p>
-<img alt="../../_images/snapshot3.png" src="../../_images/snapshot3.png" />
+<img alt="../../images/snapshot3.png" src="../../images/snapshot3.png" />
 <p>Press <span class="guilabel">Submit</span>.</p>
 <p>Press <span class="guilabel">Apply</span>, then <span class="guilabel">Save</span> to save your changes.</p>
 <p>Next select <span class="menuselection">Config‣Data‣Coverages‣New</span> and select “osm”.</p>
-<img alt="../../_images/snapshot4.png" src="../../_images/snapshot4.png" />
+<img alt="../../images/snapshot4.png" src="../../images/snapshot4.png" />
 <p>Press <span class="guilabel">New</span> and you will enter the Coverage Editor. Press <span class="guilabel">Submit</span>, <span class="guilabel">Apply</span> and <span class="guilabel">Save</span>.</p>
 <p>Under <span class="menuselection">Welcome‣Demo‣Map Preview</span> you will find a new layer “topp:osm”. Select it and see the results</p>
-<img alt="../../_images/snapshot5.png" src="../../_images/snapshot5.png" />
+<img alt="../../images/snapshot5.png" src="../../images/snapshot5.png" />
 <p>If you think the image is stretched, you are right. The reason is that the original image is georeferenced with EPSG:900913, but there is no support for this CRS in postigs (at the time of this writing). So I used EPSG:4326. For the purpose of this tutorial, this is ok.</p>
 </div>
 <div class="section" id="conclusion">

@@ -104,7 +104,7 @@
 <p>This will produce a number of TIFF files in bmpyramid along with the sub-directories <cite>1</cite>, <cite>2,</cite> <cite>3</cite>, and <cite>4</cite>.</p>
 <p>Once that is done, and assuming the GeoServer image pyramid plug-in is already installed, it’s possible to create the coverage store by pointing at the directory containing the pyramid and clicking save:</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/configureStore.png" src="../../_images/configureStore.png" />
+<img alt="../../images/configureStore.png" src="../../images/configureStore.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a image pyramid store</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>When clicking save the store will look into the directory, recognize a <cite>gdal_retile</cite> generated structure and perform some background operations:</p>
@@ -117,17 +117,17 @@
 </div></blockquote>
 <p>Once that is done the user will be asked to choose a coverage, which will be named after the pyramid root directory:</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/chooseLayer.png" src="../../_images/chooseLayer.png" />
+<img alt="../../images/chooseLayer.png" src="../../images/chooseLayer.png" />
 <p class="caption"><span class="caption-text"><em>Choosing the coverage for publishing</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Publish the layer, and then setup the layer parameter <cite>USE_JAI_IMAGEREAD</cite> to <cite>false</cite> to get better scalability:</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/layerParams.png" src="../../_images/layerParams.png" />
+<img alt="../../images/layerParams.png" src="../../images/layerParams.png" />
 <p class="caption"><span class="caption-text"><em>Tuning the pyramid parameters</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Submit and go to the preview, the pyramid should be ready to use:</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/preview.png" src="../../_images/preview.png" />
+<img alt="../../images/preview.png" src="../../images/preview.png" />
 <p class="caption"><span class="caption-text"><em>Previewing the pyramid</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>

@@ -148,7 +148,7 @@ along with the corresponding quantity value.</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/colormap1.png" src="../../../_images/colormap1.png" />
+<img alt="../../../images/colormap1.png" src="../../../images/colormap1.png" />
 </div>
 <p>A more refined example defines a color gradient from color #FFCC32 through color #BBBBBB,
 running through color #3645CC and color #CC3636.
@@ -165,7 +165,7 @@ Notice that the default opacity is 1 (opaque) when not specified.</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/colormap2.png" src="../../../_images/colormap2.png" />
+<img alt="../../../images/colormap2.png" src="../../../images/colormap2.png" />
 </div>
 <p>GeoServer extends the <code class="docutils literal notranslate"><span class="pre">&lt;ColorMap&gt;</span></code> element to allow two attributes: <code class="docutils literal notranslate"><span class="pre">type</span></code> and <code class="docutils literal notranslate"><span class="pre">extended</span></code>.</p>
 <div class="section" id="type">
@@ -191,7 +191,7 @@ The result is shown in the following example.</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/colormap3.png" src="../../../_images/colormap3.png" />
+<img alt="../../../images/colormap3.png" src="../../../images/colormap3.png" />
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">type=&quot;values&quot;</span></code> means that only pixels with the specified entry quantity values are rendered.
 Pixels with other values are not rendered.
@@ -205,7 +205,7 @@ Using the example set of color map entries:</p>
 </div>
 <p>The result image is:</p>
 <div class="figure align-left">
-<img alt="../../../_images/colormap4.png" src="../../../_images/colormap4.png" />
+<img alt="../../../images/colormap4.png" src="../../../images/colormap4.png" />
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">type=&quot;intervals&quot;</span></code> value means that each interval defined by two entries is rendered using the color of the first (lowest-value) entry.
 No color interpolation is applied across the intervals.
@@ -219,7 +219,7 @@ Using the example set of color map entries:</p>
 </div>
 <p>The result image is:</p>
 <div class="figure align-left">
-<img alt="../../../_images/colormap5.png" src="../../../_images/colormap5.png" />
+<img alt="../../../images/colormap5.png" src="../../../images/colormap5.png" />
 </div>
 <p>The color map type is also reflected in the legend graphic.
 A typical request for a raster legend is
@@ -229,7 +229,7 @@ A typical request for a raster legend is
 </div>
 <p>The legends returned for the different types are:</p>
 <div class="figure align-left">
-<img alt="../../../_images/rasterlegend.png" src="../../../_images/rasterlegend.png" />
+<img alt="../../../images/rasterlegend.png" src="../../../images/rasterlegend.png" />
 </div>
 </div>
 <div class="section" id="extended">
@@ -272,7 +272,7 @@ Named dataset bands may be mapped to red, green and blue channels, or a single n
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelselection.png" src="../../../_images/channelselection.png" />
+<img alt="../../../images/channelselection.png" src="../../../images/channelselection.png" />
 </div>
 <p>The next example shows selecting a single band of an RGB image as a grayscale channel,
 and re-colorizing it via a ColorMap:</p>
@@ -293,7 +293,7 @@ and re-colorizing it via a ColorMap:</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelselection2.png" src="../../../_images/channelselection2.png" />
+<img alt="../../../images/channelselection2.png" src="../../../images/channelselection2.png" />
 </div>
 <div class="section" id="channelselection-expressions">
 <h4>ChannelSelection Expressions<a class="headerlink" href="#channelselection-expressions" title="Permalink to this headline">¶</a></h4>
@@ -333,7 +333,7 @@ on the second band, the GreenChannel on the fifth band and the BlueChannel on th
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelsexpression1.png" src="../../../_images/channelsexpression1.png" />
+<img alt="../../../images/channelsexpression1.png" src="../../../images/channelsexpression1.png" />
 </div>
 <p>The style Schema supports also the SLD 1.1 and CSS. As a CSS examples:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>* { raster-channels: [env(&#39;B1&#39;,&#39;1&#39;)] &#39;2&#39; &#39;3&#39;; }
@@ -347,7 +347,7 @@ for example the 4, 2, 3 as the following:</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelsexpression2.png" src="../../../_images/channelsexpression2.png" />
+<img alt="../../../images/channelsexpression2.png" src="../../../images/channelsexpression2.png" />
 </div>
 <p>Now let us suppose that we want to work on a single band and to exclude all the remaining bands in order to render a monochromatic raster.
 As an SLD example:</p>
@@ -367,7 +367,7 @@ As an SLD example:</p>
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelsexpression3.png" src="../../../_images/channelsexpression3.png" />
+<img alt="../../../images/channelsexpression3.png" src="../../../images/channelsexpression3.png" />
 </div>
 <p>The Schema above will render the channel “7” by default. As before, you can choose to render any channel of the raster by calling the <code class="docutils literal notranslate"><span class="pre">env</span></code> function in your
 WMS request and setting the desired band. By adding to the request &amp;env=B1:3 for example:</p>
@@ -375,7 +375,7 @@ WMS request and setting the desired band. By adding to the request &amp;env=B1:3
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelsexpression4.png" src="../../../_images/channelsexpression4.png" />
+<img alt="../../../images/channelsexpression4.png" src="../../../images/channelsexpression4.png" />
 </div>
 <p>Finally, you can add a ColorMap on the selected channel as the following:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;RasterSymbolizer&gt;</span>
@@ -400,7 +400,7 @@ WMS request and setting the desired band. By adding to the request &amp;env=B1:3
 </pre></div>
 </div>
 <div class="figure align-left">
-<img alt="../../../_images/channelsexpression5.png" src="../../../_images/channelsexpression5.png" />
+<img alt="../../../images/channelsexpression5.png" src="../../../images/channelsexpression5.png" />
 </div>
 </div>
 </div>

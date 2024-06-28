@@ -107,13 +107,13 @@
 <li><p>Download the GDAL extension.  The download link for <span class="guilabel">GDAL</span> will be in the <span class="guilabel">Extensions</span> section under <span class="guilabel">Coverage Format</span>.</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/downloadextension.png" src="../../_images/downloadextension.png" />
+<img alt="../../images/downloadextension.png" src="../../images/downloadextension.png" />
 </div>
 <ul class="simple">
 <li><p>Extract the files in this archive to the <code class="file docutils literal notranslate"><span class="pre">WEB-INF/lib</span></code> directory of your GeoServer installation. On Windows You may be prompted for confirmation to overwrite existing files, confirm the replacement of the files</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/overwrite.png" src="../../_images/overwrite.png" />
+<img alt="../../images/overwrite.png" src="../../images/overwrite.png" />
 </div>
 <p>Moreover, in order for GeoServer to leverage these libraries, the GDAL (binary) libraries must be installed through your host system’s OS.  Once they are installed, GeoServer will be able to recognize GDAL data types. See below for more information.</p>
 <div class="section" id="installing-gdal-native-libraries">
@@ -202,7 +202,7 @@ For more information about building GDAL see:</p>
 <h2>Testing the installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this headline">¶</a></h2>
 <p>Once these steps have been completed, restart GeoServer.  If all the steps have been performed  correctly, new data formats will be in the <span class="guilabel">Raster Data Sources</span> list when creating a new data store in the <span class="guilabel">Stores</span> section as shown here below.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/newsource.png" src="../../_images/newsource.png" />
+<img alt="../../images/newsource.png" src="../../images/newsource.png" />
 <p class="caption"><span class="caption-text"><em>GDAL image formats in the list of raster data stores</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>If new formats do not appear in the GUI and you see the following message in the log file:</p>
@@ -214,35 +214,35 @@ WARNING: Native library load failed.java.lang.UnsatisfiedLinkError: no gdalalljn
 <div class="section" id="configuring-a-dted-data-store">
 <h2>Configuring a DTED data store<a class="headerlink" href="#configuring-a-dted-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/gdaldtedconfigure.png" src="../../_images/gdaldtedconfigure.png" />
+<img alt="../../images/gdaldtedconfigure.png" src="../../images/gdaldtedconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a DTED data store</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-a-ehdr-data-store">
 <h2>Configuring a EHdr data store<a class="headerlink" href="#configuring-a-ehdr-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/gdalehdrconfigure.png" src="../../_images/gdalehdrconfigure.png" />
+<img alt="../../images/gdalehdrconfigure.png" src="../../images/gdalehdrconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a EHdr data store</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-a-erdasimg-data-store">
 <h2>Configuring a ERDASImg data store<a class="headerlink" href="#configuring-a-erdasimg-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/gdalerdasimgconfigure.png" src="../../_images/gdalerdasimgconfigure.png" />
+<img alt="../../images/gdalerdasimgconfigure.png" src="../../images/gdalerdasimgconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a ERDASImg data store</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-a-jp2mrsid-data-store">
 <h2>Configuring a JP2MrSID data store<a class="headerlink" href="#configuring-a-jp2mrsid-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/gdaljp2mrsidconfigure.png" src="../../_images/gdaljp2mrsidconfigure.png" />
+<img alt="../../images/gdaljp2mrsidconfigure.png" src="../../images/gdaljp2mrsidconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a JP2MrSID data store</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-a-nitf-data-store">
 <h2>Configuring a NITF data store<a class="headerlink" href="#configuring-a-nitf-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id6">
-<img alt="../../_images/gdalnitfconfigure.png" src="../../_images/gdalnitfconfigure.png" />
+<img alt="../../images/gdalnitfconfigure.png" src="../../images/gdalnitfconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a NITF data store</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -263,17 +263,17 @@ to be masked, you just need to place a WKT file on the same folder, as
 Note that the footprint needs to have same path and name of the original data file, with .wkt extension.</p>
 <p>This is how the sample footprint geometry looks:</p>
 <div class="figure align-center" id="id7">
-<img alt="../../_images/masking.png" src="../../_images/masking.png" />
+<img alt="../../images/masking.png" src="../../images/masking.png" />
 <p class="caption"><span class="caption-text"><em>A sample geometry stored as WKT, rendered on OpenJump</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once footprint file has been added, you need to change the FootprintBehavior parameter from None (the default value) to Transparent, from the layer configuration.</p>
 <div class="figure align-center" id="id8">
-<img alt="../../_images/footprintbehavior.png" src="../../_images/footprintbehavior.png" />
+<img alt="../../images/footprintbehavior.png" src="../../images/footprintbehavior.png" />
 <p class="caption"><span class="caption-text"><em>Setting the FootprintBehavior parameter</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The next image depicts 2 layer previews for the same layer: the left one has no footprint, the right one has a footprint available and FootprintBehavior set to transparent.</p>
 <div class="figure align-center" id="id9">
-<img alt="../../_images/gdalmasks.png" src="../../_images/gdalmasks.png" />
+<img alt="../../images/gdalmasks.png" src="../../images/gdalmasks.png" />
 <p class="caption"><span class="caption-text"><em>No Footprint VS FootprintBehavior = Transparent</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="external-footprints-data-directory">

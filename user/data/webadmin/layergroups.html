@@ -79,7 +79,7 @@
 <p>A layer group is a container in which layers and other layer groups can be organized in a hierarchical structure. A layer group can be referred to by a single name in WMS requests.  This allows simpler requests, as one layer can be specified instead of multiple individual layers.
 A layer group also provides a consistent, fixed ordering of the layers it contains, and can specify alternate (non-default) styles for layers.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/data_layergroups.png" src="../../_images/data_layergroups.png" />
+<img alt="../../images/data_layergroups.png" src="../../images/data_layergroups.png" />
 <p class="caption"><span class="caption-text">Layer Groups page</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="layer-group-modes">
@@ -152,38 +152,38 @@ A layer group also provides a consistent, fixed ordering of the layers it contai
 </div>
 <p>The new <span class="guilabel">Enabled</span> checkbox, if disabled, will cause the layer group to just show up at configuration time (and in REST config), while the new <span class="guilabel">Advertised</span> checkbox, if unchecked, will make it to not be available in GetCapabilities request and in the layer preview. The behaviuor of layer group regarding both checkboxes will not affect the behaviour of any of the layers being grouped, which will follow respectively that specified  in the corresponding edit page.</p>
 <div class="figure align-default">
-<img alt="../../_images/data_layergroups_edit.png" src="../../_images/data_layergroups_edit.png" />
+<img alt="../../images/data_layergroups_edit.png" src="../../images/data_layergroups_edit.png" />
 </div>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/data_layergroups_edit_table.png" src="../../_images/data_layergroups_edit_table.png" />
+<img alt="../../images/data_layergroups_edit_table.png" src="../../images/data_layergroups_edit_table.png" />
 <p class="caption"><span class="caption-text">Layer Groups Edit page</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The table at the bottom of the page lists layers and groups contained within the current layer group. We refer to layers and layer groups as <span class="guilabel">publishable elements</span>. When a layer group is processed, the layers are rendered in the order provided, so the <span class="guilabel">publishable elements</span> at the bottom of list will be rendered last and will show on top of the other <span class="guilabel">publishable elements</span>.</p>
 <p>A <span class="guilabel">publishable element</span> can be positioned higher or lower on this list by clicking the green up or down arrows, respectively, or can be simply dragged in the target position. The layer at the top of the list is the first one to be painted, the layer below it will be painted second, and so on, the last layer will be painted on top of all others (this is the so called “painter’s model”).</p>
 <p>The <span class="guilabel">Style</span> column shows the style associated with each layer. To change the style associated with a layer, click the appropriate style link. A list of enabled styles will be displayed. Clicking on a style name reassigns the layer’s style.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/data_layergroups_edit_styles.png" src="../../_images/data_layergroups_edit_styles.png" />
+<img alt="../../images/data_layergroups_edit_styles.png" src="../../images/data_layergroups_edit_styles.png" />
 <p class="caption"><span class="caption-text">Style editing for a layer within a layer group</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>To remove a <span class="guilabel">publishable element</span> from the layer group, select its button in the <span class="guilabel">Remove</span> column. You will now be prompted to confirm or cancel this deletion.</p>
 <p>A layer can be added to the list by clicking the <span class="guilabel">Add Layer…</span> button at the top of the table. From the list of layers, select the layer to be added by clicking the layer name. The selected layer will be appended to the bottom of the <span class="guilabel">publishable</span> list.</p>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/data_layergroups_add_layer.png" src="../../_images/data_layergroups_add_layer.png" />
+<img alt="../../images/data_layergroups_add_layer.png" src="../../images/data_layergroups_add_layer.png" />
 <p class="caption"><span class="caption-text">Dialog for adding a layer to a layer group</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>A layer group can be added by clicking the <span class="guilabel">Add Layer Group…</span> button at the top of the table. From the list of layer groups, select the layer group to be added by clicking its name. The selected group will be appended to the bottom of the <span class="guilabel">publishable</span> list.</p>
 <div class="figure align-default" id="id5">
-<img alt="../../_images/data_layergroups_add_layergroup.png" src="../../_images/data_layergroups_add_layergroup.png" />
+<img alt="../../images/data_layergroups_add_layergroup.png" src="../../images/data_layergroups_add_layergroup.png" />
 <p class="caption"><span class="caption-text">Dialog for adding a layer group to a layer group</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>A style group can be added by clicking the <span class="guilabel">Add Style Group…</span> button at the top of the table. From the list of styles, select the <a class="reference internal" href="../../styling/sld/working.html#sld-working"><span class="std std-ref">style group</span></a> to be added by clicking its name. The selected style will be appended to the bottom of the <span class="guilabel">publishable</span> list.</p>
 <div class="figure align-default" id="id6">
-<img alt="../../_images/data_layergroups_add_stylegroup.png" src="../../_images/data_layergroups_add_stylegroup.png" />
+<img alt="../../images/data_layergroups_add_stylegroup.png" src="../../images/data_layergroups_add_stylegroup.png" />
 <p class="caption"><span class="caption-text">Dialog for adding a style group to a layer group</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>You can view layer groups in the <a class="reference internal" href="layerpreview.html#layerpreview"><span class="std std-ref">Layer Preview</span></a> section of the web admin.</p>
 <div class="figure align-default" id="id7">
-<img alt="../../_images/data_layergroups_tasmania.png" src="../../_images/data_layergroups_tasmania.png" />
+<img alt="../../images/data_layergroups_tasmania.png" src="../../images/data_layergroups_tasmania.png" />
 <p class="caption"><span class="caption-text">Openlayers preview of the layer group “tasmania”</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
@@ -196,7 +196,7 @@ A layer group also provides a consistent, fixed ordering of the layers it contai
 <p>For more information on data access rules, please see the section on <a class="reference internal" href="../../security/webadmin/data.html#security-webadmin-data"><span class="std std-ref">Data</span></a>.</p>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/data_layergroups_security.png" src="../../_images/data_layergroups_security.png" />
+<img alt="../../images/data_layergroups_security.png" src="../../images/data_layergroups_security.png" />
 </div>
 <p>To create/edit layergroup’s data access rules simply check/uncheck checkboxes according to desidered access mode and role.
 The Grant access to any role checkbox grant each role for each access mode.</p>
@@ -205,17 +205,17 @@ The Grant access to any role checkbox grant each role for each access mode.</p>
 <h2>Add a Layer Group<a class="headerlink" href="#add-a-layer-group" title="Permalink to this headline">¶</a></h2>
 <p>The buttons for adding and removing a layer group can be found at the top of the <span class="guilabel">Layer Groups</span> page.</p>
 <div class="figure align-default" id="id8">
-<img alt="../../_images/data_layergroups_add.png" src="../../_images/data_layergroups_add.png" />
+<img alt="../../images/data_layergroups_add.png" src="../../images/data_layergroups_add.png" />
 <p class="caption"><span class="caption-text">Buttons to add or remove a layer group</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>To add a new layer group, select the “Add a new layer group” button. You will be prompted to name the layer group.</p>
 <div class="figure align-default" id="id9">
-<img alt="../../_images/data_layergroups_name.png" src="../../_images/data_layergroups_name.png" />
+<img alt="../../images/data_layergroups_name.png" src="../../images/data_layergroups_name.png" />
 <p class="caption"><span class="caption-text">New layer group dialog</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>When finished, click <span class="guilabel">Submit</span>. You will be redirected to an empty layer group configuration page. Begin by adding layers by clicking the <span class="guilabel">Add layer…</span> button (described in the previous section). Once the layers are positioned accordingly, press <span class="guilabel">Generate Bounds</span> to automatically generate the bounding box and projection. You may also press the <span class="guilabel">Generate Bounds From CRS</span> button to use the CRS bounds (if available). Press <span class="guilabel">Save</span> to save the new layer group.</p>
 <div class="figure align-default" id="id10">
-<img alt="../../_images/data_layergroups_edit.png" src="../../_images/data_layergroups_edit.png" />
+<img alt="../../images/data_layergroups_edit.png" src="../../images/data_layergroups_edit.png" />
 <p class="caption"><span class="caption-text">New layer group configuration page</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -223,7 +223,7 @@ The Grant access to any role checkbox grant each role for each access mode.</p>
 <h2>Remove a Layer Group<a class="headerlink" href="#remove-a-layer-group" title="Permalink to this headline">¶</a></h2>
 <p>To remove a layer group, select it by clicking the checkbox next to the layer group. Multiple layer groups can be selected, or all can be selected by clicking the checkbox in the header.  Click the <span class="guilabel">Remove selected layer group(s)</span> link. You will be asked to confirm or cancel the deletion. Selecting <span class="guilabel">OK</span> removes the selected layer group(s).</p>
 <div class="figure align-default" id="id11">
-<img alt="../../_images/data_layergroups_delete.png" src="../../_images/data_layergroups_delete.png" />
+<img alt="../../images/data_layergroups_delete.png" src="../../images/data_layergroups_delete.png" />
 <p class="caption"><span class="caption-text">Removing a layer group</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -231,7 +231,7 @@ The Grant access to any role checkbox grant each role for each access mode.</p>
 <h2>Layer Group Keywords<a class="headerlink" href="#layer-group-keywords" title="Permalink to this headline">¶</a></h2>
 <p>Is possible to associate a layer group with some keywords that will be used to assist catalog searching.</p>
 <div class="figure align-default" id="id12">
-<img alt="../../_images/data_layergroups_keywords.png" src="../../_images/data_layergroups_keywords.png" />
+<img alt="../../images/data_layergroups_keywords.png" src="../../images/data_layergroups_keywords.png" />
 <p class="caption"><span class="caption-text">Layer groups keywords editor</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>Layer groups keywords will no be merged with contained layers keywords but keywords of a layer group should be logically inherited by contained layers.</p>
@@ -245,7 +245,7 @@ a hierarchy where the layer group is the root instead.</p>
 <p>By default this behaviour is inherited from the global WMS service settings (<strong>WMS Global Settings</strong> option).
 Finally, it is possible to override the service settings and force a <strong>Yes</strong> to always include the GeoServer root element.</p>
 <div class="figure align-default" id="id13">
-<img alt="../../_images/data_layers_root_in_capabilities.png" src="../../_images/data_layers_root_in_capabilities.png" />
+<img alt="../../images/data_layers_root_in_capabilities.png" src="../../images/data_layers_root_in_capabilities.png" />
 <p class="caption"><span class="caption-text">Layer groups root layer in capabilities options</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>

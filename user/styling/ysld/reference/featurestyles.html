@@ -79,7 +79,7 @@
 <span id="ysld-reference-featurestyles"></span><h1>Feature Styles<a class="headerlink" href="#feature-styles" title="Permalink to this headline">¶</a></h1>
 <p>In YSLD, a Feature Style is a block of styling <a class="reference internal" href="rules.html#ysld-reference-rules"><span class="std std-ref">Rules</span></a>. The Feature Style is applied to a single feature type and drawn in an off-screen buffer.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../../_images/feature-style.svg" src="../../../_images/feature-style.svg" /><p class="caption"><span class="caption-text">The feature style element</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/feature-style.svg" src="../../../images/feature-style.svg" /><p class="caption"><span class="caption-text">The feature style element</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>The purpose of a Feature Style is to specify drawing order.</strong> The buffer for the first Feature Style will be drawn first, while buffer for the second Feature Style will be processed after that, etc. When drawing is complete the buffers will composed into the final drawn map.</p>
 <p>A Feature Style is a <strong>top-level element</strong> in a YSLD style.</p>
@@ -101,7 +101,7 @@
 </ul>
 <p>In this case, the rules contained inside Feature Style 1 will be processed and their <a class="reference internal" href="symbolizers/index.html#ysld-reference-symbolizers"><span class="std std-ref">symbolizers</span></a> drawn first. After Rule 1a and 1b are processed, the renderer will move on to Feature Style 2, where Rule 2a, 2b, and 2c will then be processed and their symbolizers drawn.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../../_images/feature-style-order.svg" src="../../../_images/feature-style-order.svg" /><p class="caption"><span class="caption-text">Feature style order</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/feature-style-order.svg" src="../../../images/feature-style-order.svg" /><p class="caption"><span class="caption-text">Feature style order</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="drawing-order">
 <h2>Drawing order<a class="headerlink" href="#drawing-order" title="Permalink to this headline">¶</a></h2>
@@ -116,7 +116,7 @@
 <li><p>Rule 1a is applied to the third feature, followed by rule 1b</p></li>
 </ol>
 <div class="figure align-default" id="id4">
-<img alt="../../../_images/draw-order-buffer1.svg" src="../../../_images/draw-order-buffer1.svg" /><p class="caption"><span class="caption-text">Feature style 1 buffer</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/draw-order-buffer1.svg" src="../../../images/draw-order-buffer1.svg" /><p class="caption"><span class="caption-text">Feature style 1 buffer</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Feature style 2 will draw an off-screen buffer:</p>
 <ol class="arabic simple">
@@ -125,7 +125,7 @@
 <li><p>Rule 2a is applied to the third feature, followed by rule 2b and then rule 2c</p></li>
 </ol>
 <div class="figure align-default" id="id5">
-<img alt="../../../_images/draw-order-buffer2.svg" src="../../../_images/draw-order-buffer2.svg" /><p class="caption"><span class="caption-text">Feature style 2 buffer</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/draw-order-buffer2.svg" src="../../../images/draw-order-buffer2.svg" /><p class="caption"><span class="caption-text">Feature style 2 buffer</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This final map is produced by composition:</p>
 <ol class="arabic simple">
@@ -134,7 +134,7 @@
 <li><p>Any labeling is drawn on top</p></li>
 </ol>
 <div class="figure align-default" id="id6">
-<img alt="../../../_images/draw-order-map.svg" src="../../../_images/draw-order-map.svg" /><p class="caption"><span class="caption-text">Composition of both feature styles</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/draw-order-map.svg" src="../../../images/draw-order-map.svg" /><p class="caption"><span class="caption-text">Composition of both feature styles</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>If you need a rule to apply on top of other rules, use a second feature style.</strong> A useful case for this is for lines representing bridges or overpasses. In order to ensure that the bridge lines always display on “top” of other lines (which in a display that includes, they would need to be applied using a second feature style.)</p>
 </div>
@@ -250,47 +250,47 @@
 <tbody>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">copy</span></code></p></th>
 <td><p>Only the source will be present in the output.</p>
-<img alt="../../../_images/composite-source.svg" src="../../../_images/composite-source.svg" /></td>
+<img alt="../../../images/composite-source.svg" src="../../../images/composite-source.svg" /></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">destination</span></code></p></th>
 <td><p>Only the destination will be present in the output.</p>
-<img alt="../../../_images/composite-destination.svg" src="../../../_images/composite-destination.svg" /></td>
+<img alt="../../../images/composite-destination.svg" src="../../../images/composite-destination.svg" /></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">source-over</span></code></p></th>
 <td><p>The source is drawn over the destination, and the destination is visible where the source is transparent. Opposite of <code class="docutils literal notranslate"><span class="pre">destination-over</span></code>. This is the default value for x-composite.</p>
-<img alt="../../../_images/composite-source-over.svg" src="../../../_images/composite-source-over.svg" /></td>
+<img alt="../../../images/composite-source-over.svg" src="../../../images/composite-source-over.svg" /></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">destination-over</span></code></p></th>
 <td><p>The source is drawn below the destination, and is visible only when the destination is transparent. Opposite of <code class="docutils literal notranslate"><span class="pre">source-over</span></code>.</p>
-<img alt="../../../_images/composite-destination-over.svg" src="../../../_images/composite-destination-over.svg" /></td>
+<img alt="../../../images/composite-destination-over.svg" src="../../../images/composite-destination-over.svg" /></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">source-in</span></code></p></th>
 <td><p>The source is visible only when overlapping some non-transparent pixel of the destination. This allows the background map to act as a mask for the layer/feature being drawn. Opposite of <code class="docutils literal notranslate"><span class="pre">destination-in</span></code>.</p>
-<img alt="../../../_images/composite-source-in.svg" src="../../../_images/composite-source-in.svg" /></td>
+<img alt="../../../images/composite-source-in.svg" src="../../../images/composite-source-in.svg" /></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">destination-in</span></code></p></th>
 <td><p>The destination is retained only when overlapping some non transparent pixel in the source. This allows the layer/feature to be drawn to act as a mask for the background map. Opposite of <code class="docutils literal notranslate"><span class="pre">source-in</span></code>.</p>
-<img alt="../../../_images/composite-destination-in.svg" src="../../../_images/composite-destination-in.svg" /></td>
+<img alt="../../../images/composite-destination-in.svg" src="../../../images/composite-destination-in.svg" /></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">source-out</span></code></p></th>
 <td><p>The source is retained only in areas where the destination is transparent. This acts as a reverse mask when compared to <code class="docutils literal notranslate"><span class="pre">source-in</span></code>.</p>
-<img alt="../../../_images/composite-source-out.svg" src="../../../_images/composite-source-out.svg" /></td>
+<img alt="../../../images/composite-source-out.svg" src="../../../images/composite-source-out.svg" /></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">destination-out</span></code></p></th>
 <td><p>The destination is retained only in areas where the source is transparent. This acts as a reverse mask when compared to <code class="docutils literal notranslate"><span class="pre">destination-in</span></code>.</p>
-<img alt="../../../_images/composite-destination-out.svg" src="../../../_images/composite-destination-out.svg" /></td>
+<img alt="../../../images/composite-destination-out.svg" src="../../../images/composite-destination-out.svg" /></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">source-atop</span></code></p></th>
 <td><p>The destination is drawn fully, while the source is drawn only where it intersects the destination.</p>
-<img alt="../../../_images/composite-source-atop.svg" src="../../../_images/composite-source-atop.svg" /></td>
+<img alt="../../../images/composite-source-atop.svg" src="../../../images/composite-source-atop.svg" /></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">destination-atop</span></code></p></th>
 <td><p>The source is drawn fully, and the destination is drawn over the source only where it intersects it.</p>
-<img alt="../../../_images/composite-destination-atop.svg" src="../../../_images/composite-destination-atop.svg" /></td>
+<img alt="../../../images/composite-destination-atop.svg" src="../../../images/composite-destination-atop.svg" /></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">xor</span></code></p></th>
 <td><p>“Exclusive Or” mode. Each pixel is rendered only if either the source or the destination is not blank, but not both.</p>
-<img alt="../../../_images/composite-xor.svg" src="../../../_images/composite-xor.svg" /></td>
+<img alt="../../../images/composite-xor.svg" src="../../../images/composite-xor.svg" /></td>
 </tr>
 </tbody>
 </table>
@@ -309,57 +309,57 @@
 <tbody>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">multiply</span></code></p></th>
 <td><p>The source color is multiplied by the destination color and replaces the destination. The resulting color is always at least as dark as either the source or destination color. Multiplying any color with black results in black. Multiplying any color with white preserves the original color.</p>
-<img alt="../../../_images/blend-multiply.png" src="../../../_images/blend-multiply.png" />
+<img alt="../../../images/blend-multiply.png" src="../../../images/blend-multiply.png" />
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">screen</span></code></p></th>
 <td><p>Multiplies the complements of the source and destination color values, then complements the result. The end result color is always at least as light as either of the two constituent colors. Screening any color with white produces white; screening with black leaves the original color unchanged.</p>
-<img alt="../../../_images/blend-screen.png" src="../../../_images/blend-screen.png" />
+<img alt="../../../images/blend-screen.png" src="../../../images/blend-screen.png" />
 </td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">overlay</span></code></p></th>
 <td><p>Multiplies the colors depending on the destination color value. Source colors overlay the destination while preserving highlights and shadows. The backdrop color is not replaced but is mixed with the source color to reflect the lightness or darkness of the backdrop.</p>
-<img alt="../../../_images/blend-overlay.png" src="../../../_images/blend-overlay.png" />
+<img alt="../../../images/blend-overlay.png" src="../../../images/blend-overlay.png" />
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">darken</span></code></p></th>
 <td><p>Selects the darker of the destination and source colors. The destination is replaced with the source only where the source is darker.</p>
-<img alt="../../../_images/blend-darken.png" src="../../../_images/blend-darken.png" />
+<img alt="../../../images/blend-darken.png" src="../../../images/blend-darken.png" />
 </td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">lighten</span></code></p></th>
 <td><p>Selects the lighter of the destination and source colors. The destination is replaced with the source only where the source is lighter.</p>
-<img alt="../../../_images/blend-lighten.png" src="../../../_images/blend-lighten.png" />
+<img alt="../../../images/blend-lighten.png" src="../../../images/blend-lighten.png" />
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">color-dodge</span></code></p></th>
 <td><p>Brightens the destination color to reflect the source color. Drawing with black produces no changes.</p>
-<img alt="../../../_images/blend-color-dodge.png" src="../../../_images/blend-color-dodge.png" />
+<img alt="../../../images/blend-color-dodge.png" src="../../../images/blend-color-dodge.png" />
 </td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">color-burn</span></code></p></th>
 <td><p>Darkens the destination color to reflect the source color. Drawing with white produces no change.</p>
-<img alt="../../../_images/blend-color-burn.png" src="../../../_images/blend-color-burn.png" />
+<img alt="../../../images/blend-color-burn.png" src="../../../images/blend-color-burn.png" />
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">hard-light</span></code></p></th>
 <td><p>Multiplies the colors, depending on the source color value. The effect is similar to shining a harsh spotlight on the destination.</p>
-<img alt="../../../_images/blend-hard-light.png" src="../../../_images/blend-hard-light.png" />
+<img alt="../../../images/blend-hard-light.png" src="../../../images/blend-hard-light.png" />
 </td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">soft-light</span></code></p></th>
 <td><p>Darkens or lightens the colors, depending on the source color value. The effect is similar to a diffused spotlight on the destination.</p>
-<img alt="../../../_images/blend-soft-light.png" src="../../../_images/blend-soft-light.png" />
+<img alt="../../../images/blend-soft-light.png" src="../../../images/blend-soft-light.png" />
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">difference</span></code></p></th>
 <td><p>Subtracts the darker of the two constituent colors from the lighter color. White inverts the destination color; black produces no change.</p>
-<img alt="../../../_images/blend-difference.png" src="../../../_images/blend-difference.png" />
+<img alt="../../../images/blend-difference.png" src="../../../images/blend-difference.png" />
 </td>
 </tr>
 <tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">exclusion</span></code></p></th>
 <td><p>Produces an effect similar to that of difference but lower in contrast. White inverts the destination color; black produces no change.</p>
-<img alt="../../../_images/blend-difference.png" src="../../../_images/blend-difference.png" />
+<img alt="../../../images/blend-difference.png" src="../../../images/blend-difference.png" />
 </td>
 </tr>
 </tbody>
@@ -431,15 +431,15 @@
 </div>
 <p>To draw the inner lines always on top of the outer lines we need to control the <strong>z-order</strong>. The <code class="docutils literal notranslate"><span class="pre">outer_rule</span></code> is encased in its own feature style and drawn into a distinct “Outer line” buffer. Next the <code class="docutils literal notranslate"><span class="pre">inner_rule</span></code> is encased in its own feature style and drawn into a distinct “Inner line” buffer.</p>
 <div class="figure align-default" id="id7">
-<img alt="../../../_images/line-casing-buffers.svg" src="../../../_images/line-casing-buffers.svg" /><p class="caption"><span class="caption-text">Feature style buffers</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/line-casing-buffers.svg" src="../../../images/line-casing-buffers.svg" /><p class="caption"><span class="caption-text">Feature style buffers</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>During composition these two off-screen buffers are combined into the the final map.</p>
 <div class="figure align-default" id="id8">
-<img alt="../../../_images/line-casing-map.svg" src="../../../_images/line-casing-map.svg" /><p class="caption"><span class="caption-text">Final map composition</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/line-casing-map.svg" src="../../../images/line-casing-map.svg" /><p class="caption"><span class="caption-text">Final map composition</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>When drawn, the outer line has a width of 8 pixels and the inner line has a width of 6 pixels, so the line “border” is 1 pixel (on each side).</p>
 <div class="figure align-default" id="id9">
-<img alt="../../../_images/fs_roadcasing.png" src="../../../_images/fs_roadcasing.png" />
+<img alt="../../../images/fs_roadcasing.png" src="../../../images/fs_roadcasing.png" />
 <p class="caption"><span class="caption-text">Example showing road casing</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -554,11 +554,11 @@
 <h3>Layer mask<a class="headerlink" href="#layer-mask" title="Permalink to this headline">¶</a></h3>
 <p>Given two layers (in this case, two three-band rasters), one can mask or “knock out” the other, making visible what’s beneath.</p>
 <div class="figure align-default" id="id10">
-<img alt="../../../_images/fs_land.png" src="../../../_images/fs_land.png" />
+<img alt="../../../images/fs_land.png" src="../../../images/fs_land.png" />
 <p class="caption"><span class="caption-text">Top/source layer</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id11">
-<img alt="../../../_images/fs_ocean.png" src="../../../_images/fs_ocean.png" />
+<img alt="../../../images/fs_ocean.png" src="../../../images/fs_ocean.png" />
 <p class="caption"><span class="caption-text">Bottom/destination layer</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
@@ -596,7 +596,7 @@
 </pre></div>
 </td></tr></table></div>
 <div class="figure align-default" id="id12">
-<img alt="../../../_images/fs_xor.png" src="../../../_images/fs_xor.png" />
+<img alt="../../../images/fs_xor.png" src="../../../images/fs_xor.png" />
 <p class="caption"><span class="caption-text">Layer as mask</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -634,7 +634,7 @@
 </pre></div>
 </td></tr></table></div>
 <div class="figure align-default" id="id13">
-<img alt="../../../_images/fs_difference.png" src="../../../_images/fs_difference.png" />
+<img alt="../../../images/fs_difference.png" src="../../../images/fs_difference.png" />
 <p class="caption"><span class="caption-text">Layer as color inversion</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div>

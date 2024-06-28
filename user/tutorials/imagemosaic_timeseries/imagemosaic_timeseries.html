@@ -348,28 +348,28 @@ snow/snow_20100901.tif
 <h3>Step 1: Create new ImageMosaic data store<a class="headerlink" href="#step-1-create-new-imagemosaic-data-store" title="Permalink to this headline">¶</a></h3>
 <p>We create a new data store of type raster data and choose ImageMosaic.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_1_1.png" src="../../_images/step_1_1.png" />
+<img alt="../../images/step_1_1.png" src="../../images/step_1_1.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Be aware that GeoServer creates a table which is identical with the name of your layer. If the table already exists, it will not be dropped from the DB and the following error message will appear. The same message wwill appear if the generated property file already exists in the directory or there are incorrect connection parameters in datastore.properties file.</p>
 </div>
 <div class="figure align-center">
-<img alt="../../_images/errormessage.png" src="../../_images/errormessage.png" />
+<img alt="../../images/errormessage.png" src="../../images/errormessage.png" />
 </div>
 </div>
 <div class="section" id="step-2-specify-layer">
 <h3>Step 2: Specify layer<a class="headerlink" href="#step-2-specify-layer" title="Permalink to this headline">¶</a></h3>
 <p>We specify the directory that contains the property and TIFF files (path must end with a slash) and add the layer.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_1_2.png" src="../../_images/step_1_2.png" />
+<img alt="../../images/step_1_2.png" src="../../images/step_1_2.png" />
 </div>
 </div>
 <div class="section" id="step-3-set-coverage-parameters">
 <h3>Step 3: Set coverage parameters<a class="headerlink" href="#step-3-set-coverage-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The relevant parameters are AllowMultithreading and USE_JAI_IMAGEREAD. Do not forget to specify the background value according to your the value in your tif file. If you want to control which granule is displayed when a number of images match the time period specified then set the SORTING parameter to the variable name you want to use for sorting followed by a space and either D or A for descending or ascending. Descending values will mean that the latest image in a series that occurs in the time period requested is shown.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_2_1.png" src="../../_images/step_2_1.png" />
+<img alt="../../images/step_2_1.png" src="../../images/step_2_1.png" />
 </div>
 <p>Remember that for display correctly the images contained in the provided dataset a custom style is needed.</p>
 <p>Set as default style the <em>snow_style.sld</em> contained in the dataset archive.</p>
@@ -406,7 +406,7 @@ In this example, queries are only over the time attribute.</p>
 </div>
 <p>For this tutorial the Presentation attribute is set to <strong>List</strong></p>
 <div class="figure align-center">
-<img alt="../../_images/step_2_2.png" src="../../_images/step_2_2.png" />
+<img alt="../../images/step_2_2.png" src="../../images/step_2_2.png" />
 </div>
 <p>After this steps the new layer is available in GeoServer. GeoServer will create a property file in the source directory. GeoServer will either create a shapefile for the mosaic indexes, or will create a table on the database (named the same as the layer name) for the index.</p>
 <div class="section" id="generated-property-file">
@@ -434,7 +434,7 @@ In this example, queries are only over the time attribute.</p>
 <div class="section" id="generated-table">
 <h4>Generated table:<a class="headerlink" href="#generated-table" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-center">
-<img alt="../../_images/step_2_3.png" src="../../_images/step_2_3.png" />
+<img alt="../../images/step_2_3.png" src="../../images/step_2_3.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -448,7 +448,7 @@ In this example, queries are only over the time attribute.</p>
 <strong>&amp;time=</strong> &lt; <strong>pattern</strong> &gt; where you pass a value that corresponds to them in the filestore. The only thing is the pattern of the time value is slightly different.</p>
 <p>For example if an user wants to obtain the snow coverage images from the months <strong>Oct,Nov,Dec 2009</strong>, pass in each request <strong>&amp;time=2009-10-01</strong>, <strong>&amp;time=2009-11-01</strong> and <strong>&amp;time=2009-12-01</strong>. You can recognize in the three images how the snow coverage changes. Here the color blue means a lot of snow.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_3.png" src="../../_images/step_3.png" />
+<img alt="../../images/step_3.png" src="../../images/step_3.png" />
 </div>
 </div>
 </div>
@@ -458,25 +458,25 @@ In this example, queries are only over the time attribute.</p>
 <div class="section" id="step-1-add-a-postgis-datastore">
 <h3>Step 1: add a postgis datastore:<a class="headerlink" href="#step-1-add-a-postgis-datastore" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
-<img alt="../../_images/choose_datasource.png" src="../../_images/choose_datasource.png" />
+<img alt="../../images/choose_datasource.png" src="../../images/choose_datasource.png" />
 </div>
 <p>and specify the connection parameters</p>
 <div class="figure align-center">
-<img alt="../../_images/create_postgis_store.png" src="../../_images/create_postgis_store.png" />
+<img alt="../../images/create_postgis_store.png" src="../../images/create_postgis_store.png" />
 </div>
 </div>
 <div class="section" id="step-2-add-database-layer">
 <h3>Step 2: add database layer:<a class="headerlink" href="#step-2-add-database-layer" title="Permalink to this headline">¶</a></h3>
 <p>Choose from the created datastore the table that you want to publish as a layer.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_4_1.png" src="../../_images/step_4_1.png" />
+<img alt="../../images/step_4_1.png" src="../../images/step_4_1.png" />
 </div>
 </div>
 <div class="section" id="step-3-specify-dimension">
 <h3>Step 3: specify dimension:<a class="headerlink" href="#step-3-specify-dimension" title="Permalink to this headline">¶</a></h3>
 <p>In the tab Dimension specify the time-variant attribute and the form of presentation.</p>
 <div class="figure align-center">
-<img alt="../../_images/step_4_2.png" src="../../_images/step_4_2.png" />
+<img alt="../../images/step_4_2.png" src="../../images/step_4_2.png" />
 </div>
 <p>That’s it. Now is possible query this layer too.</p>
 </div>

@@ -96,13 +96,13 @@ At the time of writing the EO extension adds support for dataset series, but doe
 <h2>Exposing dataset series<a class="headerlink" href="#exposing-dataset-series" title="Permalink to this headline">¶</a></h2>
 <p>The first step to work with EO is to go into the WCS service panel and enable the EO extensions:</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/serviceConfig.png" src="../../_images/serviceConfig.png" />
+<img alt="../../images/serviceConfig.png" src="../../images/serviceConfig.png" />
 <p class="caption"><span class="caption-text"><em>Enabling the WCS 2.0 EO extensions</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second step is finding and activating the EO extensions for a suitable grid layer, which needs to be one with time dimension support and ability to describe its inner structure. At the time of writing, this means a image mosaic with time support or a netCDF data layer with time dimension.
 Once the layer is located, the EO extensions for it can be enabled by ticking a checkbox in the publishing tab:</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/layerConfig.png" src="../../_images/layerConfig.png" />
+<img alt="../../images/layerConfig.png" src="../../images/layerConfig.png" />
 <p class="caption"><span class="caption-text"><em>Exposing a layer as a dataset</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once that is done the capabilities document (e.g. <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/geoserver/ows?service=WCS&amp;version=2.0.1&amp;request=GetCapabilities</span></code> for WCS 2.0 will contain an indication that a coverage set is present:</p>

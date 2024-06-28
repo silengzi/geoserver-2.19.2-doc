@@ -132,7 +132,7 @@
 <span id="sld-cookbook-points-simplepoint"></span><h2>Simple point<a class="headerlink" href="#simple-point" title="Permalink to this headline">¶</a></h2>
 <p>This example specifies points be styled as red circles with a diameter of 6 pixels.</p>
 <div class="figure align-center" id="id19">
-<img alt="../../../_images/point_simplepoint2.png" src="../../../_images/point_simplepoint2.png" />
+<img alt="../../../images/point_simplepoint2.png" src="../../../images/point_simplepoint2.png" />
 <p class="caption"><span class="caption-text"><em>Simple point</em></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="code">
@@ -179,7 +179,7 @@
 <span id="sld-cookbook-points-simplepointwithstroke"></span><h2>Simple point with stroke<a class="headerlink" href="#simple-point-with-stroke" title="Permalink to this headline">¶</a></h2>
 <p>This example adds a stroke (or border) around the <a class="reference internal" href="#sld-cookbook-points-simplepoint"><span class="std std-ref">Simple point</span></a>, with the stroke colored black and given a thickness of 2 pixels.</p>
 <div class="figure align-center" id="id20">
-<img alt="../../../_images/point_simplepointwithstroke2.png" src="../../../_images/point_simplepointwithstroke2.png" />
+<img alt="../../../images/point_simplepointwithstroke2.png" src="../../../images/point_simplepointwithstroke2.png" />
 <p class="caption"><span class="caption-text"><em>Simple point with stroke</em></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id1">
@@ -234,7 +234,7 @@
 <h2>Rotated square<a class="headerlink" href="#rotated-square" title="Permalink to this headline">¶</a></h2>
 <p>This example creates a square instead of a circle, colors it green, sizes it to 12 pixels, and rotates it by 45 degrees.</p>
 <div class="figure align-center" id="id21">
-<img alt="../../../_images/point_rotatedsquare1.png" src="../../../_images/point_rotatedsquare1.png" />
+<img alt="../../../images/point_rotatedsquare1.png" src="../../../images/point_rotatedsquare1.png" />
 <p class="caption"><span class="caption-text"><em>Rotated square</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id3">
@@ -283,7 +283,7 @@
 <h2>Transparent triangle<a class="headerlink" href="#transparent-triangle" title="Permalink to this headline">¶</a></h2>
 <p>This example draws a triangle, creates a black stroke identical to the <a class="reference internal" href="#sld-cookbook-points-simplepointwithstroke"><span class="std std-ref">Simple point with stroke</span></a> example, and sets the fill of the triangle to 20% opacity (mostly transparent).</p>
 <div class="figure align-center" id="id22">
-<img alt="../../../_images/point_transparenttriangle1.png" src="../../../_images/point_transparenttriangle1.png" />
+<img alt="../../../images/point_transparenttriangle1.png" src="../../../images/point_transparenttriangle1.png" />
 <p class="caption"><span class="caption-text"><em>Transparent triangle</em></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id5">
@@ -340,7 +340,7 @@
 <h2>Point as graphic<a class="headerlink" href="#point-as-graphic" title="Permalink to this headline">¶</a></h2>
 <p>This example styles each point as a graphic instead of as a simple shape.</p>
 <div class="figure align-center" id="id23">
-<img alt="../../../_images/point_pointasgraphic1.png" src="../../../_images/point_pointasgraphic1.png" />
+<img alt="../../../images/point_pointasgraphic1.png" src="../../../images/point_pointasgraphic1.png" />
 <p class="caption"><span class="caption-text"><em>Point as graphic</em></span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id7">
@@ -382,7 +382,7 @@
 <h3>Details<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>This style uses a graphic instead of a simple shape to render the points.  In SLD, this is known as an <code class="docutils literal notranslate"><span class="pre">&lt;ExternalGraphic&gt;</span></code>, to distinguish it from the commonly-used shapes such as squares and circles that are “internal” to the renderer.  <strong>Lines 5-10</strong> specify the details of this graphic.  <strong>Line 8</strong> sets the path and file name of the graphic, while <strong>line 9</strong> indicates the format (MIME type) of the graphic (image/png). In this example, the graphic is contained in the same directory as the SLD, so no path information is necessary in <strong>line 8</strong>,  although a full URL could be used if desired.  <strong>Line 11</strong> determines the size of the displayed graphic; this can be set independently of the dimensions of the graphic itself, although in this case they are the same (32 pixels).  Should a graphic be rectangular, the <code class="docutils literal notranslate"><span class="pre">&lt;Size&gt;</span></code> value will apply to the <em>height</em> of the graphic only, with the width scaled proportionally.</p>
 <div class="figure align-center" id="id24">
-<img alt="../../../_images/smileyface1.png" src="../../../_images/smileyface1.png" />
+<img alt="../../../images/smileyface1.png" src="../../../images/smileyface1.png" />
 <p class="caption"><span class="caption-text"><em>Graphic used for points</em></span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -391,7 +391,7 @@
 <span id="sld-cookbook-points-pointwithdefaultlabel"></span><h2>Point with default label<a class="headerlink" href="#point-with-default-label" title="Permalink to this headline">¶</a></h2>
 <p>This example shows a text label on the <a class="reference internal" href="#sld-cookbook-points-simplepoint"><span class="std std-ref">Simple point</span></a> that displays the “name” attribute of the point. This is how a label will be displayed in the absence of any other customization.</p>
 <div class="figure align-center" id="id25">
-<img alt="../../../_images/point_pointwithdefaultlabel1.png" src="../../../_images/point_pointwithdefaultlabel1.png" />
+<img alt="../../../images/point_pointwithdefaultlabel1.png" src="../../../images/point_pointwithdefaultlabel1.png" />
 <p class="caption"><span class="caption-text"><em>Point with default label</em></span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id9">
@@ -454,7 +454,7 @@
 <span id="sld-cookbook-points-pointwithstyledlabel"></span><h2>Point with styled label<a class="headerlink" href="#point-with-styled-label" title="Permalink to this headline">¶</a></h2>
 <p>This example improves the label style from the <a class="reference internal" href="#sld-cookbook-points-pointwithdefaultlabel"><span class="std std-ref">Point with default label</span></a> example by centering the label above the point and providing a different font name and size.</p>
 <div class="figure align-center" id="id26">
-<img alt="../../../_images/point_pointwithstyledlabel1.png" src="../../../_images/point_pointwithstyledlabel1.png" />
+<img alt="../../../images/point_pointwithstyledlabel1.png" src="../../../images/point_pointwithstyledlabel1.png" />
 <p class="caption"><span class="caption-text"><em>Point with styled label</em></span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id11">
@@ -554,7 +554,7 @@
 <h2>Point with rotated label<a class="headerlink" href="#point-with-rotated-label" title="Permalink to this headline">¶</a></h2>
 <p>This example builds on the previous example, <a class="reference internal" href="#sld-cookbook-points-pointwithstyledlabel"><span class="std std-ref">Point with styled label</span></a>, by rotating the label by 45 degrees, positioning the labels farther away from the points, and changing the color of the label to purple.</p>
 <div class="figure align-center" id="id27">
-<img alt="../../../_images/point_pointwithrotatedlabel1.png" src="../../../_images/point_pointwithrotatedlabel1.png" />
+<img alt="../../../images/point_pointwithrotatedlabel1.png" src="../../../images/point_pointwithrotatedlabel1.png" />
 <p class="caption"><span class="caption-text"><em>Point with rotated label</em></span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id13">
@@ -656,7 +656,7 @@
 <h2>Attribute-based point<a class="headerlink" href="#attribute-based-point" title="Permalink to this headline">¶</a></h2>
 <p>This example alters the size of the symbol based on the value of the population (“pop”) attribute.</p>
 <div class="figure align-center" id="id28">
-<img alt="../../../_images/point_attributebasedpoint1.png" src="../../../_images/point_attributebasedpoint1.png" />
+<img alt="../../../images/point_attributebasedpoint1.png" src="../../../images/point_attributebasedpoint1.png" />
 <p class="caption"><span class="caption-text"><em>Attribute-based point</em></span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id15">
@@ -855,15 +855,15 @@
 <h2>Zoom-based point<a class="headerlink" href="#zoom-based-point" title="Permalink to this headline">¶</a></h2>
 <p>This example alters the style of the points at different zoom levels.</p>
 <div class="figure align-center" id="id29">
-<img alt="../../../_images/point_zoombasedpointlarge1.png" src="../../../_images/point_zoombasedpointlarge1.png" />
+<img alt="../../../images/point_zoombasedpointlarge1.png" src="../../../images/point_zoombasedpointlarge1.png" />
 <p class="caption"><span class="caption-text"><em>Zoom-based point: Zoomed in</em></span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id30">
-<img alt="../../../_images/point_zoombasedpointmedium1.png" src="../../../_images/point_zoombasedpointmedium1.png" />
+<img alt="../../../images/point_zoombasedpointmedium1.png" src="../../../images/point_zoombasedpointmedium1.png" />
 <p class="caption"><span class="caption-text"><em>Zoom-based point: Partially zoomed</em></span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id31">
-<img alt="../../../_images/point_zoombasedpointsmall1.png" src="../../../_images/point_zoombasedpointsmall1.png" />
+<img alt="../../../images/point_zoombasedpointsmall1.png" src="../../../images/point_zoombasedpointsmall1.png" />
 <p class="caption"><span class="caption-text"><em>Zoom-based point: Zoomed out</em></span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="id17">

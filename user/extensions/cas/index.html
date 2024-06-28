@@ -102,7 +102,7 @@ Single Sign On (SSO), in particular, using standard tickets and proxy tickets.</
 available, see <a class="reference internal" href="../../security/tutorials/cas/index.html#security-tutorials-cas"><span class="std std-ref">Authentication with CAS</span></a>.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/configuration.png" src="../../_images/configuration.png" />
+<img alt="../../images/configuration.png" src="../../images/configuration.png" />
 </div>
 </div></blockquote>
 <table class="colwidths-given docutils align-default">
@@ -254,7 +254,7 @@ on which filters are included. The following discusses three possible examples.<
 <p>As first case, let’s consider having only the CAS authentication in the “web” filter chain:</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasOnly.png" src="../../_images/webCasOnly.png" />
+<img alt="../../images/webCasOnly.png" src="../../images/webCasOnly.png" />
 </div>
 </div></blockquote>
 <p>Since anonymous access is not allowed, any attempt to access the GeoServer web console will cause
@@ -262,27 +262,27 @@ a redirect to the CAS server, for login. Once logged in, the user interface show
 a CAS logout (the logout is shared among all examples, won’t be repeated in the following text).</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasLogout.png" src="../../_images/webCasLogout.png" />
+<img alt="../../images/webCasLogout.png" src="../../images/webCasLogout.png" />
 </div>
 </div></blockquote>
 <p>A second option is to allow anonymous access in the web chain, allowing users to access the layer
 preview and other demo functionality without loggin in:</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasAnonymous.png" src="../../_images/webCasAnonymous.png" />
+<img alt="../../images/webCasAnonymous.png" src="../../images/webCasAnonymous.png" />
 </div>
 </div></blockquote>
 <p>In this case the web console does not immediately redirect to the CAS server, but
 provides a CAS login button instead:</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasLogin.png" src="../../_images/webCasLogin.png" />
+<img alt="../../images/webCasLogin.png" src="../../images/webCasLogin.png" />
 </div>
 </div></blockquote>
 <p>As a final example, let’s consider having both CAS and form login in the web chain:</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasFormAnonymous.png" src="../../_images/webCasFormAnonymous.png" />
+<img alt="../../images/webCasFormAnonymous.png" src="../../images/webCasFormAnonymous.png" />
 </div>
 </div></blockquote>
 <p>This allows both a CAS login, and a form based login using GeoServer local username/password.
@@ -290,7 +290,7 @@ It could be useful to allow GeoServer adminstration while the CAS server is offl
 In this case both the form login and the CAS login button appear at the same time:</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/webCasFormLogin.png" src="../../_images/webCasFormLogin.png" />
+<img alt="../../images/webCasFormLogin.png" src="../../images/webCasFormLogin.png" />
 </div>
 </div></blockquote>
 </div>

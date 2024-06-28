@@ -78,7 +78,7 @@
 <span id="services-webadmin-wms"></span><h1>WMS settings<a class="headerlink" href="#wms-settings" title="Permalink to this headline">¶</a></h1>
 <p>This page details the configuration options for WMS in the web administration interface.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/services_WMS.png" src="../../_images/services_WMS.png" />
+<img alt="../../images/services_WMS.png" src="../../images/services_WMS.png" />
 <p class="caption"><span class="caption-text">WMS configuration options</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="service-metadata">
@@ -88,7 +88,7 @@
 <div class="section" id="root-layer-information">
 <span id="services-webadmin-wms-raster-options"></span><h2>Root Layer Information<a class="headerlink" href="#root-layer-information" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default">
-<img alt="../../_images/services_WMS_rootLayerInfo.png" src="../../_images/services_WMS_rootLayerInfo.png" />
+<img alt="../../images/services_WMS_rootLayerInfo.png" src="../../images/services_WMS_rootLayerInfo.png" />
 </div>
 <p>In this section is possible to define a title and an abstract for the root layer in the WMS capabilities. When these are left empty the WMS service title and abstract are used.</p>
 <p>It is also possible to set the flag <strong>Always include Root Layer in capabilities</strong>.
@@ -113,15 +113,15 @@ This default setting can be overridden at the layer or request level.</p>
 <p><strong>Watermark Position</strong> -Specifies the position of the watermark relative to the WMS request. The nine options indicate which side and corner to place the graphic (top-left, top-center, top-right, etc). The default watermark position is bottom-right. Note that the watermark will always be displayed flush with the boundary. If extra space is required, the graphic itself needs to change.</p>
 <p>Because each WMS request renders the watermark, a single tiled map positions <em>one</em> watermark relative to the view window while a tiled map positions the watermark for each tile.  The only layer specific aspect of watermarking occurs because a single tile map is one WMS request, whereas a tiled map contains many WMS requests.  (The latter watermark display resembles Google Maps faint copyright notice in their Satellite imagery.)  The following three examples demonstrate watermark position, transparency and tiling display, respectively.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/services_WMS_watermark1.png" src="../../_images/services_WMS_watermark1.png" />
+<img alt="../../images/services_WMS_watermark1.png" src="../../images/services_WMS_watermark1.png" />
 <p class="caption"><span class="caption-text">Single tile watermark (aligned top-right, transparency=0)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/services_WMS_watermark2.png" src="../../_images/services_WMS_watermark2.png" />
+<img alt="../../images/services_WMS_watermark2.png" src="../../images/services_WMS_watermark2.png" />
 <p class="caption"><span class="caption-text">Single tile watermark (aligned top-right, transparency=90)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/services_WMS_watermark3.png" src="../../_images/services_WMS_watermark3.png" />
+<img alt="../../images/services_WMS_watermark3.png" src="../../images/services_WMS_watermark3.png" />
 <p class="caption"><span class="caption-text">Tiled watermark (aligned top-right, transparency=90)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -139,7 +139,7 @@ Anti-aliasing is a technique for making edges appear smoother by filling in the 
 <h2>Limited SRS list<a class="headerlink" href="#limited-srs-list" title="Permalink to this headline">¶</a></h2>
 <p>Some clients can have problems processing the large list of SRS (projections) that GeoServer can support when they are all listed in the capabilities document. It is possible to add a list of needed projections in the <em>Limited SRS List</em> box. This takes the form of a list of EPSG codes separated by commas, e.g. <code class="docutils literal notranslate"><span class="pre">4326,27700</span></code>.</p>
 <div class="figure align-default" id="id5">
-<img alt="../../_images/services_WMS_srs.png" src="../../_images/services_WMS_srs.png" />
+<img alt="../../images/services_WMS_srs.png" src="../../images/services_WMS_srs.png" />
 <p class="caption"><span class="caption-text">A limited SRS list</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">bounding</span> <span class="pre">box</span> <span class="pre">for</span> <span class="pre">every</span> <span class="pre">supported</span> <span class="pre">CRS</span></code> flag is only respected if a Limited SRS list has been specified.Setting this flag causes the WMS capabilities document to contain a Bounding Box for each supported CRS, for each Layer. Doing this for every CRS in the EPSG database, for each Layer in the catalog, would result in a impractically huge capabilities document.</p>
@@ -169,7 +169,7 @@ tendency to generate multiple or-ed bounding boxes (to query both sides of the d
 databases (e.g. Oracle), and some users might simply not like the wrapping output, thus, it’s possible to disable both functions
 in the WMS UI:</p>
 <div class="figure align-default">
-<img alt="../../_images/services_WMS_aph.png" src="../../_images/services_WMS_aph.png" />
+<img alt="../../images/services_WMS_aph.png" src="../../images/services_WMS_aph.png" />
 </div>
 <p>Continuous map wrapping is disabled if advanced projection handling is disabled.</p>
 <p>Automatic densification can slow down rendering, so it’s disabled by default, but can be enabled using the <strong>Enable automatic
@@ -183,13 +183,13 @@ and the dateline heuristic can be disabled using the <code class="docutils liter
 <h2>Restricting MIME types for GetMap and GetFeatureInfo requests<a class="headerlink" href="#restricting-mime-types-for-getmap-and-getfeatureinfo-requests" title="Permalink to this headline">¶</a></h2>
 <p>GeoServer supports restricting formats for WMS GetMap and WMS GetFeatureInfo requests. The default is to allow all MIME types for both kinds of request.</p>
 <div class="figure align-default">
-<img alt="../../_images/service_WMS_allMimeTypesAllowed.png" src="../../_images/service_WMS_allMimeTypesAllowed.png" />
+<img alt="../../images/service_WMS_allMimeTypesAllowed.png" src="../../images/service_WMS_allMimeTypesAllowed.png" />
 </div>
 <p>The following figure shows an example for MIME type restriction. The MIME types
 <strong>image/png</strong> and <strong>text/html;subtype=openlayers</strong> are allowed for GetMap requests, the MIME types <strong>text/html</strong> and <strong>text/plain</strong> are allowed for
 GetFeatureInfo requests. A GetMap/GetFeatureInfo request with a MIME type not allowed will result in a service exception reporting the error.</p>
 <div class="figure align-default">
-<img alt="../../_images/service_WMS_allowedMimeTypes.png" src="../../_images/service_WMS_allowedMimeTypes.png" />
+<img alt="../../images/service_WMS_allowedMimeTypes.png" src="../../images/service_WMS_allowedMimeTypes.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -202,7 +202,7 @@ GetFeatureInfo requests. A GetMap/GetFeatureInfo request with a MIME type not al
 <p>In addition, GetMap POST requests can contain inline style definition for layers.</p>
 <p>The usage of dynamic styling can be restricted on a global or per virtual service basis using the <strong>Dynamic styling</strong> section.</p>
 <div class="figure align-default">
-<img alt="../../_images/service_WMS_disableDynamicStyling.png" src="../../_images/service_WMS_disableDynamicStyling.png" />
+<img alt="../../images/service_WMS_disableDynamicStyling.png" src="../../images/service_WMS_disableDynamicStyling.png" />
 </div>
 <p>When the flag is checked, a GetMap/GetFeatureInfo request with a dynamic style will result in a service exception reporting the error.</p>
 </div>
@@ -210,7 +210,7 @@ GetFeatureInfo requests. A GetMap/GetFeatureInfo request with a MIME type not al
 <h2>Disabling GetFeatureInfo requests results reprojection<a class="headerlink" href="#disabling-getfeatureinfo-requests-results-reprojection" title="Permalink to this headline">¶</a></h2>
 <p>By default GetFeatureInfo results are reproject to the map coordinate reference system. This behavior can be deactivated on a global or per virtual service basis in the <strong>GetFeatureInfo results reprojection</strong> section.</p>
 <div class="figure align-default">
-<img alt="../../_images/service_WMS_disableFeaturesReprojection.png" src="../../_images/service_WMS_disableFeaturesReprojection.png" />
+<img alt="../../images/service_WMS_disableFeaturesReprojection.png" src="../../images/service_WMS_disableFeaturesReprojection.png" />
 </div>
 <p>When the flag is checked, GetFeatureInfo requests results will not be reprojected and will instead used the layer coordinate reference system.</p>
 </div>
@@ -218,7 +218,7 @@ GetFeatureInfo requests. A GetMap/GetFeatureInfo request with a MIME type not al
 <h2>Setting Remote Style max connection and request time<a class="headerlink" href="#setting-remote-style-max-connection-and-request-time" title="Permalink to this headline">¶</a></h2>
 <p>Remote styles max request time and connection timeout can be configured in milliseconds.</p>
 <div class="figure align-default">
-<img alt="../../_images/service_WMS_remoteStyleTime.png" src="../../_images/service_WMS_remoteStyleTime.png" />
+<img alt="../../images/service_WMS_remoteStyleTime.png" src="../../images/service_WMS_remoteStyleTime.png" />
 </div>
 <p><strong>Timeout in milliseconds</strong> -The max connection timeout in milliseconds for remote style requests.</p>
 <p><strong>Max request time in milliseconds</strong> -The max request time limit in milliseconds for remote style requests.</p>

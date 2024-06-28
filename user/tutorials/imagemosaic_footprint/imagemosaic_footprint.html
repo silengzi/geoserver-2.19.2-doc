@@ -102,7 +102,7 @@
 <p>For example if a Shapefile called <strong>fakeShapeFile</strong> stores the various footprints in a table like this, where each <em>Name</em> attribute is referred to a granule file:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/shp_table.png" src="../../_images/shp_table.png" />
+<img alt="../../images/shp_table.png" src="../../images/shp_table.png" />
 </div>
 </div></blockquote>
 <p>And the associated granules are:</p>
@@ -150,7 +150,7 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <h3>Step 1: Create a new ImageMosaic Layer<a class="headerlink" href="#step-1-create-a-new-imagemosaic-layer" title="Permalink to this headline">¶</a></h3>
 <p>As seen before an ImageMosaic data store can be created by going to <span class="menuselection">Stores ‣ Add New Store ‣ ImageMosaic</span>.</p>
 <div class="figure align-default">
-<img alt="../../_images/imagemosaicconfigure1.png" src="../../_images/imagemosaicconfigure1.png" />
+<img alt="../../images/imagemosaicconfigure1.png" src="../../images/imagemosaicconfigure1.png" />
 </div>
 <p>An associated Layer can be created by going to <span class="menuselection">Layers ‣ Add New Resource</span>, choosing the name of the data store created above and then clicking on the <span class="guilabel">publish</span> button.</p>
 </div>
@@ -158,7 +158,7 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <h3>Step 2: Configuring a new Layer for the Mosaic<a class="headerlink" href="#step-2-configuring-a-new-layer-for-the-mosaic" title="Permalink to this headline">¶</a></h3>
 <p>Inside the new page the only field which is interesting for this tutorial is <em>FootprintBehavior</em>:</p>
 <div class="figure align-default">
-<img alt="../../_images/footprint_behav.png" src="../../_images/footprint_behav.png" />
+<img alt="../../images/footprint_behav.png" src="../../images/footprint_behav.png" />
 </div>
 <p>The user can set one of the three values for the Footprint behaviour as described above.</p>
 <p>After that, the user must confirm the modification by clicking on the <span class="guilabel">Save</span> button on the bottom side of the page.</p>
@@ -171,20 +171,20 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <p>This is an example of mosaic without applying Footprint:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_normal.png" src="../../_images/footprint_normal.png" />
+<img alt="../../images/footprint_normal.png" src="../../images/footprint_normal.png" />
 </div>
 </div></blockquote>
 <p>And this is the result of setting <strong>FootprintBehavior</strong> to <em>Cut</em>:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_cut.png" src="../../_images/footprint_cut.png" />
+<img alt="../../images/footprint_cut.png" src="../../images/footprint_cut.png" />
 </div>
 </div></blockquote>
 <p>Background is gray because in this example the <em>BackgroundValues</em> field has been set to -20000.</p>
 <p>If an Inset is added, the final mosaic is:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_cut_inset.png" src="../../_images/footprint_cut_inset.png" />
+<img alt="../../images/footprint_cut_inset.png" src="../../images/footprint_cut_inset.png" />
 </div>
 </div></blockquote>
 <p>The <strong>footprints.properties</strong> file is:</p>
@@ -206,13 +206,13 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <p>This is another example of mosaic without Footprint:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_mosaic_none.png" src="../../_images/footprint_mosaic_none.png" />
+<img alt="../../images/footprint_mosaic_none.png" src="../../images/footprint_mosaic_none.png" />
 </div>
 </div></blockquote>
 <p>And now after setting <strong>FootprintBehavior</strong> to <em>Transparent</em> (no Inset is used) on the Layer:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_mosaic.png" src="../../_images/footprint_mosaic.png" />
+<img alt="../../images/footprint_mosaic.png" src="../../images/footprint_mosaic.png" />
 </div>
 </div></blockquote>
 </div>
@@ -225,7 +225,7 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <p>The result of setting <strong>FootprintBehavior</strong> to <em>Transparent</em>, Inset type to <em>border</em> and Inset value to 0.00001 is:</p>
 <blockquote>
 <div><div class="figure align-default">
-<img alt="../../_images/footprint_mosaic_prop.png" src="../../_images/footprint_mosaic_prop.png" />
+<img alt="../../images/footprint_mosaic_prop.png" src="../../images/footprint_mosaic_prop.png" />
 </div>
 </div></blockquote>
 <p>The <strong>footprints.properties</strong> file is:</p>
@@ -264,21 +264,21 @@ The first can be used for testing footprint configuration with a <em>Sidecar Fil
 <h3>Step 2: Watch the layer using LayerPreview<a class="headerlink" href="#step-2-watch-the-layer-using-layerpreview" title="Permalink to this headline">¶</a></h3>
 <p>Go to <span class="menuselection">LayerPreview ‣ rastermask ‣ OpenLayers</span>. The result should be similar to the one below.</p>
 <div class="figure align-default">
-<img alt="../../_images/footprint_none.png" src="../../_images/footprint_none.png" />
+<img alt="../../images/footprint_none.png" src="../../images/footprint_none.png" />
 </div>
 </div>
 <div class="section" id="step-3-change-the-footprint-behavior">
 <h3>Step 3: Change the Footprint Behavior<a class="headerlink" href="#step-3-change-the-footprint-behavior" title="Permalink to this headline">¶</a></h3>
 <p>Change the <strong>FootprintBehavior</strong> parameter to <em>Transparent</em>. <em>Cut</em> value should not be used since the files are RGB.</p>
 <div class="figure align-default">
-<img alt="../../_images/footprint_transparent_setting.png" src="../../_images/footprint_transparent_setting.png" />
+<img alt="../../images/footprint_transparent_setting.png" src="../../images/footprint_transparent_setting.png" />
 </div>
 </div>
 <div class="section" id="step-4-check-the-result">
 <h3>Step 4: Check the result<a class="headerlink" href="#step-4-check-the-result" title="Permalink to this headline">¶</a></h3>
 <p>Go to <span class="menuselection">LayerPreview ‣ rastermask ‣ OpenLayers</span>. The result should be changed now.</p>
 <div class="figure align-default">
-<img alt="../../_images/footprint_transparent.png" src="../../_images/footprint_transparent.png" />
+<img alt="../../images/footprint_transparent.png" src="../../images/footprint_transparent.png" />
 </div>
 </div>
 </div>

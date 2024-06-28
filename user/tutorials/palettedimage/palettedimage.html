@@ -94,7 +94,7 @@
 <p>Antialiasing plays a role too. Let’s take a road layer, where each road is depicted by a solid gray line, 2 pixels thick. One may think this layer needs only 2 colors: the background one (eventually transparent) and gray. In fact, this is true only if no antialiasing is enabled. Antialiasing will smooth the borders of the line giving a softer, better looking shape, and it will do so by adding pixels with an intermediate color, thus increasing the number of colors that are needed to fully display the image.</p>
 <p>The following zoom of an image shows antialiasing in action:</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/antialiasing.png" src="../../_images/antialiasing.png" />
+<img alt="../../images/antialiasing.png" src="../../images/antialiasing.png" />
 <p class="caption"><span class="caption-text"><em>Antialiasing</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>These output formats, if no other parameters are provided, do compute the optimal palette on the fly. As you’ll see, this is an expensive process (CPU bound), but as you’ll see, depending on the speed of the network connecting the server and the client, the extra cost can be ignored (especially if the bottleneck can be found in the network instead of the server CPU).</p>
@@ -116,22 +116,22 @@
 <p>And we’ll change various parameters in order to play with formats and palettes. Here goes the sampler:</p>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> | Size: 257 KB | Map generation time: 0.3s</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/tiger-ny-png24.png" src="../../_images/tiger-ny-png24.png" />
+<img alt="../../images/tiger-ny-png24.png" src="../../images/tiger-ny-png24.png" />
 <p class="caption"><span class="caption-text"><em>The standard PNG full color output</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png8</span></code> | Size: 60 KB | Map generation time: 0.6s</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/tiger-ny-png8.png" src="../../_images/tiger-ny-png8.png" />
+<img alt="../../images/tiger-ny-png8.png" src="../../images/tiger-ny-png8.png" />
 <p class="caption"><span class="caption-text"><em>The PNG8 output</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> | Size: 257 KB | Map generation time: 0.3s</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/tiger-ny-png-safe-palette.png" src="../../_images/tiger-ny-png-safe-palette.png" />
+<img alt="../../images/tiger-ny-png-safe-palette.png" src="../../images/tiger-ny-png-safe-palette.png" />
 <p class="caption"><span class="caption-text"><em>PNG + internet safe palette</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">palette=nyp</span></code> | Size: 56KB | Map generation time: 0.3s</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/tiger-ny-png-custom-palette.png" src="../../_images/tiger-ny-png-custom-palette.png" />
+<img alt="../../images/tiger-ny-png-custom-palette.png" src="../../images/tiger-ny-png-custom-palette.png" />
 <p class="caption"><span class="caption-text"><em>PNG + `custom palette &lt;http://geoserver.org/download/attachments/1278244/nyp.pal?version=1&gt;`_</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The attachments include also the GIF outputs, whose size, appearance and generation time does not differ significantly from the PNG outputs.</p>
@@ -210,27 +210,27 @@
 <p>To give you an example when paletted images may not fit the bill, let’s consider the sf:dem coverage from the sample data, and repeat the same operation as before.</p>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> Size: 117 KB | Map generation time: 0.2s</p>
 <div class="figure align-center" id="id6">
-<img alt="../../_images/dem-png24.png" src="../../_images/dem-png24.png" />
+<img alt="../../images/dem-png24.png" src="../../images/dem-png24.png" />
 <p class="caption"><span class="caption-text"><em>The standard PNG full color output.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/jpeg</span></code> Size: 23KB | Map generation time: 0.12s</p>
 <div class="figure align-center" id="id7">
-<img alt="../../_images/dem-jpeg.jpg" src="../../_images/dem-jpeg.jpg" />
+<img alt="../../images/dem-jpeg.jpg" src="../../images/dem-jpeg.jpg" />
 <p class="caption"><span class="caption-text"><em>JPEG output</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png8</span></code> Size: 60 KB | Map generation time: 0.5s</p>
 <div class="figure align-center" id="id8">
-<img alt="../../_images/dem-png8.png" src="../../_images/dem-png8.png" />
+<img alt="../../images/dem-png8.png" src="../../images/dem-png8.png" />
 <p class="caption"><span class="caption-text"><em>The PNG8 output.</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">palette=dem-png8</span></code> Size: 48KB | Map generation time: 0.15s</p>
 <div class="figure align-center" id="id9">
-<img alt="../../_images/dem-png-custom-palette.png" src="../../_images/dem-png-custom-palette.png" />
+<img alt="../../images/dem-png-custom-palette.png" src="../../images/dem-png-custom-palette.png" />
 <p class="caption"><span class="caption-text"><em>PNG + custom palette (using the png8 output as the palette).</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Parameters</strong>:<code class="docutils literal notranslate"><span class="pre">FORMAT=image/png</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">palette=safe</span></code> Size: 17KB | Map generation time: 0.15s</p>
 <div class="figure align-center" id="id10">
-<img alt="../../_images/dem-png-safe-palette.png" src="../../_images/dem-png-safe-palette.png" />
+<img alt="../../images/dem-png-safe-palette.png" src="../../images/dem-png-safe-palette.png" />
 <p class="caption"><span class="caption-text"><em>PNG + internet safe palette.</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>As the sample shows, the JPEG output has the same quality as the full color image, is generated faster and uses only 1/5 of its size.  On the other hand, the version using the internet safe palette is fast and small, but the output is totally ruined. Everything considered, JPEG is the clear winner, sporting good quality, fast image generation and a size that’s half of the best png output we can get.</p>

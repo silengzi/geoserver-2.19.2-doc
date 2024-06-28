@@ -81,7 +81,7 @@
 <h2>Calculating the roles of a user<a class="headerlink" href="#calculating-the-roles-of-a-user" title="Permalink to this headline">¶</a></h2>
 <p>The diagram below illustrates how a user/group service and a role service interact to calculate user roles.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/usergrouprole1.png" src="../../_images/usergrouprole1.png" />
+<img alt="../../images/usergrouprole1.png" src="../../images/usergrouprole1.png" />
 <p class="caption"><span class="caption-text"><em>User/group and role service interacting for role calculation</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>On fetching an enabled user from a user/group service, the roles(s) assigned to that user must be identified. The identification procedure is:</p>
@@ -103,7 +103,7 @@
 <h2>Authentication of user credentials<a class="headerlink" href="#authentication-of-user-credentials" title="Permalink to this headline">¶</a></h2>
 <p>A user/group service is primarily used during authentication. An authentication provider in the <a class="reference internal" href="../auth/chain.html#security-auth-chain"><span class="std std-ref">Authentication chain</span></a> may use a user/group service to authenticate user credentials.</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/usergrouprole2.png" src="../../_images/usergrouprole2.png" />
+<img alt="../../images/usergrouprole2.png" src="../../images/usergrouprole2.png" />
 <p class="caption"><span class="caption-text"><em>Using a a user/group service for authentication</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -111,7 +111,7 @@
 <h2>GeoServer defaults<a class="headerlink" href="#geoserver-defaults" title="Permalink to this headline">¶</a></h2>
 <p>The following diagram illustrates the default user/group service, role service, and authentication provider in GeoServer:</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/usergrouprole3.png" src="../../_images/usergrouprole3.png" />
+<img alt="../../images/usergrouprole3.png" src="../../images/usergrouprole3.png" />
 <p class="caption"><span class="caption-text"><em>Default GeoServer security configuration</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Two authentication providers are configured—the <em>Root</em> provider and the <em>Username/password</em> provider. The <em>Root</em> provider authenticates for the GeoServer <a class="reference internal" href="../root.html#security-root"><span class="std std-ref">Root account</span></a> and does not use a user/group service. The <em>Username/password</em> provider is the default provider and relays username and password credentials to a user/group service.</p>

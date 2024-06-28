@@ -84,7 +84,7 @@
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/services_WFS_features.png" src="../../_images/services_WFS_features.png" />
+<img alt="../../images/services_WFS_features.png" src="../../images/services_WFS_features.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - Features section</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <a class="reference external" href="http://www.opengeospatial.org/">Open Geospatial Consortium</a> (OGC) Web Feature Service (WFS) is a protocol for serving geographic features across the Web. Feature information that is encoded and transported using WFS includes both feature geometry and feature attribute values. Basic Web Feature Service (WFS) supports feature query and retrieval. Feature limits and bounding can be configured on the WFS page.</p>
@@ -97,7 +97,7 @@
 <div class="section" id="service-levels">
 <h2>Service Levels<a class="headerlink" href="#service-levels" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/services_WFS_servicelevel.png" src="../../_images/services_WFS_servicelevel.png" />
+<img alt="../../images/services_WFS_servicelevel.png" src="../../images/services_WFS_servicelevel.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - Service Level section</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>GeoServer is compliant with the full “Transactional Web Feature Server” (WFS-T) level of service as defined by the OGC. Specifying the WFS service level limits the capabilities of GeoServer while still remaining compliant. The WFS Service Level setting defines what WFS operations are “turned on”.</p>
@@ -110,7 +110,7 @@
 <p>WFS 1.1.0 onwards adds the ability to reproject GetFeature output to a user specified target SRS. The list of applicable target SRS is defined on a feature type basis in the capabilities documents, and GeoServer allows reprojection to any supported SRS in its internal database. To declare that GeoServer would have to add 5000+ <code class="docutils literal notranslate"><span class="pre">otherSRS/otherCRS</span></code> elements per feature type, which is clearly impractical. As a result, no declaration is made by default.</p>
 <p>A list of values to be declared in all feature types can be provided in the WFS administration panel, as a comma separated list of EPSG codes:</p>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/services_WFS_othersrs.png" src="../../_images/services_WFS_othersrs.png" />
+<img alt="../../images/services_WFS_othersrs.png" src="../../images/services_WFS_othersrs.png" />
 <p class="caption"><span class="caption-text">WFS otherSRS/otherCRS configuration</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The list will be used only for the capabilities document generation. It does not limit the actual target SRS usage in GetFeature requests.</p>
@@ -118,7 +118,7 @@
 <div class="section" id="gml">
 <h2>GML<a class="headerlink" href="#gml" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/services_WFS_srsstyle.png" src="../../_images/services_WFS_srsstyle.png" />
+<img alt="../../images/services_WFS_srsstyle.png" src="../../images/services_WFS_srsstyle.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - GML sections</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Geography Markup Language (GML) is the XML-based specification defined by the Open Geospatial Consortium (OGC) to express geographical features. GML serves as a modeling language for geographic systems as well as an open interchange format for geographic transactions on the Internet.</p>
@@ -134,7 +134,7 @@
 <div class="section" id="conformance">
 <h2>Conformance<a class="headerlink" href="#conformance" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id5">
-<img alt="../../_images/services_WFS_conformance.png" src="../../_images/services_WFS_conformance.png" />
+<img alt="../../images/services_WFS_conformance.png" src="../../images/services_WFS_conformance.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - Conformance section</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the <span class="guilabel">Encode canonical WFS schema location</span> checkbox modifies the WFS responses to include the canonical schema locations in the <code class="docutils literal notranslate"><span class="pre">xsi:schemaLocation</span></code> attribute, instead of
@@ -144,7 +144,7 @@ configuration.</p>
 <div class="section" id="encode-response-with">
 <h2>Encode response with<a class="headerlink" href="#encode-response-with" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id6">
-<img alt="../../_images/services_WFS_featureMembers.png" src="../../_images/services_WFS_featureMembers.png" />
+<img alt="../../images/services_WFS_featureMembers.png" src="../../images/services_WFS_featureMembers.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - Encode response with</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <span class="guilabel">Encode response with</span> radio button group has two selection - <span class="guilabel">One “featureMembers” element</span> (the default) or <span class="guilabel">Multiple “featureMember” elements</span>. This switches the WFS 1.1.0 encoding accordingly. Use of multiple <code class="docutils literal notranslate"><span class="pre">featureMember</span></code> elements may be required for Application Schema referencing.</p>
@@ -152,7 +152,7 @@ configuration.</p>
 <div class="section" id="shape-zip-output-format">
 <h2>SHAPE-ZIP output format<a class="headerlink" href="#shape-zip-output-format" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id7">
-<img alt="../../_images/services_WFS_shapezipprojection.png" src="../../_images/services_WFS_shapezipprojection.png" />
+<img alt="../../images/services_WFS_shapezipprojection.png" src="../../images/services_WFS_shapezipprojection.png" />
 <p class="caption"><span class="caption-text">WFS configuration options - Encode response with</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Selecting the <span class="guilabel">Use ESRI WKT format for SHAPE-ZIP generated .prj files</span> checkbox modifies how projections are encoded in the Shapefile zip output format. If this checkbox
@@ -163,7 +163,7 @@ is not selected, OGC WKT format will be used. If this checkbox is selected, ESRI
 <div class="section" id="stored-queries">
 <h2>Stored Queries<a class="headerlink" href="#stored-queries" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default">
-<img alt="../../_images/global-queries.png" src="../../_images/global-queries.png" />
+<img alt="../../images/global-queries.png" src="../../images/global-queries.png" />
 </div>
 <p>Selecting the <span class="guilabel">Allow Global Stored Queries</span> checkbox determines if global stored queries will included for usage in workspace virtual services, or not. When disabled, only stored queries created inside the workspace will be visible.</p>
 </div>
@@ -172,7 +172,7 @@ is not selected, OGC WKT format will be used. If this checkbox is selected, ESRI
 <p>The default MIME used for GML 3.2 encoded responses is <code class="docutils literal notranslate"><span class="pre">application/gml+xml;</span> <span class="pre">version=3.2</span></code> which is the MIME type mandated by OGC WFS 2.0 specification. This MIME type is not identified as XML by most common clients like browsers.</p>
 <p>Option <span class="guilabel">Override MIME Type</span> allows the selection of the MIME type that should be used for the responses encoded in GML 3.2.</p>
 <div class="figure align-default">
-<img alt="../../_images/services_WFS_mimetype.png" src="../../_images/services_WFS_mimetype.png" />
+<img alt="../../images/services_WFS_mimetype.png" src="../../images/services_WFS_mimetype.png" />
 </div>
 <p>The available MIME types are: <code class="docutils literal notranslate"><span class="pre">application/gml+xml;</span> <span class="pre">version=3.2</span></code>, <code class="docutils literal notranslate"><span class="pre">text/xml;</span> <span class="pre">subtype=gml/3.2</span></code> and <code class="docutils literal notranslate"><span class="pre">text/xml</span></code>.</p>
 </div>

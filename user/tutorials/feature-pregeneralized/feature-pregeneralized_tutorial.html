@@ -147,22 +147,22 @@ Mixed variations are also possible. Since we are working with shape files we hav
 <p>The <strong>dataSourceName</strong> attribute in the XML config is not interpreted as a name, it could be the URL for a shape file or for a property file containing properties for data store creation (e. g. jdbc connect parameters). Remember, this is a hidden deployment and no names are needed. The only <em>official</em> name is the value of the attribute <strong>featureName</strong> in the <strong>GeneralizationInfo</strong> Element.</p>
 </div>
 <p>Start GeoServer and   go to <span class="menuselection">Config‣Data‣DataStores‣New</span> and fill in the form</p>
-<img alt="../../_images/createdatastore.png" src="../../_images/createdatastore.png" />
+<img alt="../../images/createdatastore.png" src="../../images/createdatastore.png" />
 <p>Press <span class="guilabel">Submit</span>.</p>
 <p>The next form you see is</p>
-<img alt="../../_images/editdatastore1.png" src="../../_images/editdatastore1.png" />
+<img alt="../../images/editdatastore1.png" src="../../images/editdatastore1.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>RepositoryClassName</strong> and  <strong>GeneralizationInfosProviderClassName</strong> have default values which suit for GeoTools, not for GeoServer. Change <strong>GeoTools</strong> to <strong>GeoServer</strong> in the package names to instantiate the correct objects for GeoServer. <strong>GeneralizationInfosProviderParam</strong> could be an URL or a datastore from the GeoServer catalog. A datastore is referenced by using <em>workspacename:datastorename</em>. This makes sense if you have your own implementation for the <strong>GeneralizationInfosProvider</strong> interface and this implementation reads the infos from a database.</p>
 </div>
 <p>The configuration should look like this</p>
-<img alt="../../_images/editdatastore2.png" src="../../_images/editdatastore2.png" />
+<img alt="../../images/editdatastore2.png" src="../../images/editdatastore2.png" />
 <p>Press <span class="guilabel">Submit</span>, afterward a form for the feature type opens.</p>
 <p>Alter the <strong>Style</strong> to <em>line</em>, <strong>SRS</strong> is <em>26713</em> and press the <span class="guilabel">Generate</span> button labeled by <strong>Bounding Box</strong>.</p>
-<img alt="../../_images/editfeaturestore1.png" src="../../_images/editfeaturestore1.png" />
+<img alt="../../images/editfeaturestore1.png" src="../../images/editfeaturestore1.png" />
 <p>Afterward, press <span class="guilabel">Submit</span>, <span class="guilabel">Apply</span> and <span class="guilabel">Save</span>.</p>
 <p>Examine the result by pressing “<strong>My GeoServer</strong>, <strong>Demo</strong> and <strong>Map Preview</strong>. In this list there must be an entry <strong>topp:GenStreams</strong>. Press it and you will see</p>
-<img alt="../../_images/streams.png" src="../../_images/streams.png" />
+<img alt="../../images/streams.png" src="../../images/streams.png" />
 <p>Now start zooming in and out and look at the log file of GeoServer. If the deployment is correct you should see something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">May</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2009</span> <span class="mi">4</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mi">05</span> <span class="n">PM</span> <span class="n">org</span><span class="o">.</span><span class="n">geotools</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">PreGeneralizedFeatureSource</span> <span class="n">logDistanceInfo</span>
 <span class="n">INFO</span><span class="p">:</span> <span class="n">Using</span> <span class="n">generalizsation</span><span class="p">:</span> <span class="n">file</span><span class="p">:</span><span class="n">data</span><span class="o">/</span><span class="n">streams</span><span class="o">/</span><span class="mf">20.0</span><span class="o">/</span><span class="n">streams</span><span class="o">.</span><span class="n">shp</span> <span class="n">streams</span> <span class="n">the_geom</span> <span class="mf">20.0</span>
@@ -178,7 +178,7 @@ Mixed variations are also possible. Since we are working with shape files we hav
 <div class="section" id="public-deployment">
 <h2>Public Deployment<a class="headerlink" href="#public-deployment" title="Permalink to this headline">¶</a></h2>
 <p>First we have to configure all our shape files</p>
-<img alt="../../_images/streams_0_ds.png" src="../../_images/streams_0_ds.png" />
+<img alt="../../images/streams_0_ds.png" src="../../images/streams_0_ds.png" />
 <p>The <strong>Feature Data Set ID</strong> for the other  shape files is</p>
 <ol class="arabic simple">
 <li><p>Streams_5</p></li>
@@ -186,7 +186,7 @@ Mixed variations are also possible. Since we are working with shape files we hav
 <li><p>Streams_20</p></li>
 <li><p>Streams_50</p></li>
 </ol>
-<img alt="../../_images/streams_0_ds2.png" src="../../_images/streams_0_ds2.png" />
+<img alt="../../images/streams_0_ds2.png" src="../../images/streams_0_ds2.png" />
 <p>The <strong>URL</strong>  needed for the other  shape files</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">file:data/streams/5.0/streams.shp</span></code></p></li>
@@ -194,7 +194,7 @@ Mixed variations are also possible. Since we are working with shape files we hav
 <li><p><code class="docutils literal notranslate"><span class="pre">file:data/streams/20.0/streams.shp</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">file:data/streams/50.0/streams.shp</span></code></p></li>
 </ol>
-<img alt="../../_images/streams_0_ds4.png" src="../../_images/streams_0_ds4.png" />
+<img alt="../../images/streams_0_ds4.png" src="../../images/streams_0_ds4.png" />
 <p>Each feature needs an <strong>Alias</strong>, here it is <em>streams_0</em>. For the other shape files use</p>
 <ol class="arabic simple">
 <li><p>streams_5</p></li>
@@ -217,11 +217,11 @@ Mixed variations are also possible. Since we are working with shape files we hav
 </div>
 <p>Save this file as <code class="file docutils literal notranslate"><span class="pre">geninfo_shapefile2.xml</span></code> into  <code class="file docutils literal notranslate"><em><span class="pre">GEOSERVER_DATA_DIR</span></em><span class="pre">/data/streams</span></code>.</p>
 <p>Create the pregeneralized datastore</p>
-<img alt="../../_images/createdatastore2.png" src="../../_images/createdatastore2.png" />
+<img alt="../../images/createdatastore2.png" src="../../images/createdatastore2.png" />
 <p>Now we use the <strong>CatalogRepository</strong> class to find our needed data stores</p>
-<img alt="../../_images/editdatastore3.png" src="../../_images/editdatastore3.png" />
+<img alt="../../images/editdatastore3.png" src="../../images/editdatastore3.png" />
 <p>Last step</p>
-<img alt="../../_images/editfeaturestore2.png" src="../../_images/editfeaturestore2.png" />
+<img alt="../../images/editfeaturestore2.png" src="../../images/editfeaturestore2.png" />
 <p>In the <span class="guilabel">Map Preview</span> you should find <strong>topp:GenStreams2</strong> and all other generalizations. Test in the same manner we
 discussed in the hidden deployment and you should see something like this in the GeoServer log:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">May</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2009</span> <span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">06</span> <span class="n">PM</span> <span class="n">org</span><span class="o">.</span><span class="n">geotools</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">PreGeneralizedFeatureSource</span> <span class="n">logDistanceInfo</span>

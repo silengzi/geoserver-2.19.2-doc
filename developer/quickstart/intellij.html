@@ -102,19 +102,19 @@ called <code class="docutils literal notranslate"><span class="pre">geoserver</s
 <li><p>Run the Intellij IDE</p></li>
 <li><p>Select <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">New</span> <span class="pre">-&gt;</span> <span class="pre">Project</span> <span class="pre">from</span> <span class="pre">Existing</span> <span class="pre">Sources...</span></code>.</p></li>
 <li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">geoserver/src/pom.xml</span></code> directory and click <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/intellij_import.png"><img alt="../_images/intellij_import.png" src="../_images/intellij_import.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_import.png"><img alt="../images/intellij_import.png" src="../images/intellij_import.png" style="width: 600px;" /></a>
 </li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Next</span></code>, leaving all profiles unchecked.</p>
-<a class="reference internal image-reference" href="../_images/intellij_import_profile.png"><img alt="../_images/intellij_import_profile.png" src="../_images/intellij_import_profile.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_import_profile.png"><img alt="../images/intellij_import_profile.png" src="../images/intellij_import_profile.png" style="width: 600px;" /></a>
 </li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Next</span></code>, leaving the geoserver project checked.</p>
-<a class="reference internal image-reference" href="../_images/intellij_import_project.png"><img alt="../_images/intellij_import_project.png" src="../_images/intellij_import_project.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_import_project.png"><img alt="../images/intellij_import_project.png" src="../images/intellij_import_project.png" style="width: 600px;" /></a>
 </li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Next</span></code>, selecting the Java 8 JDK of your choice.</p>
-<a class="reference internal image-reference" href="../_images/intellij_import_jdk.png"><img alt="../_images/intellij_import_jdk.png" src="../_images/intellij_import_jdk.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_import_jdk.png"><img alt="../images/intellij_import_jdk.png" src="../images/intellij_import_jdk.png" style="width: 600px;" /></a>
 </li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Finish</span></code></p>
-<a class="reference internal image-reference" href="../_images/intellij_import_finish.png"><img alt="../_images/intellij_import_finish.png" src="../_images/intellij_import_finish.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_import_finish.png"><img alt="../images/intellij_import_finish.png" src="../images/intellij_import_finish.png" style="width: 600px;" /></a>
 </li>
 </ol>
 </div>
@@ -124,18 +124,18 @@ called <code class="docutils literal notranslate"><span class="pre">geoserver</s
 <li><p>From the Project browser select the <code class="docutils literal notranslate"><span class="pre">web-app</span></code> module</p></li>
 <li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">org.geoserver.web</span></code> package</p></li>
 <li><p>Right-click the <code class="docutils literal notranslate"><span class="pre">Start</span></code> class and click to <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">'Start.main()'</span></code></p>
-<a class="reference internal image-reference" href="../_images/intellij_run.png"><img alt="../_images/intellij_run.png" src="../_images/intellij_run.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_run.png"><img alt="../images/intellij_run.png" src="../images/intellij_run.png" style="width: 400px;" /></a>
 </li>
 <li><p>The first time you do this, geoserver will fail to start. Navigate to the <code class="docutils literal notranslate"><span class="pre">Run</span></code> menu, an click <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Configurations...</span></code>.</p></li>
 <li><p>Select the <code class="docutils literal notranslate"><span class="pre">Start</span></code> configuration, and append <code class="docutils literal notranslate"><span class="pre">web/app</span></code> to the <code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">Directory</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/intellij_run_config.png"><img alt="../_images/intellij_run_config.png" src="../_images/intellij_run_config.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_run_config.png"><img alt="../images/intellij_run_config.png" src="../images/intellij_run_config.png" style="width: 800px;" /></a>
 </li>
 <li><p>While you have the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Configurations</span></code> dialog open, you can fine tune your launch environment (including setting a GEOSERVER_DATA_DIR). When you are happy with your settings, click <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p></li>
 <li><p>If there are errors such as “cannot find symbol class ASTAxisId”, some generated code is not being included in the build.  Using wcs1_1 as the working directory, run a <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">install</span></code>.</p></li>
 <li><dl>
 <dt>If you get a compiler error like java.lang.NoSuchMethodError, it is most likely due to <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">Prone</span></code> tool which doesn’t support Java 8. This tool is switched off by default, but sometimes it turns on after import to IntelliJ. There are two options to fix it:</dt><dd><ol class="arabic">
 <li><p>Go to Maven tool window and uncheck the <code class="docutils literal notranslate"><span class="pre">errorprone</span></code> profile, then click <code class="docutils literal notranslate"><span class="pre">Reimport</span> <span class="pre">All</span> <span class="pre">Maven</span> <span class="pre">Projects</span></code>:</p>
-<a class="reference internal image-reference" href="../_images/intellij_maven_errorprone.png"><img alt="../_images/intellij_maven_errorprone.png" src="../_images/intellij_maven_errorprone.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../images/intellij_maven_errorprone.png"><img alt="../images/intellij_maven_errorprone.png" src="../images/intellij_maven_errorprone.png" style="width: 400px;" /></a>
 </li>
 <li><p>If you want to use <code class="docutils literal notranslate"><span class="pre">errorprone</span></code>, notably to perform the QA checks, install the <code class="docutils literal notranslate"><span class="pre">Error</span> <span class="pre">Prone</span> <span class="pre">Compiler</span></code> plugin, restart the IDE and set <code class="docutils literal notranslate"><span class="pre">Javac</span> <span class="pre">with</span> <span class="pre">error-prone</span></code> as a default compiler for the project. Please note that this will slower the build.</p></li>
 </ol>
@@ -152,7 +152,7 @@ called <code class="docutils literal notranslate"><span class="pre">geoserver</s
 <h3>Run GeoServer with Extensions<a class="headerlink" href="#run-geoserver-with-extensions" title="Permalink to this headline">¶</a></h3>
 <p>The above instructions assume you want to run GeoServer without any extensions enabled. In cases where you do need certain extensions, the <code class="docutils literal notranslate"><span class="pre">web-app</span></code> module declares a number of profiles that will enable specific extensions when running <code class="docutils literal notranslate"><span class="pre">Start</span></code>. To enable an extension, open the <code class="docutils literal notranslate"><span class="pre">Maven</span> <span class="pre">Projects</span></code> window (<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">-&gt;</span> <span class="pre">Tool</span> <span class="pre">Windows</span> <span class="pre">-&gt;</span> <span class="pre">Maven</span> <span class="pre">Projects</span></code>) and select the profile(s) you want to enable.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../_images/intellij_run_profile.png"><img alt="../_images/intellij_run_profile.png" src="../_images/intellij_run_profile.png" style="width: 300px;" /></a>
+<div><a class="reference internal image-reference" href="../images/intellij_run_profile.png"><img alt="../images/intellij_run_profile.png" src="../images/intellij_run_profile.png" style="width: 300px;" /></a>
 </div></blockquote>
 <p>The full list of supported profiles can be found in <code class="docutils literal notranslate"><span class="pre">src/web/app/pom.xml</span></code>.</p>
 </div>

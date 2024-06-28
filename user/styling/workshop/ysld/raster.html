@@ -79,7 +79,7 @@
 <span id="styling-workshop-raster"></span><h1><span class="section-number">4.5. </span>Rasters<a class="headerlink" href="#rasters" title="Permalink to this headline">¶</a></h1>
 <p>Finally we will look at using YSLD styling for the portrayal of raster data.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../../_images/RasterSymbology2.svg" src="../../../_images/RasterSymbology2.svg" /><p class="caption"><span class="caption-text">Raster Symbology</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/RasterSymbology2.svg" src="../../../images/RasterSymbology2.svg" /><p class="caption"><span class="caption-text">Raster Symbology</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Review of raster symbology:</p>
 <ul>
@@ -137,7 +137,7 @@
 </div>
 </li>
 <li><p>And use the <span class="guilabel">Layer Preview</span> tab to preview the result.</p>
-<img alt="../../../_images/raster_image_12.png" src="../../../_images/raster_image_12.png" />
+<img alt="../../../images/raster_image_12.png" src="../../../images/raster_image_12.png" />
 </li>
 <li><p>The <strong>channels</strong> property can be used to provide a list three band numbers (for images recording in several wave lengths) or a single band number can be used to view a grayscale image.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -150,7 +150,7 @@
 </div>
 </li>
 <li><p>Isolating just the green band (it wil be drawn as a grayscale image):</p>
-<img alt="../../../_images/raster_image_21.png" src="../../../_images/raster_image_21.png" />
+<img alt="../../../images/raster_image_21.png" src="../../../images/raster_image_21.png" />
 </li>
 </ol>
 </div>
@@ -188,7 +188,7 @@
 </div>
 </li>
 <li><p>Use the <span class="guilabel">Layer Preview</span> tab to preview the result. The range produced in this case from the highest and lowest values.</p>
-<img alt="../../../_images/raster_dem_12.png" src="../../../_images/raster_dem_12.png" />
+<img alt="../../../images/raster_dem_12.png" src="../../../images/raster_dem_12.png" />
 </li>
 <li><p>We can use a bit of image processing to emphasis the generated color mapping by making use of <strong>contrast-enhancement</strong>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -203,7 +203,7 @@
 </div>
 </li>
 <li><p>Image processing of this sort should be used with caution as it does distort the presentation (in this case making the landscape look more varied then it is in reality.</p>
-<img alt="../../../_images/raster_dem_21.png" src="../../../_images/raster_dem_21.png" />
+<img alt="../../../images/raster_dem_21.png" src="../../../images/raster_dem_21.png" />
 </li>
 </ol>
 <div class="section" id="color-map">
@@ -230,7 +230,7 @@
 </div>
 </li>
 <li><p>Resulting in this artificial color image:</p>
-<img alt="../../../_images/raster_dem_31.png" src="../../../_images/raster_dem_31.png" />
+<img alt="../../../images/raster_dem_31.png" src="../../../images/raster_dem_31.png" />
 </li>
 <li><p>An opacity value can also be used with each <strong>color-map</strong> entry.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -247,7 +247,7 @@
 </div>
 </li>
 <li><p>Allowing the areas of zero height to be transparent:</p>
-<img alt="../../../_images/raster_dem_41.png" src="../../../_images/raster_dem_41.png" />
+<img alt="../../../images/raster_dem_41.png" src="../../../images/raster_dem_41.png" />
 </li>
 </ol>
 <div class="admonition note">
@@ -268,7 +268,7 @@
 </div>
 </li>
 <li><p>Producing the following map preview.</p>
-<img alt="../../../_images/raster_01_auto1.png" src="../../../_images/raster_01_auto1.png" />
+<img alt="../../../images/raster_01_auto1.png" src="../../../images/raster_01_auto1.png" />
 </li>
 <li><p>To start with we can provide our own grayscale using two color map entries.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -284,11 +284,11 @@
 </li>
 <li><p>Use the <span class="guilabel">Layer Preview</span> tab to zoom in and take a look.</p>
 <p>This is much more direct representation of the source data. We have used our knowledge of elevations to construct a more accurate style.</p>
-<img alt="../../../_images/raster_02_straight1.png" src="../../../_images/raster_02_straight1.png" />
+<img alt="../../../images/raster_02_straight1.png" src="../../../images/raster_02_straight1.png" />
 </li>
 <li><p>While our straightforward style is easy to understand, it does leave a bit to be desired with respect to clarity.</p>
 <p>The eye has a hard time telling apart dark shades of black (or bright shades of white) and will struggle to make sense of this image. To address this limitation we are going to switch to the ColorBrewer <strong>9-class PuBuGn</strong> palette. This is a sequential palette that has been hand tuned to communicate a steady change of values.</p>
-<img alt="../../../_images/raster_03_elevation1.png" src="../../../_images/raster_03_elevation1.png" />
+<img alt="../../../images/raster_03_elevation1.png" src="../../../images/raster_03_elevation1.png" />
 </li>
 <li><p>Update your style with the following:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -308,7 +308,7 @@
 </span><span class="hll">      <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="s">&#39;#FFF7FB&#39;</span><span class="p p-Indicator">,</span> <span class="nv">1.0</span><span class="p p-Indicator">,</span> <span class="nv">4000</span><span class="p p-Indicator">,</span> <span class="nv">null</span><span class="p p-Indicator">]</span>
 </span></pre></div>
 </div>
-<img alt="../../../_images/raster_04_PuBuGn1.png" src="../../../_images/raster_04_PuBuGn1.png" />
+<img alt="../../../images/raster_04_PuBuGn1.png" src="../../../images/raster_04_PuBuGn1.png" />
 </li>
 <li><p>A little bit of work with alpha (to mark the ocean as a no-data section):</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">symbolizers</span><span class="p">:</span>
@@ -331,7 +331,7 @@
 </div>
 </li>
 <li><p>And we are done:</p>
-<img alt="../../../_images/raster_05_alpha1.png" src="../../../_images/raster_05_alpha1.png" />
+<img alt="../../../images/raster_05_alpha1.png" src="../../../images/raster_05_alpha1.png" />
 </li>
 </ol>
 </div>
@@ -356,7 +356,7 @@
 </div></blockquote>
 <ol class="arabic">
 <li><p>Can you explain what happens when zoom in to only show a land area (as indicated with the bounding box below)?</p>
-<img alt="../../../_images/raster_contrast_11.png" src="../../../_images/raster_contrast_11.png" />
+<img alt="../../../images/raster_contrast_11.png" src="../../../images/raster_contrast_11.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Discussion <a class="reference internal" href="done.html#ysld-raster-a1"><span class="std std-ref">provided</span></a> at the end of the workbook.</p>
@@ -404,7 +404,7 @@
 </div></blockquote>
 <ol class="arabic">
 <li><p>Producing the following image:</p>
-<img alt="../../../_images/raster_image_31.png" src="../../../_images/raster_image_31.png" />
+<img alt="../../../images/raster_image_31.png" src="../../../images/raster_image_31.png" />
 </li>
 <li><p>The <strong>raster-gamma</strong> property is used adjust the brightness of <strong>contrast-enhancement</strong> output. Values less than 1 are used to brighten the image while values greater than 1 darken the image.</p></li>
 </ol>
@@ -419,7 +419,7 @@
 </div></blockquote>
 <ol class="arabic">
 <li><p>Providing the following effect:</p>
-<img alt="../../../_images/raster_image_41.png" src="../../../_images/raster_image_41.png" />
+<img alt="../../../images/raster_image_41.png" src="../../../images/raster_image_41.png" />
 </li>
 </ol>
 </div>

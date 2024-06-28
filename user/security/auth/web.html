@@ -88,7 +88,7 @@
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The following shows the default configuration of the authentication chain for the web admin.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/auth_chain_web1.png" src="../../_images/auth_chain_web1.png" />
+<img alt="../../images/auth_chain_web1.png" src="../../images/auth_chain_web1.png" />
 <p class="caption"><span class="caption-text"><em>GeoServer authentication chain, with filter and provider chains</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>In this example the filter chain is made up of the following filters:</p>
@@ -109,7 +109,7 @@
 <h3>First time visit<a class="headerlink" href="#first-time-visit" title="Permalink to this headline">¶</a></h3>
 <p>This example describes the process when a user visits the home page of the web admin for the first time.</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/auth_chain_web2.png" src="../../_images/auth_chain_web2.png" />
+<img alt="../../images/auth_chain_web2.png" src="../../images/auth_chain_web2.png" />
 <p class="caption"><span class="caption-text"><em>Authentication chain for a first time visit from a user</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The first filter to execute is the <em>Session</em> filter. It checks for an existing session, but finds none, so processing continues to the next filter in the chain. The <em>Logout</em> filter checks for the case of a user logging out, which also is not the case, so processing continues. The <em>Form login</em> filter checks for a form login, and also finds none. The <em>Remember Me</em> filter determines if this request can be authenticated from a previous session cookie, but in this case it cannot. The final filter to execute is the <em>Anonymous</em> filter which checks if the user specified any credentials. In this case the user has not provided any credentials, so the request is authenticated anonymously. Since no authentication is required to view the home page, the provider chain is not invoked.</p>
@@ -119,7 +119,7 @@
 <h3>User logs on<a class="headerlink" href="#user-logs-on" title="Permalink to this headline">¶</a></h3>
 <p>This examples describes the process invoked when a user logs on to the web admin via the login form.</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/auth_chain_web3.png" src="../../_images/auth_chain_web3.png" />
+<img alt="../../images/auth_chain_web3.png" src="../../images/auth_chain_web3.png" />
 <p class="caption"><span class="caption-text"><em>Authentication chain for a user logging in</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <em>Session</em> filter finds no existing session, and processing continues. The <em>Logout</em> filter checks for a logout request, finds none, and continues. The <em>Form login</em> filter recognizes the request as a form login and begins the authentication process. It extracts the username and password from the request and invokes the provider chain.</p>
@@ -130,7 +130,7 @@
 <h3>User visits another page<a class="headerlink" href="#user-visits-another-page" title="Permalink to this headline">¶</a></h3>
 <p>This example describes the process invoked when a user who is already logged on visits another page in the web admin.</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/auth_chain_web4.png" src="../../_images/auth_chain_web4.png" />
+<img alt="../../images/auth_chain_web4.png" src="../../images/auth_chain_web4.png" />
 <p class="caption"><span class="caption-text"><em>Authentication chain for a user visiting another page after logging in</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <em>Session</em> filter executes and finds an existing session that is still valid. The session contains the authentication details and no further chain processing is required. The response is the page requested by the user.</p>
@@ -149,7 +149,7 @@
 <h3>User returns after session time out (with “Remember Me”)<a class="headerlink" href="#user-returns-after-session-time-out-with-remember-me" title="Permalink to this headline">¶</a></h3>
 <p>This example describes the process invoked when the user returns to the web admin after a period of inactivity, while the “Remember Me” flag is set.</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/auth_chain_web5.png" src="../../_images/auth_chain_web5.png" />
+<img alt="../../images/auth_chain_web5.png" src="../../images/auth_chain_web5.png" />
 <p class="caption"><span class="caption-text"><em>Authentication chain for a user returning after session time out with the “Remember Me” flag</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Even though the “Remember Me” flag is set, the user’s session on the server will still time out as normal. As such, the chain proceeds accordingly through the filters, starting with the <em>Session</em> filter, which finds no valid session. The <em>Logout</em> and <em>Form login</em> filters do not apply here.  The <em>Remember Me</em> filter recognizes the browser cookie and is able to authenticate the request. The user is directed to whatever page was accessed and remains logged on.</p>

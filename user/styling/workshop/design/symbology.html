@@ -79,7 +79,7 @@
 <h1><span class="section-number">2.1. </span>Symbology<a class="headerlink" href="#symbology" title="Permalink to this headline">¶</a></h1>
 <p>In cartography, <strong>symbology is the practice of representing information using shapes, colors and symbols on a map</strong>.</p>
 <div class="figure align-default">
-<img alt="../../../_images/layer_legend.svg" src="../../../_images/layer_legend.svg" /></div>
+<img alt="../../../images/layer_legend.svg" src="../../../images/layer_legend.svg" /></div>
 <p>A map legend, offers a quick summary of the symbology used for a map.</p>
 <p>The symbology for each layer should be distinct, allowing readers to clearly understand the information being presented. Care should be taken to consider the situation in which the map will be used, such as:</p>
 <ul class="simple">
@@ -91,20 +91,20 @@
 <h2><span class="section-number">2.1.1. </span>Theme<a class="headerlink" href="#theme" title="Permalink to this headline">¶</a></h2>
 <p>For thematic maps, the symbology is changed on a feature-by-feature basis in order to illustrate the attribute values being presented.</p>
 <div class="figure align-default">
-<img alt="../../../_images/layer_theme.svg" src="../../../_images/layer_theme.svg" /></div>
+<img alt="../../../images/layer_theme.svg" src="../../../images/layer_theme.svg" /></div>
 <p>The same data set may be represented in different maps, themed by a different attribute each time.</p>
 <div class="section" id="using-multiple-themes">
 <h3><span class="section-number">2.1.1.1. </span>Using Multiple Themes<a class="headerlink" href="#using-multiple-themes" title="Permalink to this headline">¶</a></h3>
 <p>A single map can be produced showing two datasets (each themed by a different attribute) allowing readers to look for any interesting patterns.</p>
 <div class="figure align-default">
-<img alt="../../../_images/layer_theme2.svg" src="../../../_images/layer_theme2.svg" /></div>
+<img alt="../../../images/layer_theme2.svg" src="../../../images/layer_theme2.svg" /></div>
 <p>As an example there may be a relationship between a country’s growing region and annual rainfall.</p>
 </div>
 </div>
 <div class="section" id="map-icons">
 <h2><span class="section-number">2.1.2. </span>Map Icons<a class="headerlink" href="#map-icons" title="Permalink to this headline">¶</a></h2>
 <p>The use of map icons (pictograms, glyphs or symbology sets) is a special case where we have a gap in terminology between Cartography and GIS.</p>
-<img alt="../../../_images/layer_symbolset.svg" src="../../../_images/layer_symbolset.svg" /><p>As an example we may wish to represent a point-of-interest data set with each location marked by a different symbol.</p>
+<img alt="../../../images/layer_symbolset.svg" src="../../../images/layer_symbolset.svg" /><p>As an example we may wish to represent a point-of-interest data set with each location marked by a different symbol.</p>
 <p>In cartography, each “type” is presented to the user as a clearly distinct data set with its own visual representation in the map legend.</p>
 <p>This is contrasted with GIS, where the “points of interest” are managed as a single layer and complex styling is used to produce the desired cartographic output.</p>
 <p>Technically the data set is themed by an attribute to produce this effect:</p>
@@ -122,7 +122,7 @@
 <li><p>Navigate to: <a class="reference external" href="http://colorbrewer2.org/">http://colorbrewer2.org/</a></p>
 <p>The website provides a generic data set which we can use to determine how effective each choice is in communicating attribute differences. We will be using this website to explore how to effectively theme an attribute.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../../_images/color_01_brewer.png" src="../../../_images/color_01_brewer.png" />
+<img alt="../../../images/color_01_brewer.png" src="../../../images/color_01_brewer.png" />
 <p class="caption"><span class="caption-text">Color Brewer</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -131,7 +131,7 @@
 </li>
 <li><p>The first step is determining how many attribute values you are looking to communicate. Set <span class="guilabel">Number of data classes</span> to <kbd class="kbd docutils literal notranslate">5</kbd>.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../../_images/color_02_classes.png" src="../../../_images/color_02_classes.png" />
+<img alt="../../../images/color_02_classes.png" src="../../../images/color_02_classes.png" />
 <p class="caption"><span class="caption-text">Number of data classes</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -143,13 +143,13 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Sequential</p></td>
-<td><p><img alt="sequential" class="inline" src="../../../_images/color_sequential.png" /></p></td>
+<td><p><img alt="sequential" class="inline" src="../../../images/color_sequential.png" /></p></td>
 </tr>
 <tr class="row-even"><td><p>Diverging</p></td>
-<td><p><img alt="diverging" class="inline" src="../../../_images/color_diverging.png" /></p></td>
+<td><p><img alt="diverging" class="inline" src="../../../images/color_diverging.png" /></p></td>
 </tr>
 <tr class="row-odd"><td><p>Qualitative</p></td>
-<td><p><img alt="qualitative" class="inline" src="../../../_images/color_qualatative.png" /></p></td>
+<td><p><img alt="qualitative" class="inline" src="../../../images/color_qualatative.png" /></p></td>
 </tr>
 </tbody>
 </table>
@@ -157,43 +157,43 @@
 </li>
 <li><p>Set <span class="guilabel">Nature of your data</span> to <kbd class="kbd docutils literal notranslate">Qualitative</kbd>. This change drastically reduces the number of color schemes listed.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../../_images/color_03_qualitative.png" src="../../../_images/color_03_qualitative.png" />
+<img alt="../../../images/color_03_qualitative.png" src="../../../images/color_03_qualitative.png" />
 <p class="caption"><span class="caption-text">Qualitative color scheme</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>The initial <strong>5-class Accent</strong> color scheme does reasonably well.</p>
 <div class="figure align-default" id="id4">
-<img alt="../../../_images/color_04_accent.png" src="../../../_images/color_04_accent.png" />
+<img alt="../../../images/color_04_accent.png" src="../../../images/color_04_accent.png" />
 <p class="caption"><span class="caption-text">5-class accent</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>One of our requirements is to help readers locate their county. To assist with that let’s turn on roads and cities.</p>
 <div class="figure align-default" id="id5">
-<img alt="../../../_images/color_05_context.png" src="../../../_images/color_05_context.png" />
+<img alt="../../../images/color_05_context.png" src="../../../images/color_05_context.png" />
 <p class="caption"><span class="caption-text">Adding context</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>The map is now starting to look a little busy:</p>
 <div class="figure align-default" id="id6">
-<img alt="../../../_images/color_06_context.png" src="../../../_images/color_06_context.png" />
+<img alt="../../../images/color_06_context.png" src="../../../images/color_06_context.png" />
 <p class="caption"><span class="caption-text">Lots of context</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Now that we have seen what we are up against, we can try a strategy to help the text and roads stand out while still communicating our vaccination schedule. Change to one of the pastel color schemes.</p>
 <div class="figure align-default" id="id7">
-<img alt="../../../_images/color_06_pastel1.png" src="../../../_images/color_06_pastel1.png" />
+<img alt="../../../images/color_06_pastel1.png" src="../../../images/color_06_pastel1.png" />
 <p class="caption"><span class="caption-text">Pastel color scheme</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Change the borders and roads to gray.</p>
 <div class="figure align-default" id="id8">
-<img alt="../../../_images/color_07_context.png" src="../../../_images/color_07_context.png" />
+<img alt="../../../images/color_07_context.png" src="../../../images/color_07_context.png" />
 <p class="caption"><span class="caption-text">Gray borders and roads</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>The result is fairly clear symbology and provides context.</p>
 <div class="figure align-default" id="id9">
-<img alt="../../../_images/color_08_done.png" src="../../../_images/color_08_done.png" />
+<img alt="../../../images/color_08_done.png" src="../../../images/color_08_done.png" />
 <p class="caption"><span class="caption-text">Finished with context</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -240,7 +240,7 @@
 </tbody>
 </table>
 <div class="figure align-default" id="id10">
-<img alt="../../../_images/color_09_color.png" src="../../../_images/color_09_color.png" />
+<img alt="../../../images/color_09_color.png" src="../../../images/color_09_color.png" />
 <p class="caption"><span class="caption-text">Color palette</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -279,7 +279,7 @@
 <ol class="arabic">
 <li><p>The Color Brewer application provides a lot of helpful information using the small “information” icons in each section.</p>
 <div class="figure align-default" id="id11">
-<img alt="../../../_images/color_09_info.png" src="../../../_images/color_09_info.png" />
+<img alt="../../../images/color_09_info.png" src="../../../images/color_09_info.png" />
 <p class="caption"><span class="caption-text">Information icons</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </li>

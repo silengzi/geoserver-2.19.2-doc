@@ -79,7 +79,7 @@
 <span id="styling-workshop-point"></span><h1><span class="section-number">4.4. </span>Points<a class="headerlink" href="#points" title="Permalink to this headline">¶</a></h1>
 <p>The next stop of the ysld styling tour is the representation of points.</p>
 <div class="figure align-default">
-<img alt="../../../_images/PointSymbology2.svg" src="../../../_images/PointSymbology2.svg" /></div>
+<img alt="../../../images/PointSymbology2.svg" src="../../../images/PointSymbology2.svg" /></div>
 <p>Review of point symbology:</p>
 <ul class="simple">
 <li><p>Points are used to represent a location only, and do not form a shape. The visual width of lines do not change depending on scale.</p></li>
@@ -127,14 +127,14 @@
 </div>
 </li>
 <li><p>And use the <span class="guilabel">Layer Preview</span> tab to preview the result.</p>
-<img alt="../../../_images/point_03_map2.png" src="../../../_images/point_03_map2.png" />
+<img alt="../../../images/point_03_map2.png" src="../../../images/point_03_map2.png" />
 </li>
 </ol>
 <div class="section" id="mark">
 <h2><span class="section-number">4.4.1. </span>Mark<a class="headerlink" href="#mark" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>point</strong> symbolizer controls the display of point data. Points are represented with the mandatory property <strong>mark</strong>.</p>
 <div class="figure align-default">
-<img alt="../../../_images/PointSymbology2.svg" src="../../../_images/PointSymbology2.svg" /></div>
+<img alt="../../../images/PointSymbology2.svg" src="../../../images/PointSymbology2.svg" /></div>
 <p>The SLD standard provides “well-known” symbols for use with point symbology: <code class="docutils literal notranslate"><span class="pre">circle</span></code>, <code class="docutils literal notranslate"><span class="pre">square</span></code>, <code class="docutils literal notranslate"><span class="pre">triangle</span></code>, <code class="docutils literal notranslate"><span class="pre">arrow</span></code>, <code class="docutils literal notranslate"><span class="pre">cross</span></code>, <code class="docutils literal notranslate"><span class="pre">star</span></code>, and <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <ol class="arabic">
 <li><p>Change the symbol used by the style to a square:</p>
@@ -148,7 +148,7 @@
 </div>
 </li>
 <li><p>Map Preview:</p>
-<img alt="../../../_images/point_mark_12.png" src="../../../_images/point_mark_12.png" />
+<img alt="../../../images/point_mark_12.png" src="../../../images/point_mark_12.png" />
 </li>
 <li><p>Before we continue we will use a filter to cut down the amount of data shown to a reasonable level.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">rules</span><span class="p">:</span>
@@ -170,7 +170,7 @@
 </div>
 <ol class="arabic">
 <li><p>Resulting in a considerably cleaner image:</p>
-<img alt="../../../_images/point_mark_22.png" src="../../../_images/point_mark_22.png" />
+<img alt="../../../images/point_mark_22.png" src="../../../images/point_mark_22.png" />
 </li>
 <li><p>Additional properties are available to control a mark’s presentation:</p>
 <p>The <strong>size</strong> property is used to control symbol size.</p>
@@ -191,7 +191,7 @@
 </div>
 </li>
 <li><p>Results in each location being marked with a diamond:</p>
-<img alt="../../../_images/point_mark_32.png" src="../../../_images/point_mark_32.png" />
+<img alt="../../../images/point_mark_32.png" src="../../../images/point_mark_32.png" />
 </li>
 <li><p>The <strong>mark</strong> property provides parameters to style the point symbol. Let’s change the <strong>fill-color</strong> to gray.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rules</span><span class="p">:</span>
@@ -211,7 +211,7 @@
 </div>
 </li>
 <li><p>Updating the mark to a gray square with a black outline.</p>
-<img alt="../../../_images/point_mark_41.png" src="../../../_images/point_mark_41.png" />
+<img alt="../../../images/point_mark_41.png" src="../../../images/point_mark_41.png" />
 </li>
 <li><p>You can add more symbolizers to apply additional point styles.</p>
 <p>Using this approach marks can be composed of multiple symbols, each with its own settings:</p>
@@ -240,14 +240,14 @@
 </div>
 </li>
 <li><p>Producing an interesting compound symbol effect:</p>
-<img alt="../../../_images/point_mark_51.png" src="../../../_images/point_mark_51.png" />
+<img alt="../../../images/point_mark_51.png" src="../../../images/point_mark_51.png" />
 </li>
 </ol>
 </div>
 <div class="section" id="graphic">
 <h2><span class="section-number">4.4.2. </span>Graphic<a class="headerlink" href="#graphic" title="Permalink to this headline">¶</a></h2>
 <p>Symbols can also be supplied by an external graphic,</p>
-<img alt="../../../_images/Point_Graphic.svg" src="../../../_images/Point_Graphic.svg" /><p>This technique was shown with the initial <code class="file docutils literal notranslate"><span class="pre">airport.svg</span></code> YSLD example.</p>
+<img alt="../../../images/Point_Graphic.svg" src="../../../images/Point_Graphic.svg" /><p>This technique was shown with the initial <code class="file docutils literal notranslate"><span class="pre">airport.svg</span></code> YSLD example.</p>
 <ol class="arabic">
 <li><p>To use an external graphic two pieces of information are required.</p>
 <p><strong>url</strong> property is defined with a <strong>url</strong> reference to image.</p>
@@ -266,7 +266,7 @@
 </div>
 </li>
 <li><p>Drawing the provided shape in each location:</p>
-<img alt="../../../_images/point_graphic_11.png" src="../../../_images/point_graphic_11.png" />
+<img alt="../../../images/point_graphic_11.png" src="../../../images/point_graphic_11.png" />
 </li>
 <li><p>The property <strong>url</strong> reference can also be used to reference external images. We can make use of the GeoServer logo.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rules</span><span class="p">:</span>
@@ -283,14 +283,14 @@
 </div>
 </li>
 <li><p>As shown in the map preview.</p>
-<img alt="../../../_images/point_graphic_21.png" src="../../../_images/point_graphic_21.png" />
+<img alt="../../../images/point_graphic_21.png" src="../../../images/point_graphic_21.png" />
 </li>
 </ol>
 </div>
 <div class="section" id="label">
 <h2><span class="section-number">4.4.3. </span>Label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <p>Labeling is now familiar from our experience with LineString and Polygons.</p>
-<img alt="../../../_images/Point_Label1.svg" src="../../../_images/Point_Label1.svg" /><p>The <strong>text</strong> symbolizer with the <strong>label</strong> property are required to label Point Locations.</p>
+<img alt="../../../images/Point_Label1.svg" src="../../../images/Point_Label1.svg" /><p>The <strong>text</strong> symbolizer with the <strong>label</strong> property are required to label Point Locations.</p>
 <ol class="arabic">
 <li><p>Replace <code class="docutils literal notranslate"><span class="pre">point_example</span></code> with the following:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">rules</span><span class="p">:</span>
@@ -312,7 +312,7 @@
 </div>
 </li>
 <li><p>Confirm the result in <code class="docutils literal notranslate"><span class="pre">Layer</span> <span class="pre">Preview</span></code> preview.</p>
-<img alt="../../../_images/point_label_12.png" src="../../../_images/point_label_12.png" />
+<img alt="../../../images/point_label_12.png" src="../../../images/point_label_12.png" />
 </li>
 <li><p>Each label is drawn starting from the provided point - which is unfortunate as it assures each label will overlap with the symbol used. To fix this limitation we will make use of the YSLD controls for label placement:</p>
 <p><strong>anchor</strong> provides two values expressing how a label is aligned with respect to the starting label position.</p>
@@ -344,7 +344,7 @@
 </div>
 </li>
 <li><p>Each label is now placed under the mark.</p>
-<img alt="../../../_images/point_label_22.png" src="../../../_images/point_label_22.png" />
+<img alt="../../../images/point_label_22.png" src="../../../images/point_label_22.png" />
 </li>
 <li><p>One remaining issue is the overlap between labels and symbols.</p>
 <p>GeoServer provides a vendor specific parameter to allow symbols to take part in label conflict resolution, preventing labels from overlapping any symbols. This severely limits the area available for labeling and is best used in conjunction with a large maximum displacement vendor option.</p>
@@ -377,7 +377,7 @@
 </div>
 </li>
 <li><p>Resulting in a considerably cleaner image:</p>
-<img alt="../../../_images/point_label_32.png" src="../../../_images/point_label_32.png" />
+<img alt="../../../images/point_label_32.png" src="../../../images/point_label_32.png" />
 </li>
 </ol>
 </div>
@@ -432,7 +432,7 @@
 </div>
 </li>
 <li><p>Click <span class="guilabel">Apply</span> to update the <span class="guilabel">Layer Preview</span> after each step.</p>
-<img alt="../../../_images/point_04_scale2.png" src="../../../_images/point_04_scale2.png" />
+<img alt="../../../images/point_04_scale2.png" src="../../../images/point_04_scale2.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This YSLD makes use of a <strong>define</strong> to avoid repeating the point symbolizer content multiple times. As an example the <kbd class="kbd docutils literal notranslate">scale: [min, '4000000.0']</kbd> rule, combined with the <kbd class="kbd docutils literal notranslate">define:</kbd> results in the following collection of properties:</p>
@@ -518,7 +518,7 @@
       <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*label</span>
 </pre></div>
 </div>
-<img alt="../../../_images/point_05_label2.png" src="../../../_images/point_05_label2.png" />
+<img alt="../../../images/point_05_label2.png" src="../../../images/point_05_label2.png" />
 </li>
 <li><p>We will use <strong>displacement</strong> and <strong>anchor</strong> to position the label above each symbol.</p>
 <p>Add the following two lines to the <kbd class="kbd docutils literal notranslate">label</kbd> define:</p>
@@ -534,7 +534,7 @@
 </span><span class="hll">  <span class="nt">displacement</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">6</span><span class="p p-Indicator">]</span>
 </span></pre></div>
 </div>
-<img alt="../../../_images/point_05_align1.png" src="../../../_images/point_05_align1.png" />
+<img alt="../../../images/point_05_align1.png" src="../../../images/point_05_align1.png" />
 </li>
 <li><p>A little bit of work with vendor specific parameters will prevent our labels from colliding with each symbol, while giving the rendering engine some flexibility in how far it is allowed to relocate a label.</p>
 <p>Add the following vendor options to the <kbd class="kbd docutils literal notranslate">label</kbd> define:</p>
@@ -564,7 +564,7 @@
 <span class="hll">  <span class="nt">x-labelObstacle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </span></pre></div>
 </div>
-<img alt="../../../_images/point_06_relocate2.png" src="../../../_images/point_06_relocate2.png" />
+<img alt="../../../images/point_06_relocate2.png" src="../../../images/point_06_relocate2.png" />
 </li>
 <li><p>Now that we have clearly labeled our cities, zoom into an area you are familiar with and we can look at changing symbology on a case-by-case basis.</p>
 <p>We have used expressions previous to generate an appropriate label. Expressions can also be used for many other property settings.</p>
@@ -609,7 +609,7 @@
   <span class="nt">x-spaceAround</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
-<img alt="../../../_images/point_07_expression2.png" src="../../../_images/point_07_expression2.png" />
+<img alt="../../../images/point_07_expression2.png" src="../../../images/point_07_expression2.png" />
 </li>
 <li><p>Next we can use <code class="docutils literal notranslate"><span class="pre">FEATURECLA</span></code> to check for capital cities.</p>
 <p>Adding a filter for capital cities at the top of the <strong>rules</strong> list:</p>
@@ -696,7 +696,7 @@
       <span class="nt">&lt;&lt;</span><span class="p">:</span> <span class="nv">*label</span>
 </pre></div>
 </div>
-<img alt="../../../_images/point_09_fill2.png" src="../../../_images/point_09_fill2.png" />
+<img alt="../../../images/point_09_fill2.png" src="../../../images/point_09_fill2.png" />
 </li>
 <li><p>If you would like to check your work the final file is here: <a class="reference download internal" download="" href="../../../downloads/2d7ed034d0727ff2ab7df449b19de03e/point_example.ysld"><code class="xref download docutils literal notranslate"><span class="pre">point_example.ysld</span></code></a></p></li>
 </ol>
@@ -839,7 +839,7 @@
 <li><p>This background is relatively busy and care must be taken to ensure both symbols and labels are clearly visible.</p></li>
 <li><p><strong>Challenge:</strong> Do your best to style populated_places over this busy background.</p>
 <p>Here is an example with labels for inspiration:</p>
-<img alt="../../../_images/point_challenge_11.png" src="../../../_images/point_challenge_11.png" />
+<img alt="../../../images/point_challenge_11.png" src="../../../images/point_challenge_11.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Answer <a class="reference internal" href="done.html#ysld-point-a3"><span class="std std-ref">provided</span></a> at the end of the workbook.</p>

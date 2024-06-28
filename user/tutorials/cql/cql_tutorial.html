@@ -93,7 +93,7 @@ The easiest way to follow the tutorial is to open the GeoServer Map Preview for 
 Click on the <em>Options</em> button at the top of the map preview to open the advanced options toolbar.
 The example filters can be entered in the <em>Filter: CQL</em> box.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/gettingStarted1.png" src="../../_images/gettingStarted1.png" />
+<img alt="../../images/gettingStarted1.png" src="../../images/gettingStarted1.png" />
 <p class="caption"><span class="caption-text"><em>topp:states preview with advanced toolbar open.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The attributes used in the filter examples are those included in the layer.
@@ -182,32 +182,32 @@ For example, the following are the attribute names and values for the Colorado f
 are expressed using plain text. The filter <code class="docutils literal notranslate"><span class="pre">PERSONS</span> <span class="pre">&gt;</span> <span class="pre">15000000</span></code> will select states that
 have more than 15 million inhabitants:</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/more15M.png" src="../../_images/more15M.png" />
+<img alt="../../images/more15M.png" src="../../images/more15M.png" />
 <p class="caption"><span class="caption-text"><em>PERSONS &gt; 15000000</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The full list of comparison operators is: <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,  <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
 <p>To select a range of values the BETWEEN operator can be used: <code class="docutils literal notranslate"><span class="pre">PERSONS</span> <span class="pre">BETWEEN</span> <span class="pre">1000000</span> <span class="pre">AND</span> <span class="pre">3000000</span></code>:</p>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/between.png" src="../../_images/between.png" />
+<img alt="../../images/between.png" src="../../images/between.png" />
 <p class="caption"><span class="caption-text"><em>PERSONS BETWEEN 1000000 AND 3000000</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Comparison operators also support text values. For instance, to select only the state of California, the filter is
 <code class="docutils literal notranslate"><span class="pre">STATE_NAME</span> <span class="pre">=</span> <span class="pre">'California'</span></code>.
 More general text comparisons can be made using the <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> operator. <code class="docutils literal notranslate"><span class="pre">STATE_NAME</span> <span class="pre">LIKE</span> <span class="pre">'N%'</span></code> will extract all states starting with an “N”:</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/startn.png" src="../../_images/startn.png" />
+<img alt="../../images/startn.png" src="../../images/startn.png" />
 <p class="caption"><span class="caption-text"><em>STATE_NAME LIKE ‘N%’</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>It is also possible to compare two attributes with each other. <code class="docutils literal notranslate"><span class="pre">MALE</span> <span class="pre">&gt;</span> <span class="pre">FEMALE</span></code> selects the
 states in which the male population surpasses the female one (a rare occurrence):</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/malefemale.png" src="../../_images/malefemale.png" />
+<img alt="../../images/malefemale.png" src="../../images/malefemale.png" />
 <p class="caption"><span class="caption-text"><em>MALE &gt; FEMALE</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>Arithmetic expressions can be computed using the <code class="docutils literal notranslate"><span class="pre">+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/</span></code> operators.
 The filter <code class="docutils literal notranslate"><span class="pre">UNEMPLOY</span> <span class="pre">/</span> <span class="pre">(EMPLOYED</span> <span class="pre">+</span> <span class="pre">UNEMPLOY)</span> <span class="pre">&gt;</span> <span class="pre">0.07</span></code> selects all states whose unemployment ratio is above 7% (remember the sample data is very old, so don’t draw any conclusion from the results!)</p>
 <div class="figure align-center" id="id6">
-<img alt="../../_images/employ.png" src="../../_images/employ.png" />
+<img alt="../../images/employ.png" src="../../images/employ.png" />
 <p class="caption"><span class="caption-text"><em>UNEMPLOY / (EMPLOYED + UNEMPLOY) &gt; 0.07</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -215,12 +215,12 @@ The filter <code class="docutils literal notranslate"><span class="pre">UNEMPLOY
 <h2>Id and list comparisons<a class="headerlink" href="#id-and-list-comparisons" title="Permalink to this headline">¶</a></h2>
 <p>If we want to extract only the states with specific feature ids we can use the <code class="docutils literal notranslate"><span class="pre">IN</span></code> operator without specifying any attribute, as in <code class="docutils literal notranslate"><span class="pre">IN</span> <span class="pre">('states.1',</span> <span class="pre">'states.12')</span></code>:</p>
 <div class="figure align-center" id="id7">
-<img alt="../../_images/idfilter.png" src="../../_images/idfilter.png" />
+<img alt="../../images/idfilter.png" src="../../images/idfilter.png" />
 <p class="caption"><span class="caption-text"><em>IN (‘states.1’, ‘states.12’)</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>If instead we want to extract the states whose name is in a given list we can use the <code class="docutils literal notranslate"><span class="pre">IN</span></code> operator specifying an attribute name, as in <code class="docutils literal notranslate"><span class="pre">STATE_NAME</span> <span class="pre">IN</span> <span class="pre">('New</span> <span class="pre">York',</span> <span class="pre">'California',</span> <span class="pre">'Montana',</span> <span class="pre">'Texas')</span></code>:</p>
 <div class="figure align-center" id="id8">
-<img alt="../../_images/statenames.png" src="../../_images/statenames.png" />
+<img alt="../../images/statenames.png" src="../../images/statenames.png" />
 <p class="caption"><span class="caption-text"><em>STATE_NAME IN (‘New York’, ‘California’, ‘Montana’, ‘Texas’)</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -230,7 +230,7 @@ The filter <code class="docutils literal notranslate"><span class="pre">UNEMPLOY
 This greatly increases the power of CQL expressions.</p>
 <p>For example, suppose we want to find all states whose name contains an “m”, regardless of letter case. We can use the <code class="docutils literal notranslate"><span class="pre">strToLowerCase</span></code> to turn all the state names to lowercase and then use a like comparison: <code class="docutils literal notranslate"><span class="pre">strToLowerCase(STATE_NAME)</span> <span class="pre">like</span> <span class="pre">'%m%'</span></code>:</p>
 <div class="figure align-center" id="id9">
-<img alt="../../_images/mstates.png" src="../../_images/mstates.png" />
+<img alt="../../images/mstates.png" src="../../images/mstates.png" />
 <p class="caption"><span class="caption-text"><em>strToLowerCase(STATE_NAME) like ‘%m%’</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -239,12 +239,12 @@ This greatly increases the power of CQL expressions.</p>
 <p>CQL provides a full set of geometric filter capabilities. Say, for example, you want to display only the states that intersect the (-90,40,-60,45) bounding box.
 The filter will be <code class="docutils literal notranslate"><span class="pre">BBOX(the_geom,</span> <span class="pre">-90,</span> <span class="pre">40,</span> <span class="pre">-60,</span> <span class="pre">45)</span></code></p>
 <div class="figure align-center" id="id10">
-<img alt="../../_images/bbox.png" src="../../_images/bbox.png" />
+<img alt="../../images/bbox.png" src="../../images/bbox.png" />
 <p class="caption"><span class="caption-text"><em>BBOX(the_geom, -90, 40, -60, 45)</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Conversely, you can select the states that do <em>not</em> intersect the bounding box with the filter: <code class="docutils literal notranslate"><span class="pre">DISJOINT(the_geom,</span> <span class="pre">POLYGON((-90</span> <span class="pre">40,</span> <span class="pre">-90</span> <span class="pre">45,</span> <span class="pre">-60</span> <span class="pre">45,</span> <span class="pre">-60</span> <span class="pre">40,</span> <span class="pre">-90</span> <span class="pre">40)))</span></code>:</p>
 <div class="figure align-center" id="id11">
-<img alt="../../_images/disjoint.png" src="../../_images/disjoint.png" />
+<img alt="../../images/disjoint.png" src="../../images/disjoint.png" />
 <p class="caption"><span class="caption-text"><em>DISJOINT(the_geom, POLYGON((-90 40, -90 45, -60 45, -60 40, -90 40)))</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>The full list of geometric predicates is: <code class="docutils literal notranslate"><span class="pre">EQUALS</span></code>, <code class="docutils literal notranslate"><span class="pre">DISJOINT</span></code>, <code class="docutils literal notranslate"><span class="pre">INTERSECTS</span></code>, <code class="docutils literal notranslate"><span class="pre">TOUCHES</span></code>, <code class="docutils literal notranslate"><span class="pre">CROSSES</span></code>, <code class="docutils literal notranslate"><span class="pre">WITHIN</span></code>, <code class="docutils literal notranslate"><span class="pre">CONTAINS</span></code>, <code class="docutils literal notranslate"><span class="pre">OVERLAPS</span></code>, <code class="docutils literal notranslate"><span class="pre">RELATE</span></code>, <code class="docutils literal notranslate"><span class="pre">DWITHIN</span></code>, <code class="docutils literal notranslate"><span class="pre">BEYOND</span></code>.</p>

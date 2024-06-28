@@ -86,7 +86,7 @@
 <p>Multiple authentication mechanisms may be active within GeoServer at a given time. The following
 figure illustrates the flow of a generic request.</p>
 <div class="figure align-center" id="id1">
-<img alt="../../_images/auth_chain1.png" src="../../_images/auth_chain1.png" />
+<img alt="../../images/auth_chain1.png" src="../../images/auth_chain1.png" />
 <p class="caption"><span class="caption-text"><em>Flow of a request through the authentication system</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Before dispatching a request to the appropriate service or handler, GeoServer first filters the request through the authentication chain. The request is passed to each mechanism in the chain in order, and each is given the chance to authenticate the request. If one of the mechanisms in the chain is able to successfully authenticate, the request moves to normal processing. Otherwise the request is not routed any further and an authorization error (usually a HTTP 401) is returned to the user.</p>
@@ -94,7 +94,7 @@ figure illustrates the flow of a generic request.</p>
 <h2>Filter chain and provider chain<a class="headerlink" href="#filter-chain-and-provider-chain" title="Permalink to this headline">¶</a></h2>
 <p>In the case of GeoServer, the authentication chain is actually made up of two chains: a <strong>filter chain</strong>, which determine if further authentication of a request is required, and a <strong>provider chain</strong>, which performs the actual authentication.</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/auth_chain2.png" src="../../_images/auth_chain2.png" />
+<img alt="../../images/auth_chain2.png" src="../../images/auth_chain2.png" />
 <p class="caption"><span class="caption-text"><em>Detail of authentication chain, showing filter chain and provider chain</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The filter chain performs a variety of tasks, including:</p>

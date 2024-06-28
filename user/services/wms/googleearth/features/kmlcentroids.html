@@ -85,15 +85,15 @@
 <p>The option is set to either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>. The default value is``false``.</p>
 <p>As an example consider the following square polygon with it’s placemark icon. When the polygon is entirely in the viewport the placement is good.</p>
 <div class="figure align-center">
-<img alt="../../../../_images/centroid_clip0.png" src="../../../../_images/centroid_clip0.png" />
+<img alt="../../../../images/centroid_clip0.png" src="../../../../images/centroid_clip0.png" />
 </div>
 <p>When the polygon moves out of the viewport the icon is lost as in the following figure:</p>
 <div class="figure align-center">
-<img alt="../../../../_images/centroid_clip1.png" src="../../../../_images/centroid_clip1.png" />
+<img alt="../../../../images/centroid_clip1.png" src="../../../../images/centroid_clip1.png" />
 </div>
 <p>When <code class="docutils literal notranslate"><span class="pre">KMCENTROID_CLIP</span></code> set to <code class="docutils literal notranslate"><span class="pre">true</span></code> only the part of the geometry intersecting the viewport is considered.</p>
 <div class="figure align-center">
-<img alt="../../../../_images/centroid_clip2.png" src="../../../../_images/centroid_clip2.png" />
+<img alt="../../../../images/centroid_clip2.png" src="../../../../images/centroid_clip2.png" />
 </div>
 </div>
 <div class="section" id="sampling-for-internal-point">
@@ -104,11 +104,11 @@ the feature geometry. For irregularily shaped geometries (like a “C” shaped 
 are chosen until one is found that falls within the polygon. The <code class="docutils literal notranslate"><span class="pre">KMCENTROID_SAMPLE</span></code> option determines how many samples to attempt. The value is an integer with a default value is 5. Note that this option only applies when <code class="docutils literal notranslate"><span class="pre">KMCENTROID_CONTAIN</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <p>As an example consider the following “c” shaped polygon with it’s placemark icon. By default the icon falls outside of the polygon.</p>
 <div class="figure align-center">
-<img alt="../../../../_images/centroid_contain0.png" src="../../../../_images/centroid_contain0.png" />
+<img alt="../../../../images/centroid_contain0.png" src="../../../../images/centroid_contain0.png" />
 </div>
 <p>When <code class="docutils literal notranslate"><span class="pre">KMCENTROID_CONTAIN</span></code> set to <code class="docutils literal notranslate"><span class="pre">true</span></code> a point within the polygon is chosen.</p>
 <div class="figure align-center">
-<img alt="../../../../_images/centroid_contain1.png" src="../../../../_images/centroid_contain1.png" />
+<img alt="../../../../images/centroid_contain1.png" src="../../../../images/centroid_contain1.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

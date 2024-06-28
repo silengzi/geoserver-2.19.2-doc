@@ -126,13 +126,13 @@
 <li><p>Navigate <span class="menuselection">Demos ‣ SRS List</span> page and search for <kbd class="kbd docutils literal notranslate">4326</kbd>.</p></li>
 <li><p>Compare the formal <cite>EPSG</cite> definition of <cite>WGS84</cite>:</p>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/wgs84-epsg-description.png" src="../../_images/wgs84-epsg-description.png" />
+<img alt="../../images/wgs84-epsg-description.png" src="../../images/wgs84-epsg-description.png" />
 <p class="caption"><span class="caption-text">WGS84 EPSG definition</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>With the internal definition of <cite>WGS84</cite>:</p>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/wgs84-internal-description.png" src="../../_images/wgs84-internal-description.png" />
+<img alt="../../images/wgs84-internal-description.png" src="../../images/wgs84-internal-description.png" />
 <p class="caption"><span class="caption-text">WGS84 Internal definition</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -167,20 +167,20 @@
 <li><p>Locate <span class="guilabel">Native SRS</span> and click on the <span class="guilabel">GCS_WGS_1984</span> link to show how GeoServer interpreted the <code class="file docutils literal notranslate"><span class="pre">PRJ</span></code> file above.</p>
 <p>The <code class="file docutils literal notranslate"><span class="pre">PRJ</span></code> did not provide an axis-order and GeoSever has filled in an assumption. This describing the data in <cite>x/y</cite> order which matches our data and we could use it unmodified.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/native_srs.png" src="../../_images/native_srs.png" />
+<img alt="../../images/native_srs.png" src="../../images/native_srs.png" />
 <p class="caption"><span class="caption-text">Native SRS for topp:states</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Locate <span class="guilabel">Declared SRS</span> and click on <span class="guilabel">EPSG:WGS 84…</span> link to see the definition used to publish this content.</p>
 <p>This is the internal definition of <code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code> as shown in the SRSList above, which also describes the data in <cite>x/y</cite> order matching our data. This definition provides slightly more readable names along with additional  <code class="docutils literal notranslate"><span class="pre">AUTHORITY</span></code> information that may be helpful to client applications.</p>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/declared_srs.png" src="../../_images/declared_srs.png" />
+<img alt="../../images/declared_srs.png" src="../../images/declared_srs.png" />
 <p class="caption"><span class="caption-text">Declared SRS for topp:states</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>The <span class="guilabel">SRS Handling</span> is set to <code class="docutils literal notranslate"><span class="pre">Force</span> <span class="pre">declared</span></code> to completely ignore the provided <span class="guilabel">Native SRS</span> definition and use the <span class="guilabel">Declared SRS</span>.</p>
 <div class="figure align-default">
-<img alt="../../_images/srs_handling.png" src="../../_images/srs_handling.png" />
+<img alt="../../images/srs_handling.png" src="../../images/srs_handling.png" />
 </div>
 <p>Force declared SRS handling for topp:states</p>
 </li>

@@ -91,7 +91,7 @@
 <div class="section" id="line-symbolizer">
 <h2><span class="section-number">2.2.1. </span>Line symbolizer<a class="headerlink" href="#line-symbolizer" title="Permalink to this headline">¶</a></h2>
 <p>A line symbolizer documents how individual strokes are used to draw a line string, including color and line width.</p>
-<img alt="../../../_images/LineSymbolizer.svg" src="../../../_images/LineSymbolizer.svg" /><p>The SLD specification provides a default <strong>stroke</strong> used when drawing line strings. These values for color and width will be used if needed.</p>
+<img alt="../../../images/LineSymbolizer.svg" src="../../../images/LineSymbolizer.svg" /><p>The SLD specification provides a default <strong>stroke</strong> used when drawing line strings. These values for color and width will be used if needed.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;LineSymbolizer&gt;</span>
   <span class="nt">&lt;Stroke/&gt;</span>
 <span class="nt">&lt;/LineSymbolizer&gt;</span>
@@ -111,7 +111,7 @@
 <h2><span class="section-number">2.2.2. </span>Polygon symbolizer<a class="headerlink" href="#polygon-symbolizer" title="Permalink to this headline">¶</a></h2>
 <p>A polygon symbolizer documents both the the stroke in addition to the fill used to draw a polygon. A fill can consist of a color, pattern, or other texture:</p>
 <p>The SLD specification provides a default gray fill, but does not supply a stroke. These values will be used if you do not provide an alternative.</p>
-<img alt="../../../_images/PolygonSymbolizer.svg" src="../../../_images/PolygonSymbolizer.svg" /><p>GeoServer includes a default <code class="file docutils literal notranslate"><span class="pre">polygon.sld</span></code> file providing a gray fill and a black outline. This file will be used when you initially create a polygon layer.</p>
+<img alt="../../../images/PolygonSymbolizer.svg" src="../../../images/PolygonSymbolizer.svg" /><p>GeoServer includes a default <code class="file docutils literal notranslate"><span class="pre">polygon.sld</span></code> file providing a gray fill and a black outline. This file will be used when you initially create a polygon layer.</p>
 <p>From GeoServer’s <strong>polygon.sld</strong> style:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;PolygonSymbolizer&gt;</span>
   <span class="nt">&lt;Fill&gt;</span>
@@ -128,7 +128,7 @@
 <div class="section" id="point-symbolizer">
 <h2><span class="section-number">2.2.3. </span>Point symbolizer<a class="headerlink" href="#point-symbolizer" title="Permalink to this headline">¶</a></h2>
 <p>A point symbolizer documents the “mark” used to represent a point. A mark may be defined by a glyph (icon) or a common mark (circle, square, etc.). The point symbolizer records the stroke and fill used to draw the mark.</p>
-<img alt="../../../_images/PointSymbolizer.svg" src="../../../_images/PointSymbolizer.svg" /><p>From GeoServer’s default <strong>point.sld</strong> style:</p>
+<img alt="../../../images/PointSymbolizer.svg" src="../../../images/PointSymbolizer.svg" /><p>From GeoServer’s default <strong>point.sld</strong> style:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;PointSymbolizer&gt;</span>
   <span class="nt">&lt;Graphic&gt;</span>
     <span class="nt">&lt;Mark&gt;</span>
@@ -146,7 +146,7 @@
 <div class="section" id="text-symbolizer">
 <h2><span class="section-number">2.2.4. </span>Text symbolizer<a class="headerlink" href="#text-symbolizer" title="Permalink to this headline">¶</a></h2>
 <p>A text symbolizer provides details on how labels are to be drawn, including font, size, and color information.</p>
-<img alt="../../../_images/TextSymbolizer.svg" src="../../../_images/TextSymbolizer.svg" /><p>From the <code class="file docutils literal notranslate"><span class="pre">populated_places.sld</span></code> style:</p>
+<img alt="../../../images/TextSymbolizer.svg" src="../../../images/TextSymbolizer.svg" /><p>From the <code class="file docutils literal notranslate"><span class="pre">populated_places.sld</span></code> style:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sld:TextSymbolizer&gt;</span>
     <span class="nt">&lt;sld:Label&gt;</span>
         <span class="nt">&lt;ogc:PropertyName&gt;</span>NAME<span class="nt">&lt;/ogc:PropertyName&gt;</span>

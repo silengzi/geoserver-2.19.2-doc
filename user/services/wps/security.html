@@ -79,12 +79,12 @@
 <p>GeoServer service security is normally based on the generic <a class="reference internal" href="../../security/service.html#security-service"><span class="std std-ref">OGC security configuration</span></a>, however, when it comes to WPS there is also a need to <strong>restrict access to individual processes</strong>, in the same way that data security restricts access to layers.</p>
 <p>WPS security allows access to be determined by process group or by single process. Each process and process group can be enabled/disabled, or subject to access control based on the user roles.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/security.png" src="../../_images/security.png" />
+<img alt="../../images/security.png" src="../../images/security.png" />
 <p class="caption"><span class="caption-text">The WPS security page</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The WPS security configurations can be changed using the <a class="reference internal" href="../../webadmin/index.html#web-admin"><span class="std std-ref">Web administration interface</span></a> on the <span class="guilabel">WPS security</span> page under <span class="guilabel">Security</span>.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/security_link.png" src="../../_images/security_link.png" />
+<img alt="../../images/security_link.png" src="../../images/security_link.png" />
 <p class="caption"><span class="caption-text">Click to access the WPS security settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="setting-access-roles">
@@ -92,7 +92,7 @@
 <p>The list of roles attached to each group or process will determine which users can access which processes. If the list is empty the group/process will be available to all users, unless it has been disabled, in which case it won’t be available to anyone.</p>
 <p>The roles string must be a list of roles separated by semicolons. The role editor provides auto-completion and also allows quick copy and paste of role lists from one process definition to the other:</p>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/security_roles.png" src="../../_images/security_roles.png" />
+<img alt="../../images/security_roles.png" src="../../images/security_roles.png" />
 <p class="caption"><span class="caption-text">Role selector field with auto-complete</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -125,12 +125,12 @@
 <p>Processes having a <code class="docutils literal notranslate"><span class="pre">*</span></code> beside the link have a defined set of limits</p>
 </div>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/security_processselector.png" src="../../_images/security_processselector.png" />
+<img alt="../../images/security_processselector.png" src="../../images/security_processselector.png" />
 <p class="caption"><span class="caption-text">The process selector, with access constraints and links to the limits configuration</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The process limits editor shows all inputs for which a limit can be provided. An empty field means that limits are disabled for that input.</p>
 <div class="figure align-default" id="id5">
-<img alt="../../_images/security_processlimits.png" src="../../_images/security_processlimits.png" />
+<img alt="../../images/security_processlimits.png" src="../../images/security_processlimits.png" />
 <p class="caption"><span class="caption-text">The process limit page, with input limits configured</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition warning">

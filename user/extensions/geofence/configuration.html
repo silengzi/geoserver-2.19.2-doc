@@ -78,7 +78,7 @@
 <span id="geofence-configuration"></span><h1>GeoFence Admin GUI<a class="headerlink" href="#geofence-admin-gui" title="Permalink to this headline">¶</a></h1>
 <p>The GeoFence Admin Page is a component of the GeoServer web interface. You can access it from the GeoServer web interface by clicking the <span class="guilabel">GeoFence</span> link, found on the left side of the screen after logging in.</p>
 <div class="figure align-center">
-<img alt="../../_images/configuration1.png" src="../../_images/configuration1.png" />
+<img alt="../../images/configuration1.png" src="../../images/configuration1.png" />
 </div>
 <div class="section" id="general-settings">
 <h2>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
@@ -114,13 +114,13 @@
 <li><p>Login with the default administrative credentials <code class="docutils literal notranslate"><span class="pre">admin</span> <span class="pre">/</span> <span class="pre">geoserver</span></code> (or whatever you have configured before).</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_001.png" src="../../_images/basic_001.png" />
+<img alt="../../images/basic_001.png" src="../../images/basic_001.png" />
 </div>
 <ul class="simple">
 <li><p>In the security panel you’ll find the GeoFence link to the GeoFence security admin page</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_002.png" src="../../_images/basic_002.png" />
+<img alt="../../images/basic_002.png" src="../../images/basic_002.png" />
 </div>
 <ul>
 <li><p>Open the GeoFence admin page; you’ll get to this page:</p>
@@ -136,20 +136,20 @@
 <blockquote>
 <div><p>We already performed a connection test from GeoFence to GeoServer. Using the button <strong>Test connection</strong> we can also test that GeoServer can communicate to GeoFence. If everything is ok, you’ll get this message:</p>
 <div class="figure align-center">
-<img alt="../../_images/basic_003.png" src="../../_images/basic_003.png" />
+<img alt="../../images/basic_003.png" src="../../images/basic_003.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Open the <strong>Authentication</strong> page under the <strong>Security</strong> settings:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_004.png" src="../../_images/basic_004.png" />
+<img alt="../../images/basic_004.png" src="../../images/basic_004.png" />
 </div>
 <ul class="simple">
 <li><p>Add the GeoFence authenticator and <strong>put it as the first in the list</strong> otherwise you will not be able to login as <code class="docutils literal notranslate"><span class="pre">admin/admin</span></code>:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_005.png" src="../../_images/basic_005.png" />
+<img alt="../../images/basic_005.png" src="../../images/basic_005.png" />
 </div>
 <ul class="simple">
 <li><p>Now that we added GeoFence as authentication provider, we’ll be able to log into GeoServer using the credentials we added in GeoFence (user <code class="docutils literal notranslate"><span class="pre">admin</span></code> and user <cite>tiger</cite>). Try and log in using user <code class="docutils literal notranslate"><span class="pre">tiger</span></code>.</p></li>
@@ -161,13 +161,13 @@
 <li><p>Logging into GeoServer as admin you will be able to see all the defined layers:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_006.png" src="../../_images/basic_006.png" />
+<img alt="../../images/basic_006.png" src="../../images/basic_006.png" />
 </div>
 <ul class="simple">
 <li><p>Logging into GeoServer as a non-admin user, the defined rules will be examined; since we defined no rules yet, the default behaviour is to deny access to all resources:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_007.png" src="../../_images/basic_007.png" />
+<img alt="../../images/basic_007.png" src="../../images/basic_007.png" />
 </div>
 <ul>
 <li><p>Get back to GeoFence, and add a rule which allows all layers in workspace tiger for user <code class="docutils literal notranslate"><span class="pre">tiger</span></code>; create a rule defining:</p>
@@ -179,7 +179,7 @@
 <li><p>grant type: <code class="docutils literal notranslate"><span class="pre">allow</span></code> You’ll get a line like this one:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_008.png" src="../../_images/basic_008.png" />
+<img alt="../../images/basic_008.png" src="../../images/basic_008.png" />
 </div>
 </div></blockquote>
 </li>
@@ -187,14 +187,14 @@
 <blockquote>
 <div><p>Since the probe caches the GeoFence responses, you may need to login again as administrator (or you may keep an admin session open in another browser) and clear the probe cache. You can do it by pressing the “Invalidate” button in the bottom of the GeoFence admin page:</p>
 <div class="figure align-center">
-<img alt="../../_images/basic_009.png" src="../../_images/basic_009.png" />
+<img alt="../../images/basic_009.png" src="../../images/basic_009.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Login again in GeoServer as user tiger and you will see in <strong>layer preview</strong> all the layers in the <code class="docutils literal notranslate"><span class="pre">tiger</span></code> workspace:</p></li>
 </ul>
 <div class="figure align-center">
-<img alt="../../_images/basic_010.png" src="../../_images/basic_010.png" />
+<img alt="../../images/basic_010.png" src="../../images/basic_010.png" />
 </div>
 </div>
 </div>

@@ -79,14 +79,14 @@
 <h2>Adding a NetCDF data store<a class="headerlink" href="#adding-a-netcdf-data-store" title="Permalink to this headline">¶</a></h2>
 <p>To add a NetCDF data store the user must go to <span class="guilabel">Stores –&gt; Add New Store –&gt; NetCDF</span>.</p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/netcdfcreate.png" src="../../_images/netcdfcreate.png" />
+<img alt="../../images/netcdfcreate.png" src="../../images/netcdfcreate.png" />
 <p class="caption"><span class="caption-text"><em>NetCDF in the list of raster data stores</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="configuring-a-netcdf-data-store">
 <h2>Configuring a NetCDF data store<a class="headerlink" href="#configuring-a-netcdf-data-store" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id3">
-<img alt="../../_images/netcdfconfigure.png" src="../../_images/netcdfconfigure.png" />
+<img alt="../../images/netcdfconfigure.png" src="../../images/netcdfconfigure.png" />
 <p class="caption"><span class="caption-text"><em>Configuring a NetCDF data store</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <table class="colwidths-given docutils align-default">
@@ -122,7 +122,7 @@
 <p><a class="reference external" href="ftp://ftp.unidata.ucar.edu/pub/netcdf-java/v4.6/toolsUI-4.6.jar">ToolsUI</a> is an useful java tool developed by UCAR which can be useful for a preliminary check on your dataset.
 Opening a sample NetCDF using that tool will show an output like this in the Viewer tab:</p>
 <div class="figure align-center" id="id4">
-<img alt="../../_images/dataset.png" src="../../_images/dataset.png" />
+<img alt="../../images/dataset.png" src="../../images/dataset.png" />
 <p class="caption"><span class="caption-text"><em>NetCDF viewer in ToolsUI</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
@@ -134,7 +134,7 @@ Opening a sample NetCDF using that tool will show an output like this in the Vie
 Two dimensional non-independent latitude-longitude coordinate variables aren’t currently supported.
 A similar dataset will look like this in ToolsUI. Look at the red marked latitude and longitude coordinate variables, each one identified by a y,x 2D matrix.</p>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/dataset2dcoords.png" src="../../_images/dataset2dcoords.png" />
+<img alt="../../images/dataset2dcoords.png" src="../../images/dataset2dcoords.png" />
 <p class="caption"><span class="caption-text"><em>NetCDF viewer in ToolsUI for 2D coordinate variables</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -237,7 +237,7 @@ a NetCDF CF file may expose gridmapping attributes to describe the underlying pr
 Once created, a CRS lookup will be made to identify a custom EPSG (if any) defined by the user to match that Projection.
 In case the NetCDF gridMapping is basically the same of the one exposed as EPSG entry but the matching doesn’t happen, you may consider tuning the comparison tolerance: See <a class="reference internal" href="../../configuration/crshandling/configurecrs.html#crs-configure"><span class="std std-ref">Coordinate Reference System Configuration</span></a>, <em>Increase Comparison Tolerance section</em>.</p>
 <div class="figure align-center" id="id6">
-<img alt="../../_images/gridmapping.png" src="../../_images/gridmapping.png" />
+<img alt="../../images/gridmapping.png" src="../../images/gridmapping.png" />
 <p class="caption"><span class="caption-text"><em>Grid Mapping and related custom EPSG definition</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>User defined NetCDF Coordinate Reference Systems with their custom EPSG need to be provided in <code class="file docutils literal notranslate"><span class="pre">user_projections\netcdf.projections.properties</span></code> file inside your data directory (you have to create that file if missing).</p>

@@ -81,7 +81,7 @@
 <h2>Startup<a class="headerlink" href="#startup" title="Permalink to this headline">¶</a></h2>
 <p>When using just JDBC as the data source you can use a Primary/Replica approach, running as many brokers as you wish as this diagram shows. On startup one primary grabs an exclusive lock in the broker database - all other brokers are replicas and pause waiting for the exclusive lock.</p>
 <div class="figure align-center">
-<img alt="../../../_images/Startup.png" src="../../../_images/Startup.png" />
+<img alt="../../../images/Startup.png" src="../../../images/Startup.png" />
 </div>
 <p>Clients should be using the Failover Transport to connect to the available brokers. e.g. using a URL something like the following
 failover:(tcp://broker1:61616,tcp://broker2:61616,tcp://broker3:61616)
@@ -91,7 +91,7 @@ Only the primary broker starts up its transport connectors and so the clients ca
 <h2>Primary failure<a class="headerlink" href="#primary-failure" title="Permalink to this headline">¶</a></h2>
 <p>If the primary looses connection to the database or looses the exclusive lock then it immediately shuts down. If a primary shuts down or fails, one of the other replicas will grab the lock and so the topology switches to the following diagram</p>
 <div class="figure align-center">
-<img alt="../../../_images/MasterFailed.png" src="../../../_images/MasterFailed.png" />
+<img alt="../../../images/MasterFailed.png" src="../../../images/MasterFailed.png" />
 </div>
 <p>One of the other other replicas immediately grabs the exclusive lock on the database to then commences becoming the primary, starting all of its transport connectors.
 Clients lose connection to the stopped primary and then the failover transport tries to connect to the available brokers - of which the only one available is the new primary.
@@ -101,7 +101,7 @@ At any time you can restart other brokers which join the cluster and start as re
 <div class="section" id="configuring-jdbc-primary-replica">
 <h2>Configuring JDBC Primary/Replica<a class="headerlink" href="#configuring-jdbc-primary-replica" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center">
-<img alt="../../../_images/MasterRestarted.png" src="../../../_images/MasterRestarted.png" />
+<img alt="../../../images/MasterRestarted.png" src="../../../images/MasterRestarted.png" />
 </div>
 <p>By default if you use the &lt;jdbcPersistenceAdapter/&gt; to avoid the high performance journal you will be using JDBC Primary/Replica by default. You just need to run more than one broker and point the client side URIs to them to get primary/replica. This works because they both try an acquire an exclusive lock on a shared table in the database and only one will succeed.</p>
 <p>The following example shows how to configure the ActiveMQ broker in JDBC Primary/Replica mode</p>

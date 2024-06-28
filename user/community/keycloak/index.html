@@ -90,7 +90,7 @@ setting up authentication against an Keycloak provider. It is recommended that t
 <li><p>Create a <a class="reference external" href="http://www.keycloak.org/docs/3.3/authorization_services/topics/resource-server/create-client.html">new client</a> for GeoServer named <cite>geoserver-client</cite>.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client001.png" src="../../_images/keycloak_client001.png" />
+<img alt="../../images/keycloak_client001.png" src="../../images/keycloak_client001.png" />
 </div>
 </div></blockquote>
 </li>
@@ -103,7 +103,7 @@ setting up authentication against an Keycloak provider. It is recommended that t
 </ul>
 </div></blockquote>
 <div class="figure align-center">
-<img alt="../../_images/keycloak_client002.png" src="../../_images/keycloak_client002.png" />
+<img alt="../../images/keycloak_client002.png" src="../../images/keycloak_client002.png" />
 </div>
 </dd>
 </dl>
@@ -112,33 +112,33 @@ setting up authentication against an Keycloak provider. It is recommended that t
 Otherwise, you should probably select <em>confidential</em>.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client003.png" src="../../_images/keycloak_client003.png" />
+<img alt="../../images/keycloak_client003.png" src="../../images/keycloak_client003.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Add the the <em>ADMINISTRATOR</em> and <em>AUTHENTICATED</em> <a class="reference external" href="http://www.keycloak.org/docs/2.5/server_admin/topics/roles/client-roles.html">client-role</a> to the <cite>geoserver-client</cite> in Keycloak.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client004.png" src="../../_images/keycloak_client004.png" />
+<img alt="../../images/keycloak_client004.png" src="../../images/keycloak_client004.png" />
 </div>
 </div></blockquote>
 <p>In this phase you will need to map GeoServer Roles to the <cite>geoserver-client</cite> ones in Keycloak.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client005.png" src="../../_images/keycloak_client005.png" />
+<img alt="../../images/keycloak_client005.png" src="../../images/keycloak_client005.png" />
 </div>
 </div></blockquote>
 <p>Use the <em>AUTHENTICATED</em> one for generic users. Assign this role <em>ADMINISTRATOR</em> to the users/groups who should have administrative access to GeoServer.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client006.png" src="../../_images/keycloak_client006.png" />
+<img alt="../../images/keycloak_client006.png" src="../../images/keycloak_client006.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Obtain the <a class="reference external" href="http://www.keycloak.org/docs/3.2/server_admin/topics/clients/installation.html">installation-configuration</a> for the <cite>geoserver-client</cite> in JSON, and provide this to the GeoServer Admin for the next steps.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_client007.png" src="../../_images/keycloak_client007.png" />
+<img alt="../../images/keycloak_client007.png" src="../../images/keycloak_client007.png" />
 </div>
 </div></blockquote>
 </li>
@@ -157,27 +157,27 @@ Paste the installation-configuration from the Keycloak-server in the text area p
 </pre></div>
 </div>
 <div class="figure align-center">
-<img alt="../../_images/keycloak_adapter001.png" src="../../_images/keycloak_adapter001.png" />
+<img alt="../../images/keycloak_adapter001.png" src="../../images/keycloak_adapter001.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Add the <cite>keycloak_adapter</cite> to the <em>web</em> <cite>filter-chain</cite> if you want to protect the Admin GUI, as an instance. If you want to be redirected everytime to Keycloak, then remove all of the others <cite>chain filters</cite> (basic, form, rememberme, anonymous), otherwise you will need to access directly the login url on Keycloak.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_adapter002.png" src="../../_images/keycloak_adapter002.png" />
+<img alt="../../images/keycloak_adapter002.png" src="../../images/keycloak_adapter002.png" />
 </div>
 </div></blockquote>
 </li>
 <li><p>Check your work so far by navigating to the GeoServer UI. You should be redirected to the Keycloak <cite>login-page</cite>, and after logging-in you should be redirected back to the actual GUI page.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_adapter003.png" src="../../_images/keycloak_adapter003.png" />
+<img alt="../../images/keycloak_adapter003.png" src="../../images/keycloak_adapter003.png" />
 </div>
 </div></blockquote>
 <p>You should verify that the message <cite>logged in as &lt;USERNAME&gt;</cite> is posted in the top right corner before continuing.</p>
 <blockquote>
 <div><div class="figure align-center">
-<img alt="../../_images/keycloak_adapter004.png" src="../../_images/keycloak_adapter004.png" />
+<img alt="../../images/keycloak_adapter004.png" src="../../images/keycloak_adapter004.png" />
 </div>
 </div></blockquote>
 </li>
@@ -187,17 +187,17 @@ Paste the installation-configuration from the Keycloak-server in the text area p
 <p>Workaround in the event of a 403 unauthorized response after logging-in.</p>
 <p>Enforce the algorithm RS256 in the keycloak client.</p>
 <div class="figure align-center">
-<img alt="../../_images/keycloak_client008.png" src="../../_images/keycloak_client008.png" />
+<img alt="../../images/keycloak_client008.png" src="../../images/keycloak_client008.png" />
 </div>
 <p>Copy the public key for the RS256 algorithm from the Realm Settings into the adapter config as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;realm-public-key&quot;</span><span class="p">:</span> <span class="n">XXXXXXX</span>
 </pre></div>
 </div>
 <div class="figure align-center">
-<img alt="../../_images/keycloak_client009.png" src="../../_images/keycloak_client009.png" />
+<img alt="../../images/keycloak_client009.png" src="../../images/keycloak_client009.png" />
 </div>
 <div class="figure align-center">
-<img alt="../../_images/keycloak_adapter005.png" src="../../_images/keycloak_adapter005.png" />
+<img alt="../../images/keycloak_adapter005.png" src="../../images/keycloak_adapter005.png" />
 </div>
 </div>
 </div>

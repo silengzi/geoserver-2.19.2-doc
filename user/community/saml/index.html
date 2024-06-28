@@ -88,19 +88,19 @@ the IdP one.</p>
 <li><p>Click the Authentication link located under the Security section of the navigation sidebar.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml01.png" src="../../_images/saml01.png" />
+<img alt="../../images/saml01.png" src="../../images/saml01.png" />
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Scroll down to the Authentication Filters panel and click the Add new link.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml02.png" src="../../_images/saml02.png" />
+<img alt="../../images/saml02.png" src="../../images/saml02.png" />
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Click the SAMLv2 link.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml03.png" src="../../_images/saml03.png" />
+<img alt="../../images/saml03.png" src="../../images/saml03.png" />
 </div>
 <p>5. Fill in the fields of the settings form as follows; you can use GeoServer role sources to assign
 a specific group or role to the SAML user.</p>
@@ -152,13 +152,13 @@ a specific group or role to the SAML user.</p>
 <li><p>Update the filter chains by adding the new SAMLv2 filter.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml04.png" src="../../_images/saml04.png" />
+<img alt="../../images/saml04.png" src="../../images/saml04.png" />
 </div>
 <ol class="arabic simple" start="7">
 <li><p>Select the SAMLv2 Filter for each filter chain you want to protect with the IdP (for example web)</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml05.png" src="../../_images/saml05.png" />
+<img alt="../../images/saml05.png" src="../../images/saml05.png" />
 </div>
 </div>
 <div class="section" id="using-onelogin-as-idp">
@@ -209,7 +209,7 @@ for geoserver use it instead.</p>
 </table>
 <p>Then, write down the Metadata URL you found in the <code class="docutils literal notranslate"><span class="pre">Issuer</span> <span class="pre">URL</span></code> field of the SSO Configuration page:</p>
 <div class="figure align-center">
-<img alt="../../_images/onelogin01.png" src="../../_images/onelogin01.png" />
+<img alt="../../images/onelogin01.png" src="../../images/onelogin01.png" />
 </div>
 </div>
 <div class="section" id="testing-with-onelogin">
@@ -219,7 +219,7 @@ for geoserver use it instead.</p>
 <li><p>Try to login again, you should be able now to see the external OneLogin form.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/onelogin02.png" src="../../_images/onelogin02.png" />
+<img alt="../../images/onelogin02.png" src="../../images/onelogin02.png" />
 </div>
 <ol class="arabic simple" start="3">
 <li><p>You can manage users using OneLogin panel located at <a class="reference external" href="https://admin.us.onelogin.com/users">https://admin.us.onelogin.com/users</a></p></li>
@@ -230,7 +230,7 @@ for geoserver use it instead.</p>
 <p>SAMLING is a Servless SAML IDP that can easily be used to test the GeoServer SAMLv2 authentication filter.</p>
 <p>You can configure a new SAMLv2 authentication filter, as in the following screenshot.</p>
 <div class="figure align-center">
-<img alt="../../_images/samling01.png" src="../../_images/samling01.png" />
+<img alt="../../images/samling01.png" src="../../images/samling01.png" />
 </div>
 <p>In particular, you have to create a JKS keystore, using the keytool command, and store it in the geoserver data dir, in a saml subfolder (choose a proper password for the keystore and another one for the certificate)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>keytool -genkeypair -alias geoserversaml -keypass &lt;certificate_password&gt; -keystore samlKeystore.jks
@@ -307,19 +307,19 @@ njo3k6r5gXyl8tk=<span class="nt">&lt;/ds:X509Certificate&gt;</span>
 <li><p>Check that the filter chain where the SAML filter is used does not include the anonymous filter:</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/saml05.png" src="../../_images/saml05.png" />
+<img alt="../../images/saml05.png" src="../../images/saml05.png" />
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Try to login again, you should be able now to see the SAMLING login form.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/samling02.png" src="../../_images/samling02.png" />
+<img alt="../../images/samling02.png" src="../../images/samling02.png" />
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Enter a username of your choice (e.g. samluser) in the Name Identifier field, then click on the Next button.</p></li>
 </ol>
 <div class="figure align-center">
-<img alt="../../_images/samling03.png" src="../../_images/samling03.png" />
+<img alt="../../images/samling03.png" src="../../images/samling03.png" />
 </div>
 <ol class="arabic simple" start="5">
 <li><p>Click on the Post Response! button, and you will be redirected to GeoServer, and logged in.</p></li>

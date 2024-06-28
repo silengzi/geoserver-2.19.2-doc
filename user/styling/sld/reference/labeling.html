@@ -149,23 +149,23 @@ sub-elements:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../../_images/label_bbox.png" src="../../../_images/label_bbox.png" />
+<img alt="../../../images/label_bbox.png" src="../../../images/label_bbox.png" />
 </div>
 <p>The following examples show how changing the anchor point affects the position of labels:</p>
 <div class="figure align-default" id="id1">
-<img alt="../../../_images/point_x0y0_5.png" src="../../../_images/point_x0y0_5.png" />
+<img alt="../../../images/point_x0y0_5.png" src="../../../images/point_x0y0_5.png" />
 <p class="caption"><span class="caption-text">(0, 0.5) places the label to the right of the label point</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id2">
-<img alt="../../../_images/point_x0_5y0_5.png" src="../../../_images/point_x0_5y0_5.png" />
+<img alt="../../../images/point_x0_5y0_5.png" src="../../../images/point_x0_5y0_5.png" />
 <p class="caption"><span class="caption-text">(0.5, 0.5) places the center of the label at the label point</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id3">
-<img alt="../../../_images/point_x15y0_5.png" src="../../../_images/point_x15y0_5.png" />
+<img alt="../../../images/point_x15y0_5.png" src="../../../images/point_x15y0_5.png" />
 <p class="caption"><span class="caption-text">(1, 0.5) places the label to the left of the label point</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="id4">
-<img alt="../../../_images/point_x0_5y0.png" src="../../../_images/point_x0_5y0.png" />
+<img alt="../../../images/point_x0_5y0.png" src="../../../images/point_x0_5y0.png" />
 <p class="caption"><span class="caption-text">(0.5, 0) places the label horizontally centered above the label point</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -188,11 +188,11 @@ The element syntax is:</p>
 </div>
 <p>Examples:</p>
 <div class="figure align-center">
-<img alt="../../../_images/point_x0y0_5_displacex10.png" src="../../../_images/point_x0y0_5_displacex10.png" />
+<img alt="../../../images/point_x0y0_5_displacex10.png" src="../../../images/point_x0y0_5_displacex10.png" />
 </div>
 <p><em>Displacement of X=10 pixels (compare with default anchor point of (X=0, Y=0.5) shown above)</em></p>
 <div class="figure align-center">
-<img alt="../../../_images/point_x0y1_displacey10.png" src="../../../_images/point_x0y1_displacey10.png" />
+<img alt="../../../images/point_x0y1_displacey10.png" src="../../../images/point_x0y1_displacey10.png" />
 </div>
 <p><em>Displacement of Y=-10 pixels (compare with anchor point (X= 0.5, Y=1.0) - not shown)</em></p>
 </div>
@@ -206,19 +206,19 @@ The element syntax is:</p>
 </div>
 <p>The examples below show how the rotation interacts with anchor points and displacements.</p>
 <div class="figure align-default">
-<img alt="../../../_images/rot1.png" src="../../../_images/rot1.png" />
+<img alt="../../../images/rot1.png" src="../../../images/rot1.png" />
 </div>
 <p><em>45 degree rotation</em></p>
 <div class="figure align-default">
-<img alt="../../../_images/rot2.png" src="../../../_images/rot2.png" />
+<img alt="../../../images/rot2.png" src="../../../images/rot2.png" />
 </div>
 <p><em>45 degree rotation with anchor point (X=0.5, Y=0.5)</em></p>
 <div class="figure align-default">
-<img alt="../../../_images/rot3.png" src="../../../_images/rot3.png" />
+<img alt="../../../images/rot3.png" src="../../../images/rot3.png" />
 </div>
 <p><em>45 degree rotation with 40-pixel X displacement</em></p>
 <div class="figure align-default">
-<img alt="../../../_images/rot4.png" src="../../../_images/rot4.png" />
+<img alt="../../../images/rot4.png" src="../../../images/rot4.png" />
 </div>
 <p><em>45 degree rotation with 40-pixel Y displacement with anchor point (X=0.5, Y=0.5)</em></p>
 </div>
@@ -248,11 +248,11 @@ A positive value displaces upwards, a negative value downwards.</p>
 </div>
 <p>Examples:</p>
 <div class="figure align-default">
-<img alt="../../../_images/lp_1.png" src="../../../_images/lp_1.png" />
+<img alt="../../../images/lp_1.png" src="../../../images/lp_1.png" />
 </div>
 <p><em>PerpendicularOffset = 0 (default)</em></p>
 <div class="figure align-default">
-<img alt="../../../_images/lp_2.png" src="../../../_images/lp_2.png" />
+<img alt="../../../images/lp_2.png" src="../../../images/lp_2.png" />
 </div>
 <p><em>PerpendicularOffset = 10</em></p>
 </div>
@@ -313,7 +313,7 @@ Under this strategy, the label to display out of a group of conflicting labels i
 </pre></div>
 </div>
 <div class="figure align-center">
-<img alt="../../../_images/priority_all.png" src="../../../_images/priority_all.png" />
+<img alt="../../../images/priority_all.png" src="../../../images/priority_all.png" />
 </div>
 <p><em>City locations (large scale map)</em></p>
 <p>More people know where New York City is than where Jersey City is.
@@ -326,7 +326,7 @@ To do this we include the following code in the <code class="docutils literal no
 </div>
 <p>This ensures that at small scales New York is labeled in preference to the less populous cities nearby:</p>
 <div class="figure align-center">
-<img alt="../../../_images/priority_some.png" src="../../../_images/priority_some.png" />
+<img alt="../../../images/priority_some.png" src="../../../images/priority_some.png" />
 </div>
 <p><em>City locations (small scale map)</em></p>
 <p>Without priority labeling, Jersey City could be labeled in preference to New York,
@@ -334,7 +334,7 @@ making it difficult to interpret the map.
 At scales showing many features,
 priority labeling is essential to ensure that larger cities are more visible than smaller cities.</p>
 <div class="figure align-center">
-<img alt="../../../_images/priority_lots.png" src="../../../_images/priority_lots.png" />
+<img alt="../../../images/priority_lots.png" src="../../../images/priority_lots.png" />
 </div>
 </div>
 <div class="section" id="grouping-features-group">
@@ -380,13 +380,13 @@ not a label for every block of “Main Street.”</p>
 <p>When the <code class="docutils literal notranslate"><span class="pre">group</span></code> option is off (the default), grouping is not performed and every block feature is labeled
 (subject to label deconfliction):</p>
 <div class="figure align-center">
-<img alt="../../../_images/group_not.png" src="../../../_images/group_not.png" />
+<img alt="../../../images/group_not.png" src="../../../images/group_not.png" />
 </div>
 <p>When the <code class="docutils literal notranslate"><span class="pre">group</span></code> option is used, geometries with the same label are grouped together
 and the label position is determined from the entire group.
 This produces a much less cluttered map:</p>
 <div class="figure align-center">
-<img alt="../../../_images/group_yes.png" src="../../../_images/group_yes.png" />
+<img alt="../../../images/group_yes.png" src="../../../images/group_yes.png" />
 </div>
 </div>
 <div class="section" id="labelallgroup">
@@ -408,15 +408,15 @@ The value supplied for the option is a positive or negative size, in pixels.</p>
 </div>
 <p>Using the default value of 0, the bounding box of a label cannot overlap the bounding box of another label:</p>
 <div class="figure align-center">
-<img alt="../../../_images/space_0.png" src="../../../_images/space_0.png" />
+<img alt="../../../images/space_0.png" src="../../../images/space_0.png" />
 </div>
 <p>With a negative <code class="docutils literal notranslate"><span class="pre">spaceAround</span></code> value, overlapping is allowed:</p>
 <div class="figure align-center">
-<img alt="../../../_images/space_neg.png" src="../../../_images/space_neg.png" />
+<img alt="../../../images/space_neg.png" src="../../../images/space_neg.png" />
 </div>
 <p>With a positive <code class="docutils literal notranslate"><span class="pre">spaceAround</span></code> value of 10, each label is at least 20 pixels apart from others:</p>
 <div class="figure align-center">
-<img alt="../../../_images/space_10.png" src="../../../_images/space_10.png" />
+<img alt="../../../images/space_10.png" src="../../../images/space_10.png" />
 </div>
 <p>Positive <code class="docutils literal notranslate"><span class="pre">spaceAround</span></code> values actually provide twice the space that you might expect.
 This is because you can specify a spaceAround for one label as 5, and for another label (in another TextSymbolizer) as 3.
@@ -481,7 +481,7 @@ The size should be wide enough to accommodate the longest word, otherwise single
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../../_images/label_autoWrap.png" src="../../../_images/label_autoWrap.png" />
+<img alt="../../../images/label_autoWrap.png" src="../../../images/label_autoWrap.png" />
 </div>
 <p><em>Labeling with autoWrap enabled</em></p>
 </div>
@@ -590,10 +590,10 @@ If this option is used the <code class="docutils literal notranslate"><span clas
 </tbody>
 </table>
 <div class="no-border figure align-default">
-<img alt="../../../_images/label_graphic-resize_none.png" src="../../../_images/label_graphic-resize_none.png" />
+<img alt="../../../images/label_graphic-resize_none.png" src="../../../images/label_graphic-resize_none.png" />
 </div>
 <div class="no-border figure align-default">
-<img alt="../../../_images/label_graphic-resize_stretch.png" src="../../../_images/label_graphic-resize_stretch.png" />
+<img alt="../../../images/label_graphic-resize_stretch.png" src="../../../images/label_graphic-resize_stretch.png" />
 </div>
 <p><em>Labeling with a Graphic Mark “square” - L) at native size; R) with “graphic-resize”=stretch and “graphic-margin”=3</em></p>
 </div>
@@ -624,7 +624,7 @@ placed by hand and are assured not to conflict with each other, at all zoom leve
 </div>
 <p>Some underlines examples:</p>
 <div class="figure align-center">
-<img alt="../../../_images/label_underlines.png" src="../../../_images/label_underlines.png" />
+<img alt="../../../images/label_underlines.png" src="../../../images/label_underlines.png" />
 </div>
 </div>
 <div class="section" id="strikethroughtext">
@@ -635,7 +635,7 @@ placed by hand and are assured not to conflict with each other, at all zoom leve
 </div>
 <p>Some strikethrough examples:</p>
 <div class="figure align-center">
-<img alt="../../../_images/label_strikethrough.png" src="../../../_images/label_strikethrough.png" />
+<img alt="../../../images/label_strikethrough.png" src="../../../images/label_strikethrough.png" />
 </div>
 </div>
 <div class="section" id="charspacing">
@@ -647,7 +647,7 @@ The value is specified in pixels.</p>
 </div>
 <p>Example of adding 3 extra pixels of space between chars on road names:</p>
 <div class="figure align-center">
-<img alt="../../../_images/charSpacing.png" src="../../../_images/charSpacing.png" />
+<img alt="../../../images/charSpacing.png" src="../../../images/charSpacing.png" />
 </div>
 </div>
 <div class="section" id="wordspacing">
@@ -659,7 +659,7 @@ The value is specified in pixels.</p>
 </div>
 <p>Example of adding 5 extra pixels of space between words on road names:</p>
 <div class="figure align-center">
-<img alt="../../../_images/wordSpacing.png" src="../../../_images/wordSpacing.png" />
+<img alt="../../../images/wordSpacing.png" src="../../../images/wordSpacing.png" />
 </div>
 </div>
 <div class="section" id="displacementmode">

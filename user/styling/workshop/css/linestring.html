@@ -79,7 +79,7 @@
 <span id="styling-workshop-css-line"></span><h1><span class="section-number">3.2. </span>Lines<a class="headerlink" href="#lines" title="Permalink to this headline">¶</a></h1>
 <p>We will start our tour of CSS styling by looking at the representation of lines.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../../_images/LineSymbology.svg" src="../../../_images/LineSymbology.svg" /><p class="caption"><span class="caption-text">LineString Geometry</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/LineSymbology.svg" src="../../../images/LineSymbology.svg" /><p class="caption"><span class="caption-text">LineString Geometry</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Review of line symbology:</p>
 <ul class="simple">
@@ -100,7 +100,7 @@
 <h2><span class="section-number">3.2.1. </span>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h2>
 <p>The only mandatory property for representation of linework is <strong>stroke</strong>. This is a <strong>key property</strong>; its presence triggers the generation of an appropriate LineSymbolizer.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../../_images/LineStringStroke_CSS.svg" src="../../../_images/LineStringStroke_CSS.svg" /><p class="caption"><span class="caption-text">Basic Stroke Properties</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/LineStringStroke_CSS.svg" src="../../../images/LineStringStroke_CSS.svg" /><p class="caption"><span class="caption-text">Basic Stroke Properties</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The use of <strong>stroke</strong> as a key property prevents CSS from having the idea of a default line color (as the <strong>stroke</strong> information must be supplied each time).</p>
 <ol class="arabic">
@@ -134,7 +134,7 @@
 </li>
 <li><p>Click <span class="guilabel">Submit</span> and then the <span class="guilabel">Map</span> tab for an initial preview.</p>
 <p>You can use this tab to follow along as the style is edited, it will refresh each time <span class="guilabel">Submit</span> is pressed.</p>
-<img alt="../../../_images/line.png" src="../../../_images/line.png" />
+<img alt="../../../images/line.png" src="../../../images/line.png" />
 </li>
 <li><p>You can look at the <span class="guilabel">SLD</span> tab at any time to see the generated SLD. Currently it is showing a straight forward LineSymbolizer generated from the CSS <strong>stroke</strong> property:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sld:UserStyle&gt;</span>
@@ -179,7 +179,7 @@
 </div>
 </li>
 <li><p>Check the <span class="guilabel">Map</span> tab to preview the result.</p>
-<img alt="../../../_images/line_stroke.png" src="../../../_images/line_stroke.png" />
+<img alt="../../../images/line_stroke.png" src="../../../images/line_stroke.png" />
 </li>
 </ol>
 <div class="admonition note">
@@ -191,7 +191,7 @@
 <h2><span class="section-number">3.2.2. </span>Z-Index<a class="headerlink" href="#z-index" title="Permalink to this headline">¶</a></h2>
 <p>The next exercise shows how to work around a limitation when using multiple strokes to render a line.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../../_images/LineStringZOrder_CSS.svg" src="../../../_images/LineStringZOrder_CSS.svg" /><p class="caption"><span class="caption-text">Use of Z-Index</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/LineStringZOrder_CSS.svg" src="../../../images/LineStringZOrder_CSS.svg" /><p class="caption"><span class="caption-text">Use of Z-Index</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
 <li><p>Providing two strokes is often used to provide a contrasting edge (called casing) to thick line work.</p>
@@ -204,7 +204,7 @@
 </div>
 </li>
 <li><p>If you look carefully you can see a problem with our initial attempt. The junctions of each line show that the casing outlines each line individually, making the lines appear randomly overlapped. Ideally we would like to control this process, only making use of this effect for overpasses.</p>
-<img alt="../../../_images/line_zorder_1.png" src="../../../_images/line_zorder_1.png" />
+<img alt="../../../images/line_zorder_1.png" src="../../../images/line_zorder_1.png" />
 </li>
 <li><p>The <strong>z-index</strong> parameter allows a draw order to be supplied. This time all the thick black lines are dawn first (at z-index 0) followed by the thinner blue lines (at z-index 1).</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="p">{</span>
@@ -216,10 +216,10 @@
 </div>
 </li>
 <li><p>If you look carefully you can see the difference.</p>
-<img alt="../../../_images/line_zorder_2.png" src="../../../_images/line_zorder_2.png" />
+<img alt="../../../images/line_zorder_2.png" src="../../../images/line_zorder_2.png" />
 </li>
 <li><p>By using <strong>z-index</strong> we have been able to simulate line casing.</p>
-<img alt="../../../_images/line_zorder_3.png" src="../../../_images/line_zorder_3.png" />
+<img alt="../../../images/line_zorder_3.png" src="../../../images/line_zorder_3.png" />
 </li>
 </ol>
 </div>
@@ -227,7 +227,7 @@
 <h2><span class="section-number">3.2.3. </span>Label<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
 <p>Our next example is significant as it introduces the how text labels are generated.</p>
 <div class="figure align-default" id="id4">
-<img alt="../../../_images/LineStringLabel_CSS.svg" src="../../../_images/LineStringLabel_CSS.svg" /><p class="caption"><span class="caption-text">Use of Label Property</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<img alt="../../../images/LineStringLabel_CSS.svg" src="../../../images/LineStringLabel_CSS.svg" /><p class="caption"><span class="caption-text">Use of Label Property</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>This is also our first example making use of a dynamic style (where the value of a property is defined by an attribute from your data).</p>
 <ol class="arabic">
@@ -241,7 +241,7 @@
 </div>
 </li>
 <li><p>The SLD standard documents the default label position for each kind of Geometry. For LineStrings the initial label is positioned on the midway point of the line.</p>
-<img alt="../../../_images/line_label_1.png" src="../../../_images/line_label_1.png" />
+<img alt="../../../images/line_label_1.png" src="../../../images/line_label_1.png" />
 </li>
 <li><p>We have used an expression to calculate a property value for label. The <strong>label</strong> property is generated dynamically from the <kbd class="kbd docutils literal notranslate">name</kbd> attribute. Expressions are supplied within square brackets, making use of Constraint Query Language (CQL) syntax.</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="p">{</span>
@@ -284,7 +284,7 @@
 </div>
 </li>
 <li><p>When used in this manner the rotation of the label will be adjusted automatically to match the LineString.</p>
-<img alt="../../../_images/line_label_2.png" src="../../../_images/line_label_2.png" />
+<img alt="../../../images/line_label_2.png" src="../../../images/line_label_2.png" />
 </li>
 </ol>
 </div>
@@ -317,7 +317,7 @@
 </div>
 </li>
 <li><p>Each label is now separated from its neighbor, improving legibility.</p>
-<img alt="../../../_images/line_label_3.png" src="../../../_images/line_label_3.png" />
+<img alt="../../../images/line_label_3.png" src="../../../images/line_label_3.png" />
 </li>
 </ol>
 </div>
@@ -333,7 +333,7 @@
 </div>
 </li>
 <li><p>And use the <span class="guilabel">Map</span> tab to preview the result.</p>
-<img alt="../../../_images/line_04_scalerank.png" src="../../../_images/line_04_scalerank.png" />
+<img alt="../../../images/line_04_scalerank.png" src="../../../images/line_04_scalerank.png" />
 </li>
 <li><p>The <strong>scalerank</strong> attribute is provided by the Natural Earth dataset to allow control of the level of detail based on scale. Our selector short-listed all content with scalerank 4 or lower, providing a nice quick preview when we are zoomed out.</p></li>
 <li><p>In addition to testing feature attributes, selectors can also be used to check the state of the rendering engine.</p>
@@ -348,7 +348,7 @@
 </div>
 </li>
 <li><p>As you adjust the scale in the <span class="guilabel">Map</span> preview (using the mouse scroll wheel) the color will change between black and blue. You can read the current scale in the bottom right corner, and the legend will change to reflect the current style.</p>
-<img alt="../../../_images/line_05_scale.png" src="../../../_images/line_05_scale.png" />
+<img alt="../../../images/line_05_scale.png" src="../../../images/line_05_scale.png" />
 </li>
 <li><p>Putting these two ideas together allows control of level detail based on scale:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="p">@</span><span class="k">scale</span> <span class="o">&lt;</span> <span class="nt">9000000</span><span class="o">]</span> <span class="o">[</span><span class="nt">scalerank</span> <span class="o">&gt;</span> <span class="nt">7</span><span class="o">]</span> <span class="p">{</span>
@@ -391,7 +391,7 @@
 <li><p>Selectors separated by a comma are combined using CQL Filter OR</p></li>
 </ul>
 <p>Our first rule <cite>[&#64;scale &lt; 9000000] [scalerank &gt; 7]</cite> checks that the scale is less than 9M AND scalerank is greater than 7.</p>
-<img alt="../../../_images/line_06_adjust.png" src="../../../_images/line_06_adjust.png" />
+<img alt="../../../images/line_06_adjust.png" src="../../../images/line_06_adjust.png" />
 </li>
 </ol>
 </div>
@@ -456,7 +456,7 @@
 </div>
 </li>
 <li><p>The result is a new appearance for our roads.</p>
-<img alt="../../../_images/line_label_4.png" src="../../../_images/line_label_4.png" />
+<img alt="../../../images/line_label_4.png" src="../../../images/line_label_4.png" />
 </li>
 </ol>
 </div>
@@ -486,7 +486,7 @@
 <p>You can <strong>Layer Preview</strong> to inspect features to determine available values for type.</p>
 </li>
 <li><p><strong>Challenge:</strong> Create a new style adjust road appearance based on <strong>type</strong>.</p>
-<img alt="../../../_images/line_type.png" src="../../../_images/line_type.png" />
+<img alt="../../../images/line_type.png" src="../../../images/line_type.png" />
 <p>Hint: The available values are ‘Major Highway’,’Secondary Highway’,’Road’ and ‘Unknown’.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -519,7 +519,7 @@
 <span id="css-line-q3"></span><h3><span class="section-number">3.2.6.5. </span>Challenge Label Shields<a class="headerlink" href="#challenge-label-shields" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>The traditional presentation of roads in the US is the use of a shield symbol, with the road number marked on top.</p>
-<img alt="../../../_images/line_shield.png" src="../../../_images/line_shield.png" />
+<img alt="../../../images/line_shield.png" src="../../../images/line_shield.png" />
 </li>
 <li><p><em>Challenge:</em> Have a look at the documentation and reproduce this technique.</p>
 <div class="admonition note">

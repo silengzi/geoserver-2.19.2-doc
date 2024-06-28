@@ -94,11 +94,11 @@ to eliminate the risk of SQL injection attacks.</p>
 When a database store is selected, the usual list of tables and views available for publication appears,
 A link <span class="guilabel">Configure new SQL view…</span> also appears:</p>
 <div class="figure align-center">
-<img alt="../../_images/createsqlview.png" src="../../_images/createsqlview.png" />
+<img alt="../../images/createsqlview.png" src="../../images/createsqlview.png" />
 </div>
 <p>Selecting the <span class="guilabel">Configure new SQL view…</span> link opens a new page where the SQL view query can be specified:</p>
 <div class="figure align-center">
-<img alt="../../_images/createsql.png" src="../../_images/createsql.png" />
+<img alt="../../images/createsql.png" src="../../images/createsql.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -109,7 +109,7 @@ In some databases alias names are required for function calls.</p>
 </div>
 <p>When a valid SQL query has been entered, press the <span class="guilabel">Refresh</span> link in the <strong>Attributes</strong> table to get the list of the attribute columns determined from the query:</p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-attributes.png" src="../../_images/sqlview-attributes.png" />
+<img alt="../../images/sqlview-attributes.png" src="../../images/sqlview-attributes.png" />
 </div>
 <p>GeoServer attempts to determine the geometry column type and the native SRID, but these should be verified and corrected if necessary.</p>
 <div class="admonition note">
@@ -123,7 +123,7 @@ Always ensure these attributes generate a unique key, or filtering and WFS reque
 The usual <span class="guilabel">New Layer</span> configuration page will appear.
 If further changes to the view are required, the page has a link to the SQL View editor at the bottom of the <span class="guilabel">Data</span> tab:</p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-edit.png" src="../../_images/sqlview-edit.png" />
+<img alt="../../images/sqlview-edit.png" src="../../images/sqlview-edit.png" />
 </div>
 <p>Once created, the SQL view layer is used in the same way as a conventional table-backed layer,
 with the one limitation of being read-only.</p>
@@ -156,18 +156,18 @@ including such uses as within SQL string constants,
 in place of SQL keywords, or representing entire SQL clauses.</p>
 <p>Here is an example of a SQL View query for a layer called <code class="docutils literal notranslate"><span class="pre">popstates</span></code> with two parameters, <code class="docutils literal notranslate"><span class="pre">low</span></code> and <code class="docutils literal notranslate"><span class="pre">high</span></code>:</p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-parametricsql.png" src="../../_images/sqlview-parametricsql.png" />
+<img alt="../../images/sqlview-parametricsql.png" src="../../images/sqlview-parametricsql.png" />
 </div>
 <p>Each parameter needs to be defined with its name, an optional default value, and a validation expression.
 The <span class="guilabel">Guess parameters from SQL</span> link can be clicked to infer the query parameters automatically, or they can be entered manually.
 The result is a table filled with the parameter names, default values and validation expressions:</p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-paramdefault.png" src="../../_images/sqlview-paramdefault.png" />
+<img alt="../../images/sqlview-paramdefault.png" src="../../images/sqlview-paramdefault.png" />
 </div>
 <p>In this case the default values should be specified, since the query cannot be executed without values for the parameters (because the expanded query <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">gid,</span> <span class="pre">state_name,</span> <span class="pre">the_geom</span> <span class="pre">from</span> <span class="pre">pgstates</span> <span class="pre">where</span> <span class="pre">persons</span> <span class="pre">between</span> <span class="pre">and</span></code> is invalid SQL).
 Since the use of the parameters in the SQL query requires their values to be positive integer numbers, the validation regular expressions are specified to allow only numeric input (i.e. <code class="docutils literal notranslate"><span class="pre">^[\d]+$</span></code>):</p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-paramcustom.png" src="../../_images/sqlview-paramcustom.png" />
+<img alt="../../images/sqlview-paramcustom.png" src="../../images/sqlview-paramcustom.png" />
 </div>
 <p>Once the parameters have been defined,
 the <strong>Attributes</strong> <span class="guilabel">Refresh</span> link is clicked to parse the query and retrieve the attribute columns.
@@ -187,11 +187,11 @@ The <code class="docutils literal notranslate"><span class="pre">viewparams</spa
 Initially no parameter values are supplied, so the defaults are used and all the states are displayed.</p>
 <p>To display all states having more than 20 million inhabitants the following parameter is added to the <code class="docutils literal notranslate"><span class="pre">GetMap</span></code> request: <code class="docutils literal notranslate"><span class="pre">&amp;viewparams=low:20000000</span></code></p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-20millions.png" src="../../_images/sqlview-20millions.png" />
+<img alt="../../images/sqlview-20millions.png" src="../../images/sqlview-20millions.png" />
 </div>
 <p>To display all states having between 2 and 5 million inhabitants the view parameters are: <code class="docutils literal notranslate"><span class="pre">&amp;viewparams=low:2000000;high:5000000</span></code></p>
 <div class="figure align-center">
-<img alt="../../_images/sqlview-2m-5m.png" src="../../_images/sqlview-2m-5m.png" />
+<img alt="../../images/sqlview-2m-5m.png" src="../../images/sqlview-2m-5m.png" />
 </div>
 <p>Parameters can be provided for multiple layers by separating each parameter map with a comma:</p>
 <blockquote>

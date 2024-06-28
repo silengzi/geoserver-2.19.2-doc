@@ -78,7 +78,7 @@
 <span id="data-webadmin-stores"></span><h1>Stores<a class="headerlink" href="#stores" title="Permalink to this headline">¶</a></h1>
 <p>A store connects to a data source that contains raster or vector data. A data source can be a file or group of files, a table in a database, a single raster file, or a directory (for example, a Vector Product Format library). The store construct allows connection parameters to be defined once, rather than for each dataset in a source. As such, it is necessary to register a store before configuring datasets within it.</p>
 <div class="figure align-default" id="id1">
-<img alt="../../_images/data_stores.png" src="../../_images/data_stores.png" />
+<img alt="../../images/data_stores.png" src="../../images/data_stores.png" />
 <p class="caption"><span class="caption-text">Stores View</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="store-types">
@@ -95,19 +95,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><img alt="../../_images/data_stores_type1.png" src="../../_images/data_stores_type1.png" />
+<tr class="row-even"><td><img alt="../../images/data_stores_type1.png" src="../../images/data_stores_type1.png" />
 </td>
 <td><p>raster data in a file</p></td>
 </tr>
-<tr class="row-odd"><td><img alt="../../_images/data_stores_type3.png" src="../../_images/data_stores_type3.png" />
+<tr class="row-odd"><td><img alt="../../images/data_stores_type3.png" src="../../images/data_stores_type3.png" />
 </td>
 <td><p>vector data in a file</p></td>
 </tr>
-<tr class="row-even"><td><img alt="../../_images/data_stores_type2.png" src="../../_images/data_stores_type2.png" />
+<tr class="row-even"><td><img alt="../../images/data_stores_type2.png" src="../../images/data_stores_type2.png" />
 </td>
 <td><p>vector data in a database</p></td>
 </tr>
-<tr class="row-odd"><td><img alt="../../_images/data_stores_type5.png" src="../../_images/data_stores_type5.png" />
+<tr class="row-odd"><td><img alt="../../images/data_stores_type5.png" src="../../images/data_stores_type5.png" />
 </td>
 <td><p>vector server (web feature server)</p></td>
 </tr>
@@ -118,7 +118,7 @@
 <h2>Edit a Store<a class="headerlink" href="#edit-a-store" title="Permalink to this headline">¶</a></h2>
 <p>To view or edit a store, click the store name. A store configuration page will be displayed.  The exact contents of this page depend on the specific format of the store. See the sections <a class="reference internal" href="../vector/index.html#data-vector"><span class="std std-ref">Vector data</span></a>, <a class="reference internal" href="../raster/index.html#data-raster"><span class="std std-ref">Raster data</span></a>, and <a class="reference internal" href="../database/index.html#data-database"><span class="std std-ref">Databases</span></a> for information about specific data formats. The example shows the configuration for the <code class="docutils literal notranslate"><span class="pre">nurc:ArcGridSample</span></code> store.</p>
 <div class="figure align-default" id="id2">
-<img alt="../../_images/data_stores_edit.png" src="../../_images/data_stores_edit.png" />
+<img alt="../../images/data_stores_edit.png" src="../../images/data_stores_edit.png" />
 <p class="caption"><span class="caption-text">Editing a raster data store</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="basic-store-info">
@@ -140,18 +140,18 @@
 <span id="data-webadmin-stores-add-a-store"></span><h2>Add a Store<a class="headerlink" href="#add-a-store" title="Permalink to this headline">¶</a></h2>
 <p>The buttons for adding and removing a store can be found at the top of the Stores page.</p>
 <div class="figure align-default" id="id3">
-<img alt="../../_images/data_stores_add_remove.png" src="../../_images/data_stores_add_remove.png" />
+<img alt="../../images/data_stores_add_remove.png" src="../../images/data_stores_add_remove.png" />
 <p class="caption"><span class="caption-text">Buttons to add and remove a Store</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>To add a store, select the <span class="guilabel">Add new Store</span> button. You will be prompted to choose a data source. GeoServer natively supports many formats (with more available via extensions). Click the appropriate data source to continue.</p>
 <div class="figure align-default" id="id4">
-<img alt="../../_images/data_stores_chooser.png" src="../../_images/data_stores_chooser.png" />
+<img alt="../../images/data_stores_chooser.png" src="../../images/data_stores_chooser.png" />
 <p class="caption"><span class="caption-text">Choosing the data source for a new store</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The next page configures the store. Since connection parameters differ across data sources, the exact contents of this page depend on the store’s specific format. See the sections <a class="reference internal" href="../vector/index.html#data-vector"><span class="std std-ref">Vector data</span></a>, <a class="reference internal" href="../raster/index.html#data-raster"><span class="std std-ref">Raster data</span></a>, and <a class="reference internal" href="../database/index.html#data-database"><span class="std std-ref">Databases</span></a> for information on specific data formats.
 The example below shows the ArcGrid raster configuration page.</p>
 <div class="figure align-default" id="id5">
-<img alt="../../_images/data_stores_add.png" src="../../_images/data_stores_add.png" />
+<img alt="../../images/data_stores_add.png" src="../../images/data_stores_add.png" />
 <p class="caption"><span class="caption-text">Configuration page for an ArcGrid raster data source</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -159,12 +159,12 @@ The example below shows the ArcGrid raster configuration page.</p>
 <h2>Remove a Store<a class="headerlink" href="#remove-a-store" title="Permalink to this headline">¶</a></h2>
 <p>To remove a store, click the checkbox next to the store. Multiple stores can be selected, or all can be selected by clicking the checkbox in the header.</p>
 <div class="figure align-default" id="id6">
-<img alt="../../_images/data_stores_delete.png" src="../../_images/data_stores_delete.png" />
+<img alt="../../images/data_stores_delete.png" src="../../images/data_stores_delete.png" />
 <p class="caption"><span class="caption-text">Stores selected for removal</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click the <span class="guilabel">Remove selected Stores</span> button. You will be asked to confirm the removal of the configuration for the store(s) and all resources defined under them. Clicking <span class="guilabel">OK</span> removes the selected store(s), and returns to the Stores page.</p>
 <div class="figure align-default" id="id7">
-<img alt="../../_images/data_stores_delete_confirm.png" src="../../_images/data_stores_delete_confirm.png" />
+<img alt="../../images/data_stores_delete_confirm.png" src="../../images/data_stores_delete_confirm.png" />
 <p class="caption"><span class="caption-text">Confirm removal of stores</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>

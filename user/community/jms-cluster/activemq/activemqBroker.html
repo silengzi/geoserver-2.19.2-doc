@@ -154,20 +154,20 @@ Now run jconsole to connect to the brokers via JMX:</p>
 <p>${JAVA_HOME}/bin/jconsole</p>
 <p>After you connect to the brokers you may see something like this:</p>
 <div class="figure align-center">
-<img alt="../../../_images/master_slave_jmx_1.png" src="../../../_images/master_slave_jmx_1.png" />
+<img alt="../../../images/master_slave_jmx_1.png" src="../../../images/master_slave_jmx_1.png" />
 </div>
 <p>You may look at the console, as you can see the 2nd instance of the broker cannot take the look on the file (the example uses KahaDB); this is also visible in the JMX console into the widhow on the right side.</p>
 <p>If now you select the ‘operation’ (on the left side window) you will see:</p>
 <div class="figure align-center">
-<img alt="../../../_images/master_slave_jmx_2.png" src="../../../_images/master_slave_jmx_2.png" />
+<img alt="../../../images/master_slave_jmx_2.png" src="../../../images/master_slave_jmx_2.png" />
 </div>
 <p>Using that console we are able to perform many operation, so to simulate a broker down we try to click on the ‘stop()’ button.</p>
 <p>Doing so, the first broker instance will stop and the JMX connection will be closed, and the second instance (on the right side) will keep the control of the DB.</p>
 <div class="figure align-center">
-<img alt="../../../_images/master_slave_jmx_3.png" src="../../../_images/master_slave_jmx_3.png" />
+<img alt="../../../images/master_slave_jmx_3.png" src="../../../images/master_slave_jmx_3.png" />
 </div>
 <div class="figure align-center">
-<img alt="../../../_images/master_slave_jmx_4.png" src="../../../_images/master_slave_jmx_4.png" />
+<img alt="../../../images/master_slave_jmx_4.png" src="../../../images/master_slave_jmx_4.png" />
 </div>
 </div>
 </div>
