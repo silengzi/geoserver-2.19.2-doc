@@ -96,7 +96,7 @@
 <h3>Create a mapping file for every complex type<a class="headerlink" href="#create-a-mapping-file-for-every-complex-type" title="Permalink to this headline">¶</a></h3>
 <p>We need one mapping file per complex type that is going to be nested, including non features, e.g. gsml:CompositionPart.</p>
 <p>Non-feature types that cannot be individually accessed (eg. CompositionPart as a Data Type) can still be mapped separately for its reusability. For this case, the containing feature type has to include these types in its mapping file. The include tag should contain the nested mapping file path relative to the location of the containing type mapping file.
-In <a class="reference download internal" download="" href="../../_downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a>:</p>
+In <a class="reference download internal" download="" href="../../downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">includedTypes</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">Include</span><span class="o">&gt;</span><span class="n">CGITermValue_MappingFile</span><span class="o">.</span><span class="n">xml</span><span class="o">&lt;/</span><span class="n">Include</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">Include</span><span class="o">&gt;</span><span class="n">CompositionPart_MappingFile</span><span class="o">.</span><span class="n">xml</span><span class="o">&lt;/</span><span class="n">Include</span><span class="o">&gt;</span>
@@ -107,14 +107,14 @@ In <a class="reference download internal" download="" href="../../_downloads/73b
 Such types would have their mapping file associated with a corresponding datastore.xml file, which means that it can be found from the data store registry.
 In other words, if the type is associated with a datastore.xml file, it doesn’t need to be explicitly included if referred from another mapping file.</p>
 <p><strong>Example</strong>:</p>
-<p>For this output: <a class="reference download internal" download="" href="../../_downloads/8eca0dfb21b74c866f8c4894105cbde1/MappedFeature_Output.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_Output.xml</span></code></a>, here are the mapping files:</p>
+<p>For this output: <a class="reference download internal" download="" href="../../downloads/8eca0dfb21b74c866f8c4894105cbde1/MappedFeature_Output.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_Output.xml</span></code></a>, here are the mapping files:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/cdbb2711a55975becf02bdabe136b4f3/MappedFeature_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_MappingFile.xml</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/f7aa346ab3bc6578a93fcde70cf899d8/CompositionPart_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">CompositionPart_MappingFile.xml</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/7c4fd7c45da249a71e93cb7cf19287e6/GeologicEvent_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicEvent_MappingFile.xml</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/dedb14a15d9f7b96a4b310726c0f36d2/CGITermValue_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">CGITermValue_MappingFile.xml</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../downloads/cdbb2711a55975becf02bdabe136b4f3/MappedFeature_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_MappingFile.xml</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../downloads/f7aa346ab3bc6578a93fcde70cf899d8/CompositionPart_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">CompositionPart_MappingFile.xml</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../downloads/7c4fd7c45da249a71e93cb7cf19287e6/GeologicEvent_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicEvent_MappingFile.xml</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../downloads/dedb14a15d9f7b96a4b310726c0f36d2/CGITermValue_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">CGITermValue_MappingFile.xml</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <p><em>GeologicUnit type</em></p>
@@ -309,7 +309,7 @@ If there isn’t any existing field that can be referred to, the system field <e
 </pre></div>
 </div>
 <p><strong>Example Two</strong>:
-Using existing field (gml:name) to hold the foreign key, see <a class="reference download internal" download="" href="../../_downloads/cdbb2711a55975becf02bdabe136b4f3/MappedFeature_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_MappingFile.xml</span></code></a>:</p>
+Using existing field (gml:name) to hold the foreign key, see <a class="reference download internal" download="" href="../../downloads/cdbb2711a55975becf02bdabe136b4f3/MappedFeature_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">MappedFeature_MappingFile.xml</span></code></a>:</p>
 <p>gsml:specification links to gml:name in GeologicUnit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AttributeMapping</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">targetAttribute</span><span class="o">&gt;</span><span class="n">gsml</span><span class="p">:</span><span class="n">specification</span><span class="o">&lt;/</span><span class="n">targetAttribute</span><span class="o">&gt;</span>
@@ -321,7 +321,7 @@ Using existing field (gml:name) to hold the foreign key, see <a class="reference
 <span class="o">&lt;/</span><span class="n">AttributeMapping</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>In <a class="reference download internal" download="" href="../../_downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a>:</p>
+<p>In <a class="reference download internal" download="" href="../../downloads/73b76015f2db42f406974f03ae3ef265/GeologicUnit_MappingFile.xml"><code class="xref download docutils literal notranslate"><span class="pre">GeologicUnit_MappingFile.xml</span></code></a>:</p>
 <p>GeologicUnit has 3 gml:name properties in the mapping file, so each has a code space to clarify them:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AttributeMapping</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">targetAttribute</span><span class="o">&gt;</span><span class="n">gml</span><span class="p">:</span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">targetAttribute</span><span class="o">&gt;</span>
@@ -365,8 +365,8 @@ Using existing field (gml:name) to hold the foreign key, see <a class="reference
 </pre></div>
 </div>
 <p>If this is the “one” side of a one-to-many or many-to-one database relationship, we can use the feature id as the source expression field, as you can see in above examples.
-See <a class="reference download internal" download="" href="../../_downloads/ccee222db067121469d67c9afe237f43/one_to_many_relationship.JPG"><code class="xref download docutils literal notranslate"><span class="pre">one_to_many_relationship.JPG</span></code></a> as an illustration.</p>
-<p>If we have a many-to-many relationship, we have to use one denormalized view for either side of the nesting. This means we can either use the feature id as the referenced field, or assign a column to serve this purpose. See <a class="reference download internal" download="" href="../../_downloads/96c91d964f29207f5412a61af3e17641/many_to_many_relationship.JPG"><code class="xref download docutils literal notranslate"><span class="pre">many_to_many_relationship.JPG</span></code></a> as an illustration.</p>
+See <a class="reference download internal" download="" href="../../downloads/ccee222db067121469d67c9afe237f43/one_to_many_relationship.JPG"><code class="xref download docutils literal notranslate"><span class="pre">one_to_many_relationship.JPG</span></code></a> as an illustration.</p>
+<p>If we have a many-to-many relationship, we have to use one denormalized view for either side of the nesting. This means we can either use the feature id as the referenced field, or assign a column to serve this purpose. See <a class="reference download internal" download="" href="../../downloads/96c91d964f29207f5412a61af3e17641/many_to_many_relationship.JPG"><code class="xref download docutils literal notranslate"><span class="pre">many_to_many_relationship.JPG</span></code></a> as an illustration.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
