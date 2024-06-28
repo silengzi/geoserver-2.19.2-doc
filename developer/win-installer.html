@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Build Windows installer &mdash; GeoServer 2.19.2 Developer Manual</title>
+  <link rel="stylesheet" href="_static/blueprint/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="_static/blueprint/print.css" type="text/css" media="print" /> 
+  <!--[if IE]>
+  <link rel="stylesheet" href="_static/blueprint/ie.css" type="text/css" media="screen, projection" />
+  <![endif]-->
+  <link rel="stylesheet" href="_static/default.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.19.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html'
+    };
+  </script>
+  <script type="text/javascript" src="_static/jquery.js"></script>
+  <script type="text/javascript" src="_static/doctools.js"></script>
+  <script type="text/javascript" src="_static/searchtools.js"></script>
+  <script type="text/javascript" src="searchindex.js"></script>
+  <link rel="shortcut icon" href="_static/geoserver.ico"/>
+      <link rel="search" title="Search" href="search.html" />
+      <link rel="top" title="GeoServer 2.19.2 Developer Manual" href="index.html" />
+      <link rel="prev" title="Community Modules" href="policies/community-modules.html" />
+</head>
+<body class="win-installer">
+  <div id="header" class="selfclear">
+    <div class="wrap selfclear">
+      <div id="logo"><a href="index.html">GeoServer 2.19.2 Developer Manual</a></div>
+      <ul id="top-nav">
+        <li class="first"><a href="http://geoserver.org/about">About</a></li>
+        <li><a href="http://blog.geoserver.org/">Blog</a></li>
+        <li><a href="http://geoserver.org/download">Download</a></li>
+        <!--<li><a href="index.html">Documentation</a></li>-->
+      </ul>
+        <form id="quick-search" action="search.html" method="get">
+          <fieldset>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <input id="quick-search-query" type="text" name="q" accessKey="q" name="searchQuery.queryString" size="25" value="Search Documentation&hellip;" size="20" tabindex="3" onblur="if(this.value=='') this.value='Search Documentation&hellip;';" onfocus="if(this.value=='Search Documentation&hellip;') this.value='';" />
+            <input id="quick-search-submit" type="image" value="Search" src="_static/chrome/search_icon_green.png" />
+          </fieldset>
+        </form>
+    </div><!-- /.wrap -->
+  </div><!-- /#header -->
+  <div id="main">
+    <div class="wrap selfclear">
+      <div id="content-left" class="content-border"></div>
+      <div id="content">
+<ul id="breadcrumbs">
+  
+  <li><a href="index.html">GeoServer 2.19.2 Developer Manual</a> &raquo;</li>
+  <li>Build Windows installer</li>
+</ul>
+<ul id="relatedlinks" class="selfclear">
+  <li class="first">
+    <a href="policies/community-modules.html" title="Community Modules"
+       accesskey="P">previous</a></li>
+</ul>
+        
+  <div class="section" id="build-windows-installer">
+<h1>Build Windows installer<a class="headerlink" href="#build-windows-installer" title="Permalink to this headline">¶</a></h1>
+<p>At the time the GeoServer project does not have financial resources and man power to stand up a Windows build server (if you can help with this, please contact the developer list).
+However you can create your own installer (using a Windows machine).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step requires a Windows machine.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A community provided Powershell script that automates the following steps is available <a class="reference external" href="https://github.com/geoserver/geoserver/edit/master/src/release/installer/win/win-installer-builder.ps1">here</a>.</p>
+</div>
+<ol class="arabic">
+<li><p>Download and install <a class="reference external" href="http://nsis.sourceforge.net/">NSIS</a>.</p></li>
+<li><p>Install the <a class="reference external" href="http://nsis.sourceforge.net/AccessControl_plug-in">NSIS Access Control plugin</a>.  The simplest way to do this is to download the zip, extract the .DLL files (<code class="file docutils literal notranslate"><span class="pre">AccessControl.dll</span></code>) and copy it to the NSIS plugins directory (usually <code class="file docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\NSIS\Plugins\x86-ansi</span></code>).</p></li>
+<li><p>Download and unzip the binary GeoServer package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="n">geoserver</span><span class="o">-</span><span class="p">[</span><span class="n">VERSION</span><span class="p">]</span><span class="o">-</span><span class="nb">bin</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download and unzip the source GeoServer package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unzip</span> <span class="n">geoserver</span><span class="o">-</span><span class="p">[</span><span class="n">VERSION</span><span class="p">]</span><span class="o">.</span><span class="n">zip</span>
+</pre></div>
+</div>
+</li>
+<li><p>Copy the files <code class="file docutils literal notranslate"><span class="pre">LICENSE.txt</span></code>, <code class="file docutils literal notranslate"><span class="pre">src/release/GPL.txt</span></code> and the following files from <code class="file docutils literal notranslate"><span class="pre">src/release/installer/win</span></code> from the Geoserver source GeoServer package to the root of the unpacked archive (the same directory level as the <code class="file docutils literal notranslate"><span class="pre">start.jar</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GeoServerEXE</span><span class="o">.</span><span class="n">nsi</span>
+<span class="n">gs</span><span class="o">.</span><span class="n">ico</span>
+<span class="n">header</span><span class="o">.</span><span class="n">bmp</span>
+<span class="n">side_left</span><span class="o">.</span><span class="n">bmp</span>
+<span class="n">splash</span><span class="o">.</span><span class="n">bmp</span>
+<span class="n">wrapper</span><span class="o">.</span><span class="n">conf</span>
+<span class="n">wrapper</span><span class="o">.</span><span class="n">dll</span>
+<span class="n">wrapper</span><span class="o">.</span><span class="n">exe</span>
+<span class="n">wrapper</span><span class="o">.</span><span class="n">jar</span>
+<span class="n">wrapper</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">license</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/win-installer1.png" src="_images/win-installer1.png" />
+</div>
+</li>
+<li><p>Right-click on the installer script <code class="file docutils literal notranslate"><span class="pre">GeoServerEXE.nsi</span></code> and select <strong class="command">Compile Script</strong>.</p>
+<div class="figure align-center">
+<img alt="_images/win-installer2.png" src="_images/win-installer2.png" />
+</div>
+</li>
+</ol>
+<p>After successfully compiling the script, an installer named <code class="file docutils literal notranslate"><span class="pre">geoserver-[VERSION].exe</span></code> will be located in the root of the unpacked archive.</p>
+<div class="figure align-center">
+<img alt="_images/win-installer3.png" src="_images/win-installer3.png" />
+</div>
+</div>
+
+
+      <div class="selfclear pagination-nav">
+          <div class="leftwise"><strong>Previous</strong>: <a href="policies/community-modules.html" title="previous chapter">Community Modules</a></div>
+      </div>
+      </div><!-- /#content> -->
+      <div id="content-right" class="content-border"></div>
+  <div id="sidebar" class="contrast">
+        <div class="section">
+          <h3>Continue Reading</h3>
+          <ul>
+            <li>Previous: <a href="policies/community-modules.html" title="previous chapter">Community Modules</a></li>
+          </ul>
+        </div>
+        <div class="section">
+        <h3>This Page</h3>
+        <ul class="this-page-menu">
+                
+        <li><a href="https://github.com/geoserver/geoserver/tree/master/doc/en/developer/source/win-installer.rst">Edit</a></li>
+        </ul>
+        </div>
+  </div><!-- /#sidebar -->
+  </div><!-- /.wrap> -->
+</div><!-- /#main -->
+<div id="footer">
+  <div class="wrap">
+    &copy; Copyright 2021, Open Source Geospatial Foundation. License <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution</a>.
+    Last updated on Jul 20, 2021.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div><!-- /.wrap> -->
+</div><!-- /#footer -->
+  </body>
+</html>
